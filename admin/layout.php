@@ -56,6 +56,14 @@
             color: #fff;
             border-left-color: #3b82f6;
         }
+      /* MAIN CONTENT WRAPPER */
+        .main-content {
+            margin-left: 250px;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
       </style>
 </head>
