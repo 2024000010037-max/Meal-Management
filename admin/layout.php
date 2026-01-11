@@ -54,7 +54,11 @@
         / Close sidebar when clicking outside on mobile (overlay)
         document.body.addEventListener('click', function(e) {
             if (window.innerWidth <= 768 && document.body.classList.contains('toggled')) {
-                
+                if (!e.target.closest('.sidebar') && !e.target.closest('#menu-toggle')) {
+                    document.body.classList.remove('toggled');
+                }
+            }
+        });
     </script>
 </body>
 </html>
