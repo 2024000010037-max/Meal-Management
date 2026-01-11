@@ -13,5 +13,9 @@ class Database {
                 $this->pass,
                 [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
             );
+            } catch (PDOException $e) {
+            die("DB Error: " . $e->getMessage());
+        }
+    }
 }
 </php>
