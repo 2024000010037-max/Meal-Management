@@ -48,5 +48,21 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         $msg = "<div class='alert alert-success alert-dismissible fade show'>User status updated!<button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
     }
 
+    // 3. Delete User
+    if ($_GET['action'] === 'delete' && $id != $_SESSION['user_id']) {
+        try {
+            $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
+            if ($stmt->execute([$id])) {
+                $msg = "<div class='alert alert-success alert-dismissible fade show'>User deleted successfully!<button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+            }
+        } catch (PDOException $e) {
+            if ($e->getCode() == '23000') {
+                $msg = "<div class='alert alert-warning alert-dismissible fade show'>Cannot delete user with existing records. Please make them <strong>Inactive</strong> instead.<button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+            } else {
+                $msg = "<div class='alert alert-danger'>Error deleting user.</div>";
+            }
+        }
+    }
+
 }
 </php>  
