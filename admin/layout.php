@@ -39,5 +39,11 @@
             <button class="btn btn-light border" id="menu-toggle"><i class="bi bi-list fs-5"></i></button>
             <div class="fw-bold text-secondary">Admin Panel</div>
         </div>
+
+        <!-- Dynamic Content -->
+        <div class="p-4">
+            <?= isset($content) ? $content : '' ?>
+        </div>
+    </div>
 </body>
 </html>
