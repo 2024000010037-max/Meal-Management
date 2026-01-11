@@ -202,6 +202,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
                 JOIN users u ON d.user_id = u.id 
                 WHERE d.status = 'pending' 
                 ORDER BY d.deposit_date ASC")->fetchAll(PDO::FETCH_ASSOC);
+            
+            2. History (Approved/Rejected) for Selected Month
+                $stmt = $pdo->prepare("
+                SELECT d.*, u.full_name, m.full_name as manager_name,
+                TIMESTAMPDIFF(SECOND, d.created_at, NOW()) as time_diff
+                FROM deposits d 
+                JOIN users u ON d.user_id = u.id 
+                LEFT JOIN users m ON d.manager_id = m.id
+                WHERE d.status != 'pending' AND DATE_FORMAT(d.deposit_date, '%Y-%m') = ? 
+                ORDER BY d.deposit_date DESC");
+                $stmt->execute([$selected_month]);
+                $history = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
