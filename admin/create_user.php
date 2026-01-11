@@ -126,5 +126,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
     $email    = trim($_POST['email']);
     $phone    = trim($_POST['phone']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    
+    // Default role is always 'user' first
+    $role = 'user';
+
+    // Validation: Ensure all text fields are filled
+    if (empty($name) || empty($username) || empty($_POST['password']) || empty($email) || empty($phone)) {
+        $msg = "<div class='alert alert-danger'>All text fields are required.</div>";
+    } elseif (empty($_FILES['nid_photo']['name'])) {
+        $msg = "<div class='alert alert-danger'>NID Photo is required.</div>";
+    } else {
 </php>  
