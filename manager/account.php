@@ -14,4 +14,8 @@ $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+// Profile Photo Logic
+$profile_img = !empty($user['photo']) ? "../uploads/" . $user['photo'] : "https://ui-avatars.com/api/?name=" . urlencode($user['full_name']) . "&background=fff&color=667eea&size=128";
+
+
 ?>
