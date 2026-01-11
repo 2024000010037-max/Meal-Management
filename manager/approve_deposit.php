@@ -169,6 +169,11 @@ if (!empty($deposit['email'])) {
     }
 }
 
+    // 6. Redirect
+header("Location: deposit.php?month=$month&msg=approved");
+exit;
+
+
 
 
 ?>
