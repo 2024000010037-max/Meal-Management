@@ -345,6 +345,65 @@ ob_start();
             </div>
         </div>
 
+<!-- ADD / EDIT FORM -->
+        <div class="tab-pane fade <?= $edit_data ? 'show active' : '' ?>" id="pills-add">
+            <div class="card p-4" style="max-width: 600px; margin: 0 auto;">
+                <h5 class="fw-bold mb-3 <?= $pre_amount ? 'text-danger' : 'text-success' ?>"><?= $edit_data ? 'Update Deposit Entry' : ($pre_amount ? 'Return Cash / Refund' : 'Add Direct Deposit') ?></h5>
+                <form method="POST" action="deposit.php?month=<?= $selected_month ?>">
+                    <input type="hidden" name="save_deposit" value="1">
+                    <?php if($edit_data): ?>
+                        <input type="hidden" name="edit_id" value="<?= $edit_data['id'] ?>">
+                    <?php endif; ?>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Date</label>
+                            <input type="date" name="deposit_date" class="form-control" value="<?= $edit_data['deposit_date'] ?? date('Y-m-d') ?>" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Member</label>
+                            <select name="user_id" class="form-select select2" required>
+                                <option value="">Select Member</option>
+                                <?php foreach($users as $u): ?>
+                                    <option value="<?= $u['id'] ?>" <?= (($edit_data && $edit_data['user_id'] == $u['id']) || ($pre_user_id == $u['id'])) ? 'selected' : '' ?>>
+                                        <?= htmlspecialchars($u['full_name']) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Payment Method</label>
+                            <select name="payment_method" class="form-select" required>
+                                <?php $methods = ['cash', 'bkash', 'nagad', 'bank', 'other']; ?>
+                                <?php foreach($methods as $m): ?>
+                                    <option value="<?= $m ?>" <?= ($edit_data && $edit_data['payment_method'] == $m) ? 'selected' : '' ?>>
+                                        <?= ucfirst($m) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Amount (৳)</label>
+                            <input type="number" step="0.01" name="amount" class="form-control" value="<?= $edit_data['amount'] ?? $pre_amount ?? '' ?>" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold">Transaction ID (Optional)</label>
+                            <input type="text" name="transaction_id" class="form-control" value="<?= $edit_data['transaction_id'] ?? '' ?>" placeholder="e.g. TrxID123456">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold">Remarks</label>
+                            <textarea name="remarks" class="form-control" rows="2"><?= $edit_data['remarks'] ?? ($pre_amount ? 'Cash Returned to Member' : '') ?></textarea>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button class="btn btn-success w-100 fw-bold"><?= $edit_data ? 'Update Changes' : 'Save & Approve' ?></button>
+                            <?php if($edit_data): ?>
+                                <a href="deposit.php?month=<?= $selected_month ?>" class="btn btn-light w-100 mt-2">Cancel</a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
 
 
