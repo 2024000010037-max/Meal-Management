@@ -79,5 +79,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_user'])) {
     $username = trim($_POST['username']);
     $email    = trim($_POST['email']);
     $phone    = trim($_POST['phone']);
-
+    
+if (empty($name) || empty($username) || empty($email) || empty($phone)) {
+        $msg = "<div class='alert alert-danger'>All text fields are required.</div>";
+    } else {
+        // Check username uniqueness (excluding current user)
+        $check = $pdo->prepare("SELECT id FROM users WHERE username=? AND id != ?");
+        $check->execute([$username, $id]);
 </php>  
