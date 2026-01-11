@@ -27,6 +27,40 @@ if (isset($_GET['msg']) && $_GET['msg'] === 'refund_sent') {
     $msg = "<div class='alert alert-success alert-dismissible fade show'>Refund processed and receipt sent successfully! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
 }
 
+    // --- HANDLE ACTIONS (Approve, Reject, Delete) ---
+if (isset($_GET['action']) && isset($_GET['id'])) {
+    $action = $_GET['action'];
+    $did = intval($_GET['id']);
+
+    if ($action === 'delete') {
+        // Check permission: Admin (anytime) or Manager (within 10 mins)
+        $stmt = $pdo->prepare("SELECT created_at, TIMESTAMPDIFF(SECOND, created_at, NOW()) as time_diff FROM deposits WHERE id = ?");
+        $stmt->execute([$did]);
+        $dep = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $can_delete = false;
+        if ($_SESSION['role'] === 'admin') {
+            $can_delete = true;
+        } elseif ($_SESSION['role'] === 'manager' && isset($dep['time_diff']) && $dep['time_diff'] >= 0 && $dep['time_diff'] <= 600) {
+            $can_delete = true;
+        }
+
+        if ($can_delete) {
+            $stmt = $pdo->prepare("DELETE FROM deposits WHERE id = ?");
+            $stmt->execute([$did]);
+            $msg = "<div class='alert alert-warning alert-dismissible fade show'>Deposit deleted permanently. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        } else {
+            $msg = "<div class='alert alert-danger alert-dismissible fade show'>Permission denied or time limit exceeded. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        }
+    } elseif ($action === 'reject') {
+        $new_status = 'rejected';
+        // Update status AND manager_id
+        $stmt = $pdo->prepare("UPDATE deposits SET status = ?, manager_id = ? WHERE id = ?");
+        $stmt->execute([$new_status, $manager_id, $did]);
+        $msg = "<div class='alert alert-success alert-dismissible fade show'>Request Rejected! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+    }
+}
+
 
 
 ?>
