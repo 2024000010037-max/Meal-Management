@@ -32,6 +32,12 @@
 
        </div>
     </div>
-    
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="top-header">
+            <button class="btn btn-light border" id="menu-toggle"><i class="bi bi-list fs-5"></i></button>
+            <div class="fw-bold text-secondary">Admin Panel</div>
+        </div>
 </body>
 </html>
