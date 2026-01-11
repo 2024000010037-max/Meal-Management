@@ -405,6 +405,79 @@ ob_start();
             </div>
         </div>
 
+<!-- HISTORY -->
+        <div class="tab-pane fade" id="pills-history">
+            <!-- Toolbar -->
+            <div class="row g-3 mb-3 no-print">
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search member, method...">
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <button onclick="window.print()" class="btn btn-outline-danger me-2"><i class="bi bi-printer"></i> Print</button>
+                    <a href="?month=<?= $selected_month ?>&export=excel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Excel</a>
+                </div>
+            </div>
+
+            <div class="card p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Member</th>
+                                <th>Details</th>
+                                <th>Approved By</th>
+                                <th class="text-end">Amount</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="depositTableBody">
+                            <?php if(empty($history)): ?>
+                                <tr><td colspan="6" class="text-center text-muted py-4">No records found for this month.</td></tr>
+                            <?php else: ?>
+                                <?php foreach($history as $h): ?>
+                                <tr>
+                                    <td><?= date('d M', strtotime($h['deposit_date'])) ?></td>
+                                    <td><?= htmlspecialchars($h['full_name']) ?></td>
+                                    <td>
+                                        <span class="badge badge-<?= strtolower($h['payment_method']) ?> text-uppercase"><?= $h['payment_method'] ?></span>
+                                        <?php if($h['transaction_id']): ?><br><small class="text-muted"><?= htmlspecialchars($h['transaction_id']) ?></small><?php endif; ?>
+                                    </td>
+                                    <td><small class="text-muted"><?= htmlspecialchars($h['manager_name'] ?? 'N/A') ?></small></td>
+                                    <td class="fw-bold text-end <?= $h['amount'] < 0 ? 'text-danger' : 'text-success' ?> amount-cell" data-amount="<?= $h['amount'] ?>">
+                                        <?= $h['amount'] > 0 ? '+' : '' ?><?= number_format($h['amount'], 2) ?>
+                                    </td>
+                                    <td class="text-end">
+                                        <?php
+                                        $can_action = false;
+                                        if ($_SESSION['role'] === 'admin') {
+                                            $can_action = true;
+                                        } elseif ($_SESSION['role'] === 'manager' && isset($h['time_diff']) && $h['time_diff'] >= 0 && $h['time_diff'] <= 600) {
+                                            $can_action = true;
+                                        }
+                                        ?>
+                                        <?php if ($can_action): ?>
+                                            <a href="?edit=<?= $h['id'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil"></i></a>
+                                            <a href="?action=delete&id=<?= $h['id'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Permanently delete this record?')"><i class="bi bi-trash"></i></a>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                        <tfoot class="table-light">
+                            <tr>
+                                <td colspan="4" class="text-end fw-bold">Total Amount:</td>
+                                <td class="text-end fw-bold" id="totalAmount">0.00</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
 
