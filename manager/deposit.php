@@ -274,6 +274,77 @@ ob_start();
             .main-content { margin-left: 0 !important; }
         }
     </style>
+<div class="d-flex justify-content-between align-items-center mb-4 no-print">
+        <h3 class="fw-bold mb-0 text-success"><i class="bi bi-wallet2"></i> Deposit Section</h3>
+        <form method="GET" class="d-flex align-items-center gap-2">
+            <label class="small fw-bold text-muted">Month:</label>
+            <input type="month" name="month" class="form-control form-control-sm" value="<?= $selected_month ?>" onchange="this.form.submit()">
+        </form>
+    </div>
+
+    <?= $msg ?>
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link <?= !$edit_data ? 'active' : '' ?> fw-bold position-relative" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending" type="button">
+                Pending Requests
+                <?php if(count($pending_reqs) > 0): ?>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <?= count($pending_reqs) ?>
+                    </span>
+                <?php endif; ?>
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link <?= $edit_data ? 'active' : '' ?> fw-bold" id="pills-add-tab" data-bs-toggle="pill" data-bs-target="#pills-add" type="button">
+                <?= $edit_data ? 'Edit Deposit' : ($pre_amount ? 'Return Cash Entry' : 'Add New Deposit') ?>
+            </button>
+        </li>
+        <li class="nav-item"><button class="nav-link fw-bold" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button">History</button></li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+        
+        <!-- PENDING REQUESTS -->
+        <div class="tab-pane fade <?= !$edit_data ? 'show active' : '' ?>" id="pills-pending">
+            <div class="card p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Member</th>
+                                <th>Method / TnxID</th>
+                                <th>Amount</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if(empty($pending_reqs)): ?>
+                                <tr><td colspan="5" class="text-center text-muted py-4">No pending deposit requests.</td></tr>
+                            <?php else: ?>
+                                <?php foreach($pending_reqs as $req): ?>
+                                <tr>
+                                    <td><?= date('d M', strtotime($req['deposit_date'])) ?></td>
+                                    <td class="fw-bold"><?= htmlspecialchars($req['full_name']) ?></td>
+                                    <td>
+                                        <span class="badge badge-<?= strtolower($req['payment_method']) ?> text-uppercase"><?= $req['payment_method'] ?></span>
+                                        <div class="small text-muted"><?= htmlspecialchars($req['transaction_id']) ?></div>
+                                    </td>
+                                    <td class="fw-bold text-success">+<?= number_format($req['amount'], 2) ?></td>
+                                    <td class="text-end">
+                                        <a href="approve_deposit.php?id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="btn btn-success btn-sm" title="Approve" onclick="return confirm('Are you sure you want to approve this deposit and send the invoice?')"><i class="bi bi-check-lg"></i></a>
+                                        <a href="?action=reject&id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-danger btn-sm" title="Reject" onclick="return confirm('Reject this deposit?')"><i class="bi bi-x-lg"></i></a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
 
 
 
