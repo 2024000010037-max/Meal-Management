@@ -15,7 +15,19 @@
             background: #f1f5f9;
             overflow-x: hidden; /* Prevent scroll when sidebar toggles */
         }
-
+        /* SIDEBAR STYLES */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #0f172a;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
       
 
