@@ -125,5 +125,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
 
                 $meal_rate = ($total_mess_meals > 0) ? ($total_mess_bazar / $total_mess_meals) : 0;
 
+                // User Stats (This Month)
+                $stmt_user_stats = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE user_id = ? AND DATE_FORMAT(meal_date, '%Y-%m') = ?");
+                $stmt_user_stats->execute([$user_id, $current_month]);
+                $user_meals = $stmt_user_stats->fetchColumn() ?: 0;
+
 
 ?>
