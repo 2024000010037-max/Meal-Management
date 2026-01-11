@@ -72,4 +72,12 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     }
 }
 
+    /* UPDATE USER */
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_user'])) {
+    $id       = $_POST['user_id'];
+    $name     = trim($_POST['full_name']);
+    $username = trim($_POST['username']);
+    $email    = trim($_POST['email']);
+    $phone    = trim($_POST['phone']);
+
 </php>  
