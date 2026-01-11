@@ -23,5 +23,10 @@ function uploadFile($file, $dir, $prefix) {
     return null;
 }
 
+if (isset($_GET['action']) && isset($_GET['id'])) {
+    $id = $_GET['id'];
 
+
+
+}
 </php>  
