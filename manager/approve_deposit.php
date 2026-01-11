@@ -46,5 +46,9 @@ if (!$deposit) {
 $stmt = $pdo->prepare("UPDATE deposits SET status = 'approved', manager_id = ? WHERE id = ?");
 $stmt->execute([$manager_id, $id]);
 
+// 3. Calculate Stats for Invoice (Total Deposit & Current Balance)
+$user_id = $deposit['user_id'];
+$current_month = date('Y-m'); 
+
 
 ?>
