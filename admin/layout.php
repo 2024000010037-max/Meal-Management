@@ -38,6 +38,10 @@
             margin: 0;
             font-weight: 700;
         }
+      .sidebar-menu {
+            padding: 10px 0;
+            flex-grow: 1;
+        }
 
       </style>
 </head>
