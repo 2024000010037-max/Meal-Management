@@ -33,8 +33,13 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
             // Promote the selected user
             $stmt = $pdo->prepare("UPDATE users SET role = 'manager' WHERE id = ?");
             $stmt->execute([$id]);
-            $pdo->commit(
-
+             $pdo->commit();
+            $msg = "<div class='alert alert-success alert-dismissible fade show'>Manager updated successfully! Only 1 manager is allowed.<button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        } catch (Exception $e) {
+            $pdo->rollBack();
+            $msg = "<div class='alert alert-danger'>Error updating manager.</div>";
+        }
+    }
 
 }
 </php>  
