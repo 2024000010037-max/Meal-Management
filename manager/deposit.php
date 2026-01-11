@@ -232,6 +232,14 @@ if (isset($_GET['export']) && $_GET['export'] === 'excel') {
     // 3. Users List for Dropdown
 $users = $pdo->query("SELECT id, full_name FROM users WHERE status = 1 AND role IN ('manager', 'user') ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
 
+// 4. Fetch Single Record for Edit
+$edit_data = null;
+if (isset($_GET['edit'])) {
+    $stmt = $pdo->prepare("SELECT * FROM deposits WHERE id = ?");
+    $stmt->execute([$_GET['edit']]);
+    $edit_data = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 
 
 ?>
