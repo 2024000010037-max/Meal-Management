@@ -26,7 +26,12 @@
     <div class="sidebar">
         <div class="sidebar-header">
             <h4>Mess Admin</h4>
+        </div>
+        <div class="sidebar-menu">
+            <?php $cur = basename($_SERVER['PHP_SELF']); ?>
 
+       </div>
+    </div>
     
 </body>
 </html>
