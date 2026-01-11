@@ -64,5 +64,13 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         }
     }
 
+    // 4. Edit User (Fetch Data)
+    if ($_GET['action'] === 'edit') {
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+        $stmt->execute([$id]);
+        $editUser = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+}
+
 }
 </php>  
