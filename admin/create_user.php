@@ -152,4 +152,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
             "INSERT INTO users (full_name, username, password, role, email, phone, photo, nid_photo, status)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)"
         );
+          if ($stmt->execute([$name, $username, $password, $role, $email, $phone, $photoPath, $nidPath])) {
+            $msg = "<div class='alert alert-success alert-dismissible fade show'>User created successfully! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        } else {
+            $msg = "<div class='alert alert-danger'>Database error.</div>";
+        }
+    }
+    }
+}
 </php>  
