@@ -72,5 +72,4 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     }
 }
 
-}
 </php>  
