@@ -30,6 +30,11 @@
         <div class="sidebar-menu">
             <?php $cur = basename($_SERVER['PHP_SELF']); ?>
 
+<a href="create_user.php" class="<?= $cur == 'create_user.php' ? 'active' : '' ?>"><i class="bi bi-person-plus me-2"></i> Create User</a>
+
+
+
+            
        </div>
     </div>
     <!-- MAIN CONTENT -->
