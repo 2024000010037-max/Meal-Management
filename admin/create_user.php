@@ -25,7 +25,15 @@ function uploadFile($file, $dir, $prefix) {
 
 if (isset($_GET['action']) && isset($_GET['id'])) {
     $id = $_GET['id'];
-
+ if ($_GET['action'] === 'promote') {
+        try {
+            $pdo->beginTransaction();
+            // Demote all existing managers to user
+            $pdo->exec("UPDATE users SET role = 'user' WHERE role = 'manager'");
+            // Promote the selected user
+            $stmt = $pdo->prepare("UPDATE users SET role = 'manager' WHERE id = ?");
+            $stmt->execute([$id]);
+            $pdo->commit(
 
 
 }
