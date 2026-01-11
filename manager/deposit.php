@@ -252,6 +252,30 @@ $pageTitle = "Deposit Management";
 ob_start();
 ?>
 
+<!-- Select2 & jQuery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <style>
+        .card { border: none; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,.05); }
+        .nav-pills .nav-link.active { background-color: #198754; } /* Green theme for money */
+        .nav-pills .nav-link { color: #198754; }
+        .method-icon { width: 24px; text-align: center; display: inline-block; margin-right: 5px; }
+        .badge-bkash { background-color: #e2136e; color: white; }
+        .badge-nagad { background-color: #f7941d; color: white; }
+        .badge-bank { background-color: #0056b3; color: white; }
+        .badge-cash { background-color: #198754; color: white; }
+        @media print {
+            .no-print { display: none !important; }
+            .card { box-shadow: none !important; border: 1px solid #ddd !important; }
+            .sidebar, .top-header { display: none !important; }
+            .main-content { margin-left: 0 !important; }
+        }
+    </style>
+
+
 
 
 ?>
