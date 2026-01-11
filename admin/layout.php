@@ -43,6 +43,20 @@
             flex-grow: 1;
         }
 
+      .sidebar-menu a {
+            display: block;
+            padding: 12px 25px;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background: #1e293b;
+            color: #fff;
+            border-left-color: #3b82f6;
+        }
+
       </style>
 </head>
 <body>
