@@ -99,5 +99,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
         if ($stmt->execute([$user_id, $manager_id, $amount, $method, $tnx_id, $date, $remarks])) {
             $deposit_id = $pdo->lastInsertId();            
 
+            // If it's a refund, redirect to the refund receipt sender
+            if ($amount < 0) {
+                header("Location: send_refund_receipt.php?id=$deposit_id&month=$selected_month");
+                exit;
+            }
+            // --- For positive amounts, send deposit receipt ---
+
+            // --- START: SEND INVOICE EMAIL ---
+            $stmtUser = $pdo->prepare("SELECT full_name, email FROM users WHERE id = ?");
+            $stmtUser->execute([$user_id]);
+            $user_info = $stmtUser->fetch(PDO::FETCH_ASSOC);
+
+            if ($user_info && !empty($user_info['email'])) {
+                $current_month = date('Y-m', strtotime($date));
+
+                // Global Stats for Rate
+                $stmt_rate = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+                $stmt_rate->execute([$current_month]);
+                $total_mess_meals = $stmt_rate->fetchColumn() ?: 0;
+
+                $stmt_rate = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
+                $stmt_rate->execute([$current_month]);
+                $total_mess_bazar = $stmt_rate->fetchColumn() ?: 0;
+
+                $meal_rate = ($total_mess_meals > 0) ? ($total_mess_bazar / $total_mess_meals) : 0;
+
 
 ?>
