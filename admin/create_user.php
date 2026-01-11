@@ -118,5 +118,13 @@ if (empty($name) || empty($username) || empty($email) || empty($phone)) {
         }
     }
 }
+
+    /* CREATE USER */
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
+    $name     = trim($_POST['full_name']);
+    $username = trim($_POST['username']);
+    $email    = trim($_POST['email']);
+    $phone    = trim($_POST['phone']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
 </php>  
