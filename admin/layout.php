@@ -81,6 +81,15 @@
         body.toggled .main-content {
             margin-left: 0;
         }
+      
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .sidebar {
+                left: -250px; /* Hidden by default on mobile */
+            }
+            .main-content {
+                margin-left: 0;
+            }
 
       </style>
 </head>
