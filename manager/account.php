@@ -9,4 +9,9 @@ include "../config/database.php";
 $pdo = (new Database())->connect();
 $user_id = $_SESSION['user_id'];
 
+// Fetch User Info
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+$stmt->execute([$user_id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
