@@ -166,4 +166,3 @@ $users = $pdo->query("SELECT * FROM users ORDER BY FIELD(role, 'admin', 'manager
 $pageTitle = "User Management | Admin";
 ob_start();
 ?>
-</php>  
