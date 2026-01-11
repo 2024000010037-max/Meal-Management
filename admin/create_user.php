@@ -138,4 +138,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
     {// File Upload Logic
         $uploadDir = "../uploads/";
         if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
+
+            $photoPath = uploadFile($_FILES['photo'], $uploadDir, 'avatar');
+    $nidPath   = uploadFile($_FILES['nid_photo'], $uploadDir, 'nid');
+
+    $check = $pdo->prepare("SELECT id FROM users WHERE username=?");
+    $check->execute([$username]);
 </php>  
