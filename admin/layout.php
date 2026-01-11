@@ -21,4 +21,12 @@
 
       </style>
 </head>
+<body>
+      <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h4>Mess Admin</h4>
+
+    
+</body>
 </html>
