@@ -91,6 +91,11 @@
                 margin-left: 0;
             }
 
+            /* When toggled on mobile, show sidebar */
+            body.toggled .sidebar {
+                left: 0;
+            }
+
       </style>
 </head>
 <body>
