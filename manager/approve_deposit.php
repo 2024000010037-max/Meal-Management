@@ -14,5 +14,14 @@ use PHPMailer\PHPMailer\Exception;
 
 $pdo = (new Database())->connect();
 
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$month = $_GET['month'] ?? date('Y-m');
+$manager_id = $_SESSION['user_id'];
+
+if (!$id) {
+    header("Location: deposit.php?month=$month");
+    exit;
+}
+
 
 ?>
