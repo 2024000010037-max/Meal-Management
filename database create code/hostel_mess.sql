@@ -13,3 +13,8 @@ CREATE TABLE `users` (
   `nid_photo` varchar(255) DEFAULT NULL,
   `is_auto_meal` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*   Indexes for table `users` */
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
