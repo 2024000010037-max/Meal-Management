@@ -86,4 +86,37 @@ if (empty($name) || empty($username) || empty($email) || empty($phone)) {
         // Check username uniqueness (excluding current user)
         $check = $pdo->prepare("SELECT id FROM users WHERE username=? AND id != ?");
         $check->execute([$username, $id]);
+
+    if ($check->rowCount() > 0) {
+            $msg = "<div class='alert alert-danger'>Username already exists</div>";
+        } else {
+            $sql = "UPDATE users SET full_name=?, username=?, email=?, phone=?";
+            $params = [$name, $username, $email, $phone];
+
+            if (!empty($_POST['password'])) {
+                $sql .= ", password=?";
+                $params[] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            }
+
+            $uploadDir = "../uploads/";
+            if (!empty($_FILES['photo']['name']) && $path = uploadFile($_FILES['photo'], $uploadDir, 'avatar')) {
+                $sql .= ", photo=?"; $params[] = $path;
+            }
+            if (!empty($_FILES['nid_photo']['name']) && $path = uploadFile($_FILES['nid_photo'], $uploadDir, 'nid')) {
+                $sql .= ", nid_photo=?"; $params[] = $path;
+            }
+
+            $sql .= " WHERE id=?";
+            $params[] = $id;
+
+            if ($pdo->prepare($sql)->execute($params)) {
+                $msg = "<div class='alert alert-success'>User updated successfully!</div>";
+                echo "<script>setTimeout(()=>window.location.href='create_user.php', 1000)</script>";
+            } else {
+                $msg = "<div class='alert alert-danger'>Update failed.</div>";
+            }
+        }
+    }
+}
+    
 </php>  
