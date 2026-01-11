@@ -56,6 +56,26 @@
                 </ul>
             </div>
         </div>
+        <!-- Dynamic Content -->
+        <div class="p-4">
+            <?= isset($content) ? $content : '' ?>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('toggled');
+        });
+        document.body.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && document.body.classList.contains('toggled')) {
+                if (!e.target.closest('.sidebar') && !e.target.closest('#menu-toggle')) {
+                    document.body.classList.remove('toggled');
+                }
+            }
+        });
+    </script>
+
 
 </body>
 </html>
