@@ -160,4 +160,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
     }
     }
 }
+    // --- FETCH USERS FOR LIST ---
+$users = $pdo->query("SELECT * FROM users ORDER BY FIELD(role, 'admin', 'manager', 'user'), id DESC")->fetchAll(PDO::FETCH_ASSOC);
+
+$pageTitle = "User Management | Admin";
+ob_start();
+?>
 </php>  
