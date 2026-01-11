@@ -19,3 +19,7 @@ CREATE TABLE `users` (
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
+
+/* AUTO_INCREMENT for table `users` */
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
