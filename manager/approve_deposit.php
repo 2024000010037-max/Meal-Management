@@ -23,5 +23,24 @@ if (!$id) {
     exit;
 }
 
+    / 1. Fetch Deposit Details (Verify it exists and is pending)
+$stmt = $pdo->prepare("SELECT d.*, u.full_name, u.email FROM deposits d JOIN users u ON d.user_id = u.id WHERE d.id = ? AND d.status = 'pending'");
+$stmt->execute([$id]);
+$deposit = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$deposit) {
+    header("Location: deposit.php?month=$month&error=not_found");
+    exit;
+}
+/ 1. Fetch Deposit Details (Verify it exists and is pending)
+$stmt = $pdo->prepare("SELECT d.*, u.full_name, u.email FROM deposits d JOIN users u ON d.user_id = u.id WHERE d.id = ? AND d.status = 'pending'");
+$stmt->execute([$id]);
+$deposit = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$deposit) {
+    header("Location: deposit.php?month=$month&error=not_found");
+    exit;
+}
+
 
 ?>
