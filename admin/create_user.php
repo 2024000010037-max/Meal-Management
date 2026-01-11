@@ -144,4 +144,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
 
     $check = $pdo->prepare("SELECT id FROM users WHERE username=?");
     $check->execute([$username]);
+
+     if ($check->rowCount() > 0) {
+        $msg = "<div class='alert alert-danger'>Username already exists</div>";
+    } else {
+        $stmt = $pdo->prepare(
+            "INSERT INTO users (full_name, username, password, role, email, phone, photo, nid_photo, status)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, 1)"
+        );
 </php>  
