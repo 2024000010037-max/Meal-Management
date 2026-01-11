@@ -41,5 +41,12 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         }
     }
 
+       // 2. Toggle Status (Active/Inactive)
+    if ($_GET['action'] === 'status') {
+        $stmt = $pdo->prepare("UPDATE users SET status = NOT status WHERE id = ?");
+        $stmt->execute([$id]);
+        $msg = "<div class='alert alert-success alert-dismissible fade show'>User status updated!<button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+    }
+
 }
 </php>  
