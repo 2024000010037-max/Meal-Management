@@ -169,5 +169,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
                     </div>
                 </div>";
 
+                // Send Email
+                $mail = new PHPMailer(true);
+                try {
+                    $mail->isSMTP();
+                    $mail->Host       = 'smtp.gmail.com';
+                    $mail->SMTPAuth   = true;
+                    $mail->Username   = 'remarkhb.herlanit@gmail.com';
+                    $mail->Password   = 'mutq ddwp qkyu hzgo';
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                    $mail->Port       = 587;
+
+                    $mail->setFrom('remarkhb.herlanit@gmail.com', 'Hostel Mess Manager');
+                    $mail->addAddress($user_info['email'], $user_info['full_name']);
+
+                    $mail->isHTML(true);
+                    $mail->Subject = "Deposit Received - ৳ " . number_format($amount, 2);
+                    $mail->Body    = "Dear {$user_info['full_name']},<br><br>We have received your deposit. Here is your receipt.<br><br>" . $invoice_html;
+                    $mail->addStringAttachment($invoice_html, "Receipt_{$invoice_no}.html", 'base64', 'text/html');
+                    
+                    $mail->send();
+                    $msg = "<div class='alert alert-success alert-dismissible fade show'>Deposit added and invoice sent successfully! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+                } catch (Exception $e) {
+                    $msg = "<div class='alert alert-warning alert-dismissible fade show'>Deposit added, but failed to send invoice email. Error: {$mail->ErrorInfo} <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+                }
+            }
+            // --- END: SEND INVOICE EMAIL ---
+
 
 ?>
