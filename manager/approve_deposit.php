@@ -50,5 +50,16 @@ $stmt->execute([$manager_id, $id]);
 $user_id = $deposit['user_id'];
 $current_month = date('Y-m'); 
 
+// Global Stats for Rate
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$current_month]);
+$total_mess_meals = $stmt->fetchColumn() ?: 0;
+
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
+$stmt->execute([$current_month]);
+$total_mess_bazar = $stmt->fetchColumn() ?: 0;
+
+$meal_rate = ($total_mess_meals > 0) ? ($total_mess_bazar / $total_mess_meals) : 0;
+
 
 ?>
