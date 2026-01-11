@@ -74,7 +74,13 @@
             align-items: center;
             justify-content: space-between;
         }
-
+         /* TOGGLED STATE (Desktop: Hide Sidebar, Mobile: Show Sidebar) */
+        body.toggled .sidebar {
+            left: -250px;
+        }
+        body.toggled .main-content {
+            margin-left: 0;
+        }
 
       </style>
 </head>
