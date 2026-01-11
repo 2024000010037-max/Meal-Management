@@ -42,5 +42,9 @@ if (!$deposit) {
     exit;
 }
 
+    // 2. Approve the Deposit
+$stmt = $pdo->prepare("UPDATE deposits SET status = 'approved', manager_id = ? WHERE id = ?");
+$stmt->execute([$manager_id, $id]);
+
 
 ?>
