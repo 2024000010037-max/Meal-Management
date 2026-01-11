@@ -134,5 +134,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
         $msg = "<div class='alert alert-danger'>All text fields are required.</div>";
     } elseif (empty($_FILES['nid_photo']['name'])) {
         $msg = "<div class='alert alert-danger'>NID Photo is required.</div>";
-    } else {
+    } else 
+    {// File Upload Logic
+        $uploadDir = "../uploads/";
+        if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
 </php>  
