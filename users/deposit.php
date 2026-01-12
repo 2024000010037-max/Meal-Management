@@ -53,4 +53,7 @@ SELECT d.*, m.full_name as manager_name
 ");
 $stmt->execute([$user_id, $selected_month]);
 $history = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$pageTitle = "My Deposits";
+ob_start();
+?>
 
