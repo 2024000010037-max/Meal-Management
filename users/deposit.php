@@ -50,3 +50,7 @@ SELECT d.*, m.full_name as manager_name
   LEFT JOIN users m ON d.manager_id = m.id
     WHERE d.user_id = ? AND d.status != 'pending' AND DATE_FORMAT(d.deposit_date, '%Y-%m') = ? 
     ORDER BY d.deposit_date DESC
+");
+$stmt->execute([$user_id, $selected_month]);
+$history = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
