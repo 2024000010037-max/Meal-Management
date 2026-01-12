@@ -380,3 +380,13 @@ div class="row g-3">
                             <label class="form-label small fw-bold">Remarks</label>
                             <textarea name="remarks" class="form-control" rows="2"><?= $edit_data['remarks'] ?? ($pre_amount ? 'Cash Returned to Member' : '') ?></textarea>
                         </div>
+<div class="col-12 mt-4">
+                            <button class="btn btn-success w-100 fw-bold"><?= $edit_data ? 'Update Changes' : 'Save & Approve' ?></button>
+                            <?php if($edit_data): ?>
+                                <a href="deposit.php?month=<?= $selected_month ?>" class="btn btn-light w-100 mt-2">Cancel</a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
