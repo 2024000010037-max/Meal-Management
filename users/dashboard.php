@@ -135,7 +135,17 @@ ob_start();
         <div class="card dashboard-card bg-white p-4 h-100 shadow-sm border-bottom border-4 border-warning">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    
+                  <div class="card-label text-warning">My Meals</div>
+                    <h2 class="card-value text-dark mt-2"><?= number_format($my_meal, 1) ?></h2>
+                    <div class="card-sub text-muted mt-1">total meal</div>
+                </div>
+                <div class="card-icon bg-warning bg-opacity-10 text-warning">
+                    <i class="bi bi-egg-fried"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+     
 
 
 
