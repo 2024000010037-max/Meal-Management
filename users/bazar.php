@@ -159,4 +159,13 @@ ob_start();
                         </tbody>
                         <tfoot class="table-light">
                             <tr>
-                                
+                                                             <td colspan="3" class="text-end fw-bold">Total Amount:</td>
+                                <td class="text-end fw-bold text-primary" id="totalAmount">0.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+   
