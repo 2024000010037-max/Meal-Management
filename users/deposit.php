@@ -168,4 +168,7 @@ div class="col-12">
                 </div>
             </div>
         </div>
-                                             
+    <!-- HISTORY -->
+        <div class="tab-pane fade" id="pills-history">
+            <div class="card p-4">
+                                          
