@@ -115,3 +115,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
                 $stmt_user_stats = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE user_id = ? AND DATE_FORMAT(meal_date, '%Y-%m') = ?");
                 $stmt_user_stats->execute([$user_id, $current_month]);
                 $user_meals = $stmt_user_stats->fetchColumn() ?: 0;
+               // User Total Deposit (This Month)
+                $stmt_user_stats = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE user_id = ? AND status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
+                $stmt_user_stats->execute([$user_id, $current_month]);
+                $user_total_deposit = $stmt_user_stats->fetchColumn() ?: 0;
+
+                $user_cost = $user_meals * $meal_rate;
+                $balance = $user_total_deposit - $user_cost;
