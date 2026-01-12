@@ -101,3 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
 
             if ($user_info && !empty($user_info['email'])) {
                 $current_month = date('Y-m', strtotime($date));
+              // Global Stats for Rate
+                $stmt_rate = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+                $stmt_rate->execute([$current_month]);
+                $total_mess_meals = $stmt_rate->fetchColumn() ?: 0;
+
