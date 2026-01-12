@@ -86,3 +86,6 @@ CREATE TABLE `meals` (
 ALTER TABLE `meals`
   ADD CONSTRAINT `meals_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
+
+ALTER TABLE `meals`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
