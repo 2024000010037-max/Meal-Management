@@ -64,7 +64,10 @@ if ($user) {
         ";
 $mail->send();
         echo "success";
-
+} catch (Exception $e) {
+        echo "Mailer Error: {$mail->ErrorInfo}";
+    }
+}
 
 
 ?>
