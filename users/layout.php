@@ -86,4 +86,7 @@ body.toggled .main-content {
     .main-content {
                 margin-left: 0;
             }
-         
+   body.toggled .sidebar {
+                left: 0;
+            }
+       
