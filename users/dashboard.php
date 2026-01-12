@@ -24,5 +24,8 @@ $stmt->execute([$selected_month]);
 $total_members = $stmt->fetchColumn() ?: 0;
 
 // 2. Total Meal (Mess - Month)
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_mess_meal = $stmt->fetchColumn() ?: 0;
 
 
