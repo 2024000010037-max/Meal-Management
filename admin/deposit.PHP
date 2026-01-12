@@ -390,3 +390,15 @@ div class="row g-3">
                 </form>
             </div>
         </div>
+<!-- HISTORY -->
+        <div class="tab-pane fade" id="pills-history">
+            <!-- Toolbar -->
+            <div class="row g-3 mb-3 no-print">
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search member, method...">
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <button onclick="window.print()" class="btn btn-outline-danger me-2"><i class="bi bi-printer"></i> Print</button>
+                    <a href="?month=<?= $selected_month ?>&export=excel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Excel</a>
+                </div>
+            </div>
