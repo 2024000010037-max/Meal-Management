@@ -81,6 +81,10 @@ session_start();
  .back-link:hover {
         color: #c44569;
     }
+.step {
+        display: none;
+        animation: fadeIn 0.5s ease-out;
+    }
 
 
   
