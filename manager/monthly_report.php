@@ -243,6 +243,8 @@ ob_start();
             row.style.display = text.includes(filter) ? '' : 'none';
         });
     });
+function sendInvoice(userId, month, name) {
+        if(!confirm('Send Due Invoice to ' + name + ' via Email?')) return;
 
     
 
