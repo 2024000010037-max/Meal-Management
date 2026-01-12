@@ -29,6 +29,11 @@ $stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE D
 $stmt->execute([$selected_month]);
 $total_meal = $stmt->fetchColumn() ?: 0;
 
+// 3. Total Bazar (Month)
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_bazar = $stmt->fetchColumn() ?: 0;
+
 
 
 
