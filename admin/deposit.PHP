@@ -89,3 +89,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
         if ($stmt->execute([$user_id, $manager_id, $amount, $method, $tnx_id, $date, $remarks])) {
             $deposit_id = $pdo->lastInsertId();            
 
+           // If it's a refund, redirect to the refund receipt sender
+            if ($amount < 0) {
+                header("Location: send_refund_receipt.php?id=$deposit_id&month=$selected_month");
+                exit;
+            }
