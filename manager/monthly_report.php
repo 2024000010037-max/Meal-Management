@@ -166,6 +166,19 @@ ob_start();
             <a href="?month=<?= $selected_month ?>&export=excel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Excel</a>
         </div>
     </div>
+<div class="table-responsive">
+        <table class="table table-hover align-middle table-bordered">
+            <thead class="table-light text-center">
+                <tr>
+                    <th>Member Name</th>
+                    <th>Role</th>
+                    <th>Total Meals</th>
+                    <th>Total Deposit</th>
+                    <th>Total Expense <br><small class="text-muted">(Meals × Rate)</small></th>
+                    <th>Balance <br><small class="text-muted">(Due / Advance)</small></th>
+                    <th>Action</th>
+                </tr>
+            </thead>
 
 
 
