@@ -70,3 +70,8 @@ ob_start();
         <p class="text-muted small mb-0">View and export meal records</p>
     </div>
     <div>
+<a href="meal_entry.php" class="btn btn-outline-secondary me-2"><i class="bi bi-arrow-left"></i> Back</a>
+        <button onclick="window.print()" class="btn btn-outline-danger me-2"><i class="bi bi-file-pdf"></i> PDF / Print</button>
+        <button onclick="exportExcel()" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Excel</button>
+    </div>
+</div>
