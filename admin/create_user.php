@@ -195,7 +195,13 @@ ob_start();
                             $preview = "https://via.placeholder.com/100?text=Photo";
                             if($editUser && !empty($editUser['photo'])) $preview = "../uploads/" . $editUser['photo'];
                         ?>
-
+    <img src="<?= $preview ?>" id="preview" class="avatar-preview">
+                        </div>
+                        <label class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                            <i class="bi bi-camera me-1"></i> Upload Photo
+                            <input type="file" name="photo" class="d-none" accept="image/*" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])">
+                        </label>
+                    </div>
 
 <?php
 $content = ob_get_clean();
