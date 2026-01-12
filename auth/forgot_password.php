@@ -136,6 +136,14 @@ function verifyOTP() {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: `otp=${encodeURIComponent(otp)}`
         })
+.then(res => res.text())
+        .then(data => {
+            if (data.trim() === "success") {
+                showStep(3);
+            } else {
+                showMessage(data, "danger");
+            }
+        })
 
 
 
