@@ -212,6 +212,12 @@ ob_start();
         </table>
     </div>
 </div>
+<!-- Loading Overlay -->
+<div id="loadingOverlay">
+    <div class="spinner-custom mb-3"></div>
+    <h5 class="fw-bold text-danger">Sending Invoice...</h5>
+    <p class="text-muted">Please wait, do not close this window.</p>
+</div>
 
     
 
