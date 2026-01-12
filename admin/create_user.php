@@ -184,11 +184,17 @@ ob_start();
                 <h5 class="fw-bold mb-4 text-secondary">
                     <i class="bi bi-person-<?= $editUser ? 'gear' : 'plus' ?>-fill me-2"></i>
                     <?= $editUser ? 'Edit Member' : 'Add New Member' ?>
-                /h5>
+                </h5>
                 <form method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="<?= $editUser ? 'update_user' : 'create_user' ?>" value="1">
                     <?php if($editUser): ?><input type="hidden" name="user_id" value="<?= $editUser['id'] ?>"><?php endif; ?>
-
+                    <!-- Photo Preview -->
+                    <div class="text-center mb-3">
+                        <div class="avatar-upload">
+                        <?php 
+                            $preview = "https://via.placeholder.com/100?text=Photo";
+                            if($editUser && !empty($editUser['photo'])) $preview = "../uploads/" . $editUser['photo'];
+                        ?>
 
 
 <?php
