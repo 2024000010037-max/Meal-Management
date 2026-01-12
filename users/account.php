@@ -52,3 +52,9 @@ div class="mb-3 border-bottom pb-2">
                         <span class="text-success fw-bold"><i class="bi bi-check-circle-fill"></i> Active</span>
  <?php else: ?>
                         <span class="text-danger fw-bold"><i class="bi bi-x-circle-fill"></i> Inactive</span>
+    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
