@@ -42,6 +42,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_bazar'])) {
     }
 }
 
+    // --- FETCH DATA ---
+// 1. Pending Requests
+$pending_reqs = $pdo->query("
+    SELECT b.*, u.full_name as submitter_name 
+    FROM bazar b 
+    JOIN users u ON b.user_id = u.id 
+    WHERE b.status = 'pending' 
+    ORDER BY b.bazar_date ASC
+")->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 ?>
