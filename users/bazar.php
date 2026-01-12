@@ -149,4 +149,9 @@ ob_start();
                                         </div>
                                     </td>
                                     <td>
+  <span class="d-block text-dark"><?= htmlspecialchars($b['details']) ?></span>
+                                        <?php if($b['remarks']): ?><small class="text-muted">Note: <?= htmlspecialchars($b['remarks']) ?></small><?php endif; ?>
+                                    </td>
+                                    <td class="fw-bold text-success text-end amount-cell" data-amount="<?= $b['amount'] ?>"><?= number_format($b['amount'], 2) ?></td>
+                                </tr>
 
