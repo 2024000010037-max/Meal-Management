@@ -148,5 +148,10 @@ function verifyOTP() {
 .catch(() => showMessage("An error occurred.", "danger"))
         .finally(() => toggleButtonLoading('verify-otp-btn', false));
     }
-
+ function changePassword() {
+        const newpass = document.getElementById("newpass").value;
+        if (!newpass) {
+            showMessage("Please enter a new password.", "warning");
+            return;
+        }
 
