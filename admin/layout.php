@@ -114,11 +114,11 @@
         <div class="sidebar-menu">
             <?php $cur = basename($_SERVER['PHP_SELF']); ?>
 
-<a href="create_user.php" class="<?= $cur == 'create_user.php' ? 'active' : '' ?>"><i class="bi bi-person-plus me-2"></i> Create User</a>
-              <a href="meal_entry.php" class="<?= $cur == 'meal_entry.php' ? 'active' : '' ?>"><i class="bi bi-egg-fried me-2"></i> Meal Entry</a>
+            <a href="create_user.php" class="<?= $cur == 'create_user.php' ? 'active' : '' ?>"><i class="bi bi-person-plus me-2"></i> Create User</a>
+            <a href="meal_entry.php" class="<?= $cur == 'meal_entry.php' ? 'active' : '' ?>"><i class="bi bi-egg-fried me-2"></i> Meal Entry</a>
             <a href="deposit.php" class="<?= $cur == 'deposit.php' ? 'active' : '' ?>"><i class="bi bi-wallet2 me-2"></i> Deposit</a>
-
-           <a href="../auth/logout.php" class="text-danger mt-3"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+            <a href="monthly_report.php" class="<?= $cur == 'monthly_report.php' ? 'active' : '' ?>"><i class="bi bi-file-earmark-bar-graph me-2"></i> Monthly Report</a>
+            <a href="../auth/logout.php" class="text-danger mt-3"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
             
        </div>
     </div>
