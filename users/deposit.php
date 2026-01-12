@@ -65,3 +65,7 @@ ob_start();
         .badge-nagad { background-color: #f7941d; color: white; }
         .badge-bank { background-color: #0056b3; color: white; }
         .badge-cash { background-color: #198754; color: white;
+  </style>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold mb-0 text-success"><i class="bi bi-wallet2"></i> My Deposits</h3>
