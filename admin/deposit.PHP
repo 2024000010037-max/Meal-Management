@@ -179,3 +179,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
         }
     }
 }
+/ --- FETCH DATA ---
+// 1. Pending Requests
+$pending_reqs = $pdo->query("
+    SELECT d.*, u.full_name 
+    FROM deposits d 
+    JOIN users u ON d.user_id = u.id 
+    WHERE d.status = 'pending' 
+    ORDER BY d.deposit_date ASC
+")->fetchAll(PDO::FETCH_ASSOC);
