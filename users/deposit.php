@@ -171,4 +171,8 @@ div class="col-12">
     <!-- HISTORY -->
         <div class="tab-pane fade" id="pills-history">
             <div class="card p-4">
+<div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
                                           
