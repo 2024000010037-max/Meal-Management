@@ -61,5 +61,65 @@ if ($balance >= 0) {
     echo "<script>alert('User has no due amount to pay.'); window.location.href='monthly_report.php?month=$selected_month';</script>";
     exit;
 }
+// --- 3. GENERATE INVOICE ---
+$month_name = date('F Y', strtotime($selected_month));
+$invoice_date = date('d M, Y');
+$invoice_html = "
+<div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; padding: 20px; background: #fff;'>
+    <div style='text-align: center; border-bottom: 2px solid #e15f41; padding-bottom: 10px; margin-bottom: 20px;'>
+        <h2 style='color: #e15f41; margin: 0;'>HOSTEL MESS INVOICE</h2>
+        <p style='color: #777; margin: 5px 0;'>Month: <strong>$month_name</strong></p>
+    </div>
+    
+    <table style='width: 100%; margin-bottom: 20px;'>
+        <tr>
+            <td>
+                <strong>To:</strong><br>
+                {$user['full_name']}<br>
+                {$user['email']}
+            </td>
+            <td style='text-align: right;'>
+                <strong>Date:</strong> $invoice_date<br>
+                <strong>Status:</strong> <span style='color: red;'>Unpaid</span>
+            </td>
+        </tr>
+    </table>
 
+    <table style='width: 100%; border-collapse: collapse; margin-bottom: 20px;'>
+        <tr style='background: #f8f9fa;'>
+            <th style='border: 1px solid #ddd; padding: 10px; text-align: left;'>Description</th>
+            <th style='border: 1px solid #ddd; padding: 10px; text-align: right;'>Value</th>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Total Meals Consumed</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>" . number_format($user_meals, 1) . "</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Meal Rate (Current)</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>৳ " . number_format($meal_rate, 2) . "</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'><strong>Total Expense</strong></td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'><strong>৳ " . number_format($user_cost, 2) . "</strong></td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Less: Total Deposit</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>(-) ৳ " . number_format($user_deposit, 2) . "</td>
+        </tr>
+        <tr style='background: #ffebee;'>
+            <td style='border: 1px solid #ddd; padding: 10px; color: #c62828; font-weight: bold;'>TOTAL DUE AMOUNT</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right; color: #c62828; font-weight: bold; font-size: 1.2em;'>৳ " . number_format($due_amount, 2) . "</td>
+        </tr>
+    </table>
+
+    <div style='text-align: center; font-size: 12px; color: #777; margin-top: 30px;'>
+        <p>Please clear your dues as soon as possible to avoid meal cancellation.</p>
+        <p>Thank you, <br>Hostel Manager</p>
+    </div>
+</div>
+";
+
+
+
+    
 ?>
