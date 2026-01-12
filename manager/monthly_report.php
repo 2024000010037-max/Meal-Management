@@ -25,6 +25,9 @@ $stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE status = 'approved
 $stmt->execute([$selected_month]);
 $total_mess_deposit = $stmt->fetchColumn() ?: 0;
 
+// Meal Rate
+$meal_rate = ($total_mess_meals > 0) ? ($total_mess_bazar / $total_mess_meals) : 0;
+
 
 
 ?>
