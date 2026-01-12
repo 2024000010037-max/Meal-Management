@@ -17,3 +17,13 @@ $total_members = $pdo->query("SELECT COUNT(*) FROM users WHERE status = 1")->fet
 $stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
 $stmt->execute([$selected_month]);
 $total_meal = $stmt->fetchColumn() ?: 0;
+
+// 3. Total Bazar (Month)
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_bazar = $stmt->fetchColumn() ?: 0;
+
+// 4. Total Deposit (Month)
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_deposit = $stmt->fetchColumn() ?: 0;
