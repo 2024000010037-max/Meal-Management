@@ -63,3 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
     $tnx_id = $_POST['transaction_id'];
     $remarks = $_POST['remarks'];
     $edit_id = $_POST['edit_id'] ?? null;
+  if ($edit_id) {
+        // EDIT EXISTING
+        // Check permission: Admin (anytime) or Manager (within 10 mins)
+        $stmt = $pdo->prepare("SELECT created_at, TIMESTAMPDIFF(SECOND, created_at, NOW()) as time_diff FROM deposits WHERE id = ?");
+        $stmt->execute([$edit_id]);
+        $dep = $stmt->fetch(PDO::FETCH_ASSOC);
