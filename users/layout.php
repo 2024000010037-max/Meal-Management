@@ -78,3 +78,4 @@ body.toggled .sidebar {
 body.toggled .main-content {
  margin-left: 0;
         }
+/* MOBILE RESPONSIVE */
