@@ -295,6 +295,12 @@ ob_start();
                                         <span class="badge bg-danger">Inactive</span>
                                     <?php endif; ?>
                                 </td>
+                                    td class="text-end pe-3">
+                                    <?php if($u['role'] !== 'admin'): ?>
+                                        <!-- Status Toggle -->
+                                        <a href="?action=status&id=<?= $u['id'] ?>" class="btn btn-sm btn-light text-secondary me-1" title="Toggle Status">
+                                            <i class="bi bi-toggle-<?= $u['status'] ? 'on text-success' : 'off text-danger' ?>"></i>
+                                        </a>
                     
 <?php
 $content = ob_get_clean();
