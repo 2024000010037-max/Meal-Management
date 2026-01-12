@@ -130,6 +130,7 @@ if (!empty($deposit['email'])) {
     }
 }
 
-
-
+// 5. Redirect
+header("Location: deposit.php?month=$month&msg=refund_sent");
+exit;
 ?>
