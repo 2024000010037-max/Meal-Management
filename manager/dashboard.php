@@ -271,6 +271,22 @@ if ($view_as === 'user') {
     </div>
 
     <?php if ($my_net_balance >= 0): ?>
+<!-- My Balance (Surplus) -->
+    <div class="col-md-12 col-lg-12">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm border-start border-5 border-success">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="card-label text-success">My Balance</div>
+                    <h2 class="card-value text-dark mt-2">+৳ <?= number_format($my_net_balance, 0) ?></h2>
+                    <div class="card-sub text-muted mt-1">Current Surplus</div>
+                </div>
+                <div class="card-icon bg-success bg-opacity-10 text-success">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php else: ?>
 
 
 
