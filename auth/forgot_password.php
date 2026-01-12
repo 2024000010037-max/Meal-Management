@@ -104,6 +104,11 @@ function sendOTP() {
         }
  toggleButtonLoading('send-otp-btn', true);
         alertMsg.innerHTML = '';
+fetch("send_otp.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `email=${encodeURIComponent(email)}`
+        })
 
 
 
