@@ -154,4 +154,6 @@ div class="col-12">
   <span class="badge badge-<?= strtolower($req['payment_method']) ?> text-uppercase"><?= $req['payment_method'] ?></span>
                                                 <?php if($req['transaction_id']): ?><br><small class="text-muted"><?= htmlspecialchars($req['transaction_id']) ?></small><?php endif; ?>
                                             </td>
-                                                
+   <td class="fw-bold text-success">+<?= number_format($req['amount'], 2) ?></td>
+                                            <td class="text-end">
+                                              
