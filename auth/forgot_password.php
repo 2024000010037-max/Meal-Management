@@ -69,5 +69,11 @@ session_start();
     const step3 = document.getElementById('step-3');
     const finalSuccess = document.getElementById('final-success');
     const alertMsg = document.getElementById('alertMsg');
+  
+        function showStep(stepNum) {
+        step1.classList.remove('active');
+        step2.classList.remove('active');
+        step3.classList.remove('active');
+        finalSuccess.classList.remove('active');
 
 
