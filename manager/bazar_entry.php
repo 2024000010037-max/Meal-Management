@@ -52,6 +52,16 @@ $pending_reqs = $pdo->query("
     ORDER BY b.bazar_date ASC
 ")->fetchAll(PDO::FETCH_ASSOC);
 
+// 2. Approved History
+$stmt = $pdo->prepare("
+    SELECT b.* 
+    FROM bazar b 
+    WHERE b.status = 'approved' AND DATE_FORMAT(b.bazar_date, '%Y-%m') = ? 
+    ORDER BY b.bazar_date DESC
+");
+$stmt->execute([$selected_month]);
+$history = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 ?>
