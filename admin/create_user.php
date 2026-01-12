@@ -312,6 +312,14 @@ ob_start();
                                         <?php else: ?>
                                             <span class="text-success small fw-bold me-2"><i class="bi bi-check-circle-fill"></i> Manager</span>
                                         <?php endif; ?>
+                                <!-- Delete -->
+                                        <a href="?action=delete&id=<?= $u['id'] ?>" class="btn btn-sm btn-outline-danger rounded-circle" onclick="return confirm('Are you sure you want to delete this user? This cannot be undone.')">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
 
                     
 <?php
