@@ -36,3 +36,6 @@ CREATE TABLE `bazar` (
   `bazar_date` date DEFAULT NULL,
   `shopper_ids` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+ALTER TABLE `bazar`
+  ADD CONSTRAINT `bazar_ibfk_1` FOREIGN KEY (`manager_id`) REFERENCES `users` (`id`);
