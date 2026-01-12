@@ -150,7 +150,11 @@ ob_start();
                     <label class="form-label text-muted fw-bold small">BREAKFAST</label>
                     <div class="d-flex align-items-center justify-content-center gap-2 bg-light rounded-pill p-2">
                         <button type="button" class="btn btn-outline-danger btn-qty" onclick="updateQty('breakfast', -0.5)">-</button>
-
+                        <input type="number" step="0.5" min="0" id="breakfast" name="breakfast" value="<?= $current_meal['breakfast'] ?? 0 ?>" class="meal-input" readonly>
+                        <button type="button" class="btn btn-outline-success btn-qty" onclick="updateQty('breakfast', 0.5)">+</button>
+                    </div>
+                    <?php if($lock_b): ?><small class="text-danger d-block mt-1"><i class="bi bi-lock"></i> Locked</small><?php endif; ?>
+                
 
 
 
