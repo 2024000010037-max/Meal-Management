@@ -47,3 +47,6 @@ $my_pending = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt = $pdo->prepare("
 SELECT d.*, m.full_name as manager_name
     FROM deposits d
+  LEFT JOIN users m ON d.manager_id = m.id
+    WHERE d.user_id = ? AND d.status != 'pending' AND DATE_FORMAT(d.deposit_date, '%Y-%m') = ? 
+    ORDER BY d.deposit_date DESC
