@@ -33,3 +33,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
     $stmt = $pdo->prepare("INSERT INTO deposits (user_id, amount, payment_method, transaction_id, deposit_date, remarks, status) VALUES (?, ?, ?, ?, ?, ?, 'pending')");
  if ($stmt->execute([$user_id, $amount, $method, $tnx_id, $date, $remarks])) {
  $msg = "<div class='alert alert-success alert-dismissible fade show'>Deposit request submitted! Waiting for approval. <button 
+type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+    } else {
