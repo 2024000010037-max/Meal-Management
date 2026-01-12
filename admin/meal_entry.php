@@ -119,3 +119,12 @@ ob_start();
                             <th class="text-center">Dinner <small class="text-muted d-block" style="font-size:10px">(< 3 PM)</small></th>
                         </tr>
                     </thead>
+                   <tbody>
+                        <?php foreach($users as $u): 
+                            $uid = $u['id'];
+                            // Auto Meal Logic: If no entry exists and auto is ON, default to 1 (only for today/future)
+                            $default = ($u['is_auto_meal'] && $selected_date >= date('Y-m-d')) ? 1 : 0;
+                            $b = $current_meals[$uid]['breakfast'] ?? $default;
+                            $l = $current_meals[$uid]['lunch'] ?? $default;
+                            $d = $current_meals[$uid]['dinner'] ?? $default;
+                        ?>
