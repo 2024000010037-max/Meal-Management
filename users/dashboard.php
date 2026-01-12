@@ -175,7 +175,13 @@ ob_start();
             </div>
         </div>
     </div>
-      
+        <!-- My Balance (Due/Advance) -->
+    <div class="col-md-3">
+        <?php if ($my_balance >= 0): ?>
+            <div class="card dashboard-card bg-gradient-success p-4 h-100 text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+  
 
 
 
