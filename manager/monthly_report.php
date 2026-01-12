@@ -120,7 +120,16 @@ ob_start();
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 </style>
 
-
+<div class="d-flex justify-content-between align-items-center mb-4 no-print">
+    <div>
+        <h3 class="fw-bold mb-0 text-primary"><i class="bi bi-file-earmark-bar-graph"></i> Monthly Report</h3>
+        <p class="text-muted small mb-0">Overview for <?= date('F Y', strtotime($selected_month)) ?></p>
+    </div>
+    <form method="GET" class="d-flex align-items-center gap-2">
+        <label class="small fw-bold text-muted">Month:</label>
+        <input type="month" name="month" class="form-control form-control-sm fw-bold" value="<?= $selected_month ?>" onchange="this.form.submit()">
+    </form>
+</div>
 
 
 ?>
