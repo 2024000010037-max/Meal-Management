@@ -9,3 +9,11 @@ include "../config/database.php";
 $pdo = (new Database())->connect();
 
 $selected_month = $_GET['month'] ?? date('Y-m');
+
+// 1. Total Active Members
+$total_members = $pdo->query("SELECT COUNT(*) FROM users WHERE status = 1")->fetchColumn();
+
+// 2. Total Meal (Month)
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_meal = $stmt->fetchColumn() ?: 0;
