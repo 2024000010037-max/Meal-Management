@@ -21,6 +21,9 @@ if (!empty($search)) {
     $params[] = "%$search%";
 }
 $sql .= " ORDER BY m.meal_date DESC, u.full_name ASC";
+$stmt = $pdo->prepare($sql);
+$stmt->execute($params);
+$meals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
