@@ -29,7 +29,9 @@ if (!$deposit) {
     header("Location: deposit.php?month=$month&error=not_found");
     exit;
 }
-
+// 2. Calculate Stats for Invoice (Total Deposit & Current Balance)
+$user_id = $deposit['user_id'];
+$current_month = date('Y-m', strtotime($deposit['deposit_date']));
 
 
 ?>
