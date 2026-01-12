@@ -67,6 +67,26 @@ if ($view_as === 'user') {
 
 
 
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4 gap-3">
+    <div class="text-center text-lg-start">
+        <h3 class="fw-bold text-dark mb-0"></h3>
+        <p class="text-muted small mb-0"></p>
+    </div>
+    
+    <form method="GET" class="bg-white p-1 rounded-4 shadow-sm d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-2 border">
+        <!-- View Mode Selector -->
+        <div class="d-flex align-items-center px-3 py-2 bg-light rounded-3">
+            <i class="bi bi-person-gear text-primary me-2 fs-5"></i>
+            <select name="view_as" class="form-select form-select-sm border-0 shadow-none bg-transparent fw-bold text-secondary p-0" style="width: auto; cursor: pointer;" onchange="this.form.submit()">
+                <option value="manager" <?= $view_as == 'manager' ? 'selected' : '' ?>>Manager View</option>
+                <option value="user" <?= $view_as == 'user' ? 'selected' : '' ?>>My Personal View</option>
+            </select>
+        </div>
+
+
+
+
+
 
 
 
