@@ -9,4 +9,5 @@ $pdo = (new Database())->connect();
 $msg = "";
 $selected_month = $_GET['month'] ?? date('Y-m');
 $user_id = $_SESSION['user_id'];
+// --- HANDLE ACTIONS (Delete Pending) ---
 
