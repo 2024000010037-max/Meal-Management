@@ -402,3 +402,16 @@ div class="row g-3">
                     <a href="?month=<?= $selected_month ?>&export=excel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Excel</a>
                 </div>
             </div>
+<div class="card p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Member</th>
+                                <th>Details</th>
+                                <th>Approved By</th>
+                                <th class="text-end">Amount</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
