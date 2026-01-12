@@ -147,3 +147,8 @@ div class="col-12">
                                     <?php if(empty($my_pending)): ?>
                                         <tr><td colspan="4" class="text-center text-muted py-4">No pending requests.</td></tr>
                                     <?php else: ?>
+<?php foreach($my_pending as $req): ?>
+                                        <tr>
+                                            <td><?= date('d M', strtotime($req['deposit_date'])) ?></td>
+                                            <td>
+                                                
