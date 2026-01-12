@@ -167,5 +167,18 @@ ob_start();
                 </div>
             </div>
         </div>
+ <!-- ADD NEW TAB -->
+        <div class="tab-pane fade" id="pills-add">
+            <div class="row g-4">
+                <!-- Form -->
+                <div class="col-md-5">
+                    <div class="card p-4 h-100">
+                        <h5 class="fw-bold mb-3 text-primary">Add Bazar Expense</h5>
+                        <form method="POST">
+                            <input type="hidden" name="add_bazar" value="1">
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Date</label>
+                                <input type="date" name="bazar_date" class="form-control" value="<?= date('Y-m-d') ?>" required>
+                            </div>
 
    
