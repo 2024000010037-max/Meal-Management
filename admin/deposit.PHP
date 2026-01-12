@@ -211,3 +211,6 @@ if (isset($_GET['export']) && $_GET['export'] === 'excel') {
         $mgr = $h['manager_name'] ?? 'N/A';
         echo "<tr><td>{$h['deposit_date']}</td><td>{$h['full_name']}</td><td>{$details}</td><td>{$mgr}</td><td>{$h['amount']}</td></tr>";
     }
+   echo '</table>';
+    exit;
+}
