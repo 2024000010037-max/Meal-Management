@@ -150,6 +150,13 @@ ob_start();
             <div class="summary-value">৳ <?= number_format($total_mess_bazar, 0) ?></div>
         </div>
     </div>
+<div class="col-md-3">
+        <div class="summary-box border-bottom border-4 border-info">
+            <div class="summary-label">Meal Rate</div>
+            <div class="summary-value">৳ <?= number_format($meal_rate, 2) ?></div>
+        </div>
+    </div>
+</div>
 
 
 
