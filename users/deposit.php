@@ -190,3 +190,6 @@ div class="col-12">
                                 <tr>
                                     <td><?= date('d M', strtotime($h['deposit_date'])) ?></td>
                                     <td>
+   <span class="badge badge-<?= strtolower($h['payment_method']) ?> text-uppercase"><?= $h['payment_method'] ?></span>
+                                        <?php if($h['transaction_id']): ?><br><small class="text-muted"><?= htmlspecialchars($h['transaction_id']) ?></small><?php endif; ?>
+                                    </td>
