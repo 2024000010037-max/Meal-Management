@@ -112,4 +112,14 @@ body {
         </button>
         <span class="dev-tooltip">Need a Custom System?</span>
     </div>
+    <!-- Developer Contact Popup -->
+    <div id="devPopup" class="dev-popup-overlay">
+        <div class="dev-popup-card">
+            <button class="dev-close-btn" style="width: 30px; height: 30px; font-size: 1rem; top: 15px; right: 15px;" onclick="toggleDevPopup()"><i class="bi bi-x-lg"></i></button>
+            
+            <div class="mb-3">
+                <div style="width: 60px; height: 60px; background: #f3e8ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; color: #9333ea; font-size: 1.8rem;">
+                    <i class="bi bi-laptop"></i>
+                </div>
+            </div>
 </body>
