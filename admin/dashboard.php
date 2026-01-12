@@ -108,3 +108,18 @@ ob_start();
             </div>
         </div>
     </div>
+   <!-- Total Meals -->
+    <div class="col-md-4 col-lg-3">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="card-label text-warning">Total Meals</div>
+                    <h2 class="card-value text-dark mt-2"><?= number_format($total_meal, 1) ?></h2>
+                    <div class="card-sub text-muted mt-1">This Month</div>
+                </div>
+                <div class="card-icon bg-warning bg-opacity-10 text-warning">
+                    <i class="bi bi-egg-fried"></i>
+                </div>
+            </div>
+        </div>
+    </div>
