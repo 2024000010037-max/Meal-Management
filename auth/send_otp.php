@@ -10,6 +10,15 @@ require '../sms/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+$email = $_POST['email'] ?? '';
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email format";
+    exit;
+}
+
+$pdo = (new Database())->connect();
+
 
 
 ?>
