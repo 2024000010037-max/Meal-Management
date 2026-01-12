@@ -42,6 +42,12 @@ $stmt = $pdo->prepare("SELECT user_id, SUM(amount) as deposit FROM deposits WHER
 $stmt->execute([$selected_month]);
 $user_deposits_map = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
 
+// --- 3. BUILD REPORT DATA ---
+$report_data = [];
+foreach ($users as $u) {
+    $uid = $u['id'];
+    $meals = $user_meals_map[$uid] ?? 0;
+
 
 
 ?>
