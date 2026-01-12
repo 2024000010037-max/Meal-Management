@@ -20,6 +20,7 @@ if (!empty($search)) {
     $sql .= " AND u.full_name LIKE ?";
     $params[] = "%$search%";
 }
+$sql .= " ORDER BY m.meal_date DESC, u.full_name ASC";
 
 
 
