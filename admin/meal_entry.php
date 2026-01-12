@@ -128,3 +128,17 @@ ob_start();
                             $l = $current_meals[$uid]['lunch'] ?? $default;
                             $d = $current_meals[$uid]['dinner'] ?? $default;
                         ?>
+           <tr>
+                            <td>
+                                <div class="fw-bold"><?= htmlspecialchars($u['full_name']) ?></div>
+                                <?php if($u['role'] === 'manager'): ?>
+                                    <span class="user-role-badge">Manager</span>
+                                <?php endif; ?>
+                                <!-- Auto Meal Toggle -->
+                                <div class="mt-1">
+                                    <a href="?date=<?= $selected_date ?>&toggle_auto=1&uid=<?= $uid ?>" class="text-decoration-none small">
+                                        <i class="bi <?= $u['is_auto_meal'] ? 'bi-toggle-on text-success' : 'bi-toggle-off text-muted' ?> fs-5 align-middle"></i>
+                                        <span class="text-muted align-middle" style="font-size: 11px;">Auto Meal</span>
+                                    </a>
+                                </div>
+                            </td>
