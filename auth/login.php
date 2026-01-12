@@ -122,4 +122,12 @@ body {
                     <i class="bi bi-laptop"></i>
                 </div>
             </div>
+            <h5 class="fw-bold text-dark mb-2">Build Your Own Panel!</h5>
+            <p class="text-muted small mb-3" style="font-size: 0.8rem;">Looking for a custom Admin Panel? Contact us to build professional software.</p>
+            
+            <div class="d-flex flex-column gap-2 text-start bg-light p-3 rounded-4 mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="bg-white p-2 rounded-circle shadow-sm me-3 text-primary"><i class="bi bi-telephone-fill"></i></div>
+                    <div><small class="text-muted d-block" style="font-size: 10px;">CALL US</small><span class="fw-bold text-dark">+8801780767020</span></div>
+                </div>
 </body>
