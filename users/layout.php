@@ -99,5 +99,7 @@ body.toggled .main-content {
     </style>
 </head>
 <body>
+<!-- SIDEBAR -->
+    <div class="sidebar">
 
      
