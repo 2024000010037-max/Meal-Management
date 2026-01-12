@@ -82,6 +82,13 @@ if ($view_as === 'user') {
                 <option value="user" <?= $view_as == 'user' ? 'selected' : '' ?>>My Personal View</option>
             </select>
         </div>
+<!-- Month Picker -->
+        <div class="d-flex align-items-center px-3 py-2 bg-light rounded-3">
+            <i class="bi bi-calendar-month text-primary me-2 fs-5"></i>
+            <input type="month" name="month" class="form-control form-control-sm border-0 shadow-none bg-transparent fw-bold text-dark p-0" style="width: auto; cursor: pointer;" value="<?= $selected_month ?>" onchange="this.form.submit()">
+        </div>
+    </form>
+</div>
 
 
 
