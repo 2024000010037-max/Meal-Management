@@ -45,6 +45,9 @@ $my_meal = $stmt->fetchColumn() ?: 0;
 $stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE user_id = ? AND status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
 $stmt->execute([$user_id, $selected_month]);
 $my_deposit = $stmt->fetchColumn() ?: 0;
+// 7. My Expense (Estimated)
+$my_expense = $my_meal * $meal_rate;
+
 
 
 
