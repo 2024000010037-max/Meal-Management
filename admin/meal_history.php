@@ -128,3 +128,10 @@ ob_start();
         </table>
     </div>
 </div>
+<script>
+function exportExcel() {
+    const url = new URL(window.location.href);
+    url.searchParams.set('export', 'excel');
+    window.location.href = url.toString();
+}
+</script>
