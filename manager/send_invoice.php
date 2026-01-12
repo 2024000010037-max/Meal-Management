@@ -29,6 +29,9 @@ if (!$user || empty($user['email'])) {
     echo "<script>alert('User email not found!'); window.location.href='monthly_report.php?month=$selected_month';</script>";
     exit;
 }
-
+// Global Stats for Rate
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_mess_meals = $stmt->fetchColumn() ?: 0;
 
 ?>
