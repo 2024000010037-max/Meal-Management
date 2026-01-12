@@ -107,3 +107,4 @@ div class="sidebar-header">
         <div class="sidebar-menu">
  ass="<?= $cur == 'dashboard.php' ? 'active' : '' ?>"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>            
  <a href="meals.php" class="<?= $cur == 'meals.php' ? 'active' : '' ?>"><i class="bi bi-egg-fried me-2"></i> My Meals</a>    
+<a href="bazar.php" class="<?= $cur == 'bazar.php' ? 'active' : '' ?>"><i class="bi bi-cart me-2"></i> Bazar List</a>
