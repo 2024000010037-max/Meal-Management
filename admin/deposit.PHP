@@ -263,3 +263,15 @@ ob_start();
             <input type="month" name="month" class="form-control form-control-sm" value="<?= $selected_month ?>" onchange="this.form.submit()">
         </form>
     </div>
+    <?= $msg ?>
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link <?= !$edit_data ? 'active' : '' ?> fw-bold position-relative" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending" type="button">
+                Pending Requests
+                <?php if(count($pending_reqs) > 0): ?>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <?= count($pending_reqs) ?>
+                    </span>
+                <?php endif; ?>
+            </button>
