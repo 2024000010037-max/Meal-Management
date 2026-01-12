@@ -27,5 +27,10 @@ $total_members = $stmt->fetchColumn() ?: 0;
 $stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
 $stmt->execute([$selected_month]);
 $total_mess_meal = $stmt->fetchColumn() ?: 0;
+// 3. Total Bazar (Mess - Month)
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_mess_bazar = $stmt->fetchColumn() ?: 0;
+
 
 
