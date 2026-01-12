@@ -62,6 +62,10 @@ $stmt = $pdo->prepare("
 $stmt->execute([$selected_month]);
 $history = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// 3. Users List
+$users = $pdo->query("SELECT id, full_name FROM users WHERE status = 1 AND role IN ('manager', 'user') ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
+$userMap = array_column($users, 'full_name', 'id');
+
 
 
 ?>
