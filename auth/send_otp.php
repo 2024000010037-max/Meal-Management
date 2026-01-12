@@ -19,6 +19,10 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 $pdo = (new Database())->connect();
 
+// Assuming 'email' column exists in users table
+$stmt = $pdo->prepare("SELECT id, full_name FROM users WHERE email = ?");
+$stmt->execute([$email]);
+$user = $stmt->fetch();
 
 
 ?>
