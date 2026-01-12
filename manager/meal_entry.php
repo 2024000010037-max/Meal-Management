@@ -158,6 +158,10 @@ ob_start();
                                 </div>
                             </td>
 
+                             <!-- Breakfast -->
+                            <td><?php renderMealInput($uid, 'breakfast', $b, $lock_b); ?></td>
+
+
 
 
 
