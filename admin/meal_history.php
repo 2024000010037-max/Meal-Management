@@ -64,3 +64,9 @@ ob_start();
         .main-content { margin-left: 0 !important; }
     }
 </style>
+<div class="d-flex justify-content-between align-items-center mb-4 no-print">
+    <div>
+        <h3 class="fw-bold mb-0">Meal History</h3>
+        <p class="text-muted small mb-0">View and export meal records</p>
+    </div>
+    <div>
