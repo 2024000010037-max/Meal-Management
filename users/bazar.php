@@ -201,5 +201,16 @@ ob_start();
                                 <input type="text" name="remarks" class="form-control" placeholder="Any extra note...">
                             </div>
                             <button class="btn btn-primary w-100 fw-bold"><i class="bi bi-send me-2"></i> Submit for Approval</button>
+                        </form>
+                    </div>
+                </div>
 
+                <!-- My Recent Requests -->
+                <div class="col-md-7">
+                    <div class="card p-4 h-100">
+                        <h5 class="fw-bold mb-3">My Recent Requests</h5>
+                        <div class="table-responsive">
+                            <table class="table table-sm align-middle">
+                                <thead>
+                                    
    
