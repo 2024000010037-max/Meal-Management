@@ -368,3 +368,15 @@ div class="row g-3">
                                 <?php endforeach; ?>
                             </select>
                         </div>
+<div class="col-md-6">
+                            <label class="form-label small fw-bold">Amount (৳)</label>
+                            <input type="number" step="0.01" name="amount" class="form-control" value="<?= $edit_data['amount'] ?? $pre_amount ?? '' ?>" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold">Transaction ID (Optional)</label>
+                            <input type="text" name="transaction_id" class="form-control" value="<?= $edit_data['transaction_id'] ?? '' ?>" placeholder="e.g. TrxID123456">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold">Remarks</label>
+                            <textarea name="remarks" class="form-control" rows="2"><?= $edit_data['remarks'] ?? ($pre_amount ? 'Cash Returned to Member' : '') ?></textarea>
+                        </div>
