@@ -11,5 +11,7 @@ if ($user_otp == $session_otp) {
     $_SESSION['otp_verified'] = true;
     echo "success";
 }
-
+else {
+    echo "Invalid OTP code.";
+}
 ?>
