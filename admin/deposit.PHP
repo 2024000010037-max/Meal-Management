@@ -168,4 +168,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
                     $mail->Subject = "Deposit Received - ৳ " . number_format($amount, 2);
                     $mail->Body    = "Dear {$user_info['full_name']},<br><br>We have received your deposit. Here is your receipt.<br><br>" . $invoice_html;
                     $mail->addStringAttachment($invoice_html, "Receipt_{$invoice_no}.html", 'base64', 'text/html');
-
+                    
+                    $mail->send();
+                    $msg = "<div class='alert alert-success alert-dismissible fade show'>Deposit added and invoice sent successfully! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+                } catch (Exception $e) {
+                    $msg = "<div class='alert alert-warning alert-dismissible fade show'>Deposit added, but failed to send invoice email. Error: {$mail->ErrorInfo} <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+                }
+            }
+            // --- END: SEND INVOICE EMAIL ---
+        }
+    }
+}
