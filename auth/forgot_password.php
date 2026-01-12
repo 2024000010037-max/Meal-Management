@@ -22,6 +22,10 @@ session_start();
         z-index: 0;
         user-select: none;
     }
+@keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(10deg); }
+    }
 
 
 
