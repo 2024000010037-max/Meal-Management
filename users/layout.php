@@ -64,3 +64,5 @@ min-height: 100vh;
         }
 /* TOP HEADER */
         .top-header {
+ background: #fff;
+            padding: 15px 25px;
