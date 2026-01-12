@@ -72,3 +72,6 @@ align-items: center;
             justify-content: space-between;
         }
    /* TOGGLED STATE */
+body.toggled .sidebar {
+            left: -250px;
+        }
