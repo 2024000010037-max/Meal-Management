@@ -84,5 +84,9 @@ ob_start();
         </li>
         <li class="nav-item"><button class="nav-link fw-bold" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button">History</button></li>
     </ul>
-
+ <div class="tab-content" id="pills-tabContent">
+        
+        <!-- ADD NEW REQUEST -->
+        <div class="tab-pane fade show active" id="pills-add">
+            <div class="row g-4"
     
