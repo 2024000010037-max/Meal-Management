@@ -170,5 +170,9 @@ function verifyOTP() {
                 showMessage(data, "danger");
             }
         })
+.catch(() => showMessage("An error occurred.", "danger"))
+        .finally(() => toggleButtonLoading('change-pass-btn', false));
+    }
+  </script>
 
 
