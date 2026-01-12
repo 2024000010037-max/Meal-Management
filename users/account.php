@@ -35,3 +35,6 @@ alt="Profile" style="object-fit: cover;">
 Information</h6>
                 
                 <div class="mb-3 border-bottom pb-2">
+ <label class="small text-muted d-block mb-1">Username</label>
+                    <span class="fw-bold text-dark fs-5"><?= htmlspecialchars($user['username']) ?></span>
+                </div>
