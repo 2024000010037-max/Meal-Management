@@ -219,6 +219,10 @@ ob_start();
                             <label class="form-label small fw-bold text-muted">PHONE</label>
                             <input type="text" name="phone" class="form-control" placeholder="017..." value="<?= $editUser['phone'] ?? '' ?>" required>
                         </div>
+          <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">EMAIL</label>
+                            <input type="email" name="email" class="form-control" placeholder="mail@example.com" value="<?= $editUser['email'] ?? '' ?>" required>
+                        </div>
 
                     
 <?php
