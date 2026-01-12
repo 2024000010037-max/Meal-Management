@@ -31,3 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
             $_SESSION['full_name'] = $user['full_name'];
+
+            // Redirect based on role
+            if ($user['role'] === 'admin') {
+                header("Location: ../admin/dashboard.php");
+            } elseif ($user['role'] === 'manager') {
+                header("Location: ../manager/dashboard.php");
+            } else {
+                header("Location: ../user/dashboard.php");
+            }
+            exit;
