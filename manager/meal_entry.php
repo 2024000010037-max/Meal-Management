@@ -75,6 +75,17 @@ $today_str = $now->format('Y-m-d');
 $target_str = $target->format('Y-m-d');
 $hour = (int)$now->format('H');
 
+// Check if Breakfast time has passed (for Auto-Save trigger)
+$time_lock_b = false;
+if ($target_str == $today_str && $hour >= 8) {
+    $time_lock_b = true;
+}
+
+$lock_b = false; // Breakfast Lock
+$lock_l = false; // Lunch Lock
+$lock_d = false; // Dinner Lock
+$global_lock_msg = "";
+
 
 
 
