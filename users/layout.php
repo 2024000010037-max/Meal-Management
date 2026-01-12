@@ -146,3 +146,6 @@ Logout</a></li>
         </div>
 <!-- Dynamic Content -->
         <div class="p-4">
+        <?= isset($content) ? $content : '' ?>
+        </div>
+    </div>
