@@ -31,5 +31,11 @@ if ($amount > 0 && !empty($details)) {
  if ($stmt->execute([$userId, $shopper_ids, $date, $amount, $details, $remarks])) {
             $msg = "<div class='alert alert-success alert-dismissible fade show'>Request submitted successfully! Waiting for approval. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
         } else {
+ $msg = "<div class='alert alert-danger'>Failed to submit request.</div>";
+        }
+    } else {
+        $msg = "<div class='alert alert-warning'>Please fill in all required fields.</div>";
+    }
+}
 
     
