@@ -279,6 +279,15 @@ ob_start();
                                     <div class="small"><i class="bi bi-telephone me-1"></i> <?= htmlspecialchars($u['phone'] ?? '-') ?></div>
                                     <div class="small text-muted"><i class="bi bi-envelope me-1"></i> <?= htmlspecialchars($u['email'] ?? '-') ?></div>
                                 </td>
+                                    <td>
+                                    <?php if($u['role'] === 'admin'): ?>
+                                        <span class="role-badge role-admin">Admin</span>
+                                    <?php elseif($u['role'] === 'manager'): ?>
+                                        <span class="role-badge role-manager">Manager</span>
+                                    <?php else: ?>
+                                        <span class="role-badge role-user">User</span>
+                                    <?php endif; ?>
+                                </td>
                     
 <?php
 $content = ob_get_clean();
