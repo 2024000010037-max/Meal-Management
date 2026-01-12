@@ -113,3 +113,7 @@ div class="col-12">
                                     <label class="form-label small fw-bold">Amount (৳)</label>
                                     <input type="number" step="0.01" name="amount" class="form-control" placeholder="0.00" required>
                                 </div>
+div class="col-12">
+                                    <label class="form-label small fw-bold">Transaction ID (Optional)</label>
+                                    <input type="text" name="transaction_id" class="form-control" placeholder="e.g. TrxID123456">
+                                </div>
