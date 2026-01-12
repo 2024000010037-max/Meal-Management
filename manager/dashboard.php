@@ -326,6 +326,12 @@ if ($view_as === 'user') {
         </a>
     </div>
 
+ <div class="col-6 col-md-3 mb-3">
+        <a href="deposit.php" class="btn btn-outline-success w-100 p-3 h-100 d-flex flex-column align-items-center justify-content-center gap-2 rounded-4">
+            <i class="bi bi-wallet2 fs-3"></i>
+            <span class="fw-bold">Deposits</span>
+        </a>
+    </div>
 
 
 
