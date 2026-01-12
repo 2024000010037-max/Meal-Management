@@ -119,6 +119,9 @@ fetch("send_otp.php", {
             }
         })
 
+.catch(() => showMessage("An error occurred. Please try again.", "danger"))
+        .finally(() => toggleButtonLoading('send-otp-btn', false));
+    }
 
 
 
