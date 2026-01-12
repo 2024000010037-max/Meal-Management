@@ -156,3 +156,6 @@ document.getElementById('menu-toggle').addEventListener('click', function() {
         });
 document.body.addEventListener('click', function(e) {
             if (window.innerWidth <= 768 && document.body.classList.contains('toggled')) {
+f (!e.target.closest('.sidebar') && !e.target.closest('#menu-toggle')) {
+                    document.body.classList.remove('toggled');
+                }
