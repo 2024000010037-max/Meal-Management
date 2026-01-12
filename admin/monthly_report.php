@@ -84,3 +84,14 @@ if (isset($_GET['export']) && $_GET['export'] === 'excel') {
 $pageTitle = "Monthly Report";
 ob_start();
 ?>
+<style>
+    .card { border: none; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,.05); }
+    .summary-box { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
+    .summary-label { font-size: 0.8rem; font-weight: 600; color: #6c757d; text-transform: uppercase; }
+    .summary-value { font-size: 1.5rem; font-weight: 700; margin-top: 5px; color: #212529; }
+    @media print {
+        .no-print { display: none !important; }
+        .card { box-shadow: none !important; border: 1px solid #ddd !important; }
+        .sidebar, .top-header { display: none !important; }
+        .main-content { margin-left: 0 !important; }
+    }
