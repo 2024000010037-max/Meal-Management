@@ -54,3 +54,12 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         $msg = "<div class='alert alert-success alert-dismissible fade show'>Request Rejected! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
     }
 }
+// --- HANDLE FORM SUBMISSION (Add New / Edit) ---
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
+    $user_id = $_POST['user_id'];
+    $date = $_POST['deposit_date'];
+    $amount = $_POST['amount'];
+    $method = $_POST['payment_method'];
+    $tnx_id = $_POST['transaction_id'];
+    $remarks = $_POST['remarks'];
+    $edit_id = $_POST['edit_id'] ?? null;
