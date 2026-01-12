@@ -141,4 +141,9 @@ body {
             </div>
         </div>
     </div>
+     <script>
+        function toggleDevPopup() {
+            document.getElementById('devPopup').classList.toggle('active');
+        }
+    </script>
 </body>
