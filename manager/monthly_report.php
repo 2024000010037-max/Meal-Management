@@ -47,6 +47,23 @@ $report_data = [];
 foreach ($users as $u) {
     $uid = $u['id'];
     $meals = $user_meals_map[$uid] ?? 0;
+// Filter: Only show users who have meal count > 0
+    if ($meals > 0) {
+        $deposit = $user_deposits_map[$uid] ?? 0;
+        $cost = $meals * $meal_rate;
+        $balance = $deposit - $cost; 
+        
+        $report_data[] = [
+            'user_id' => $uid,
+            'name' => $u['full_name'],
+            'role' => ucfirst($u['role']),
+            'meals' => $meals,
+            'deposit' => $deposit,
+            'cost' => $cost,
+            'balance' => $balance
+        ];
+    }
+}
 
 
 
