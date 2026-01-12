@@ -204,3 +204,8 @@ div class="col-12">
  <td class="fw-bold text-end <?= $h['amount'] < 0 ? 'text-danger' : 'text-success' ?>">
                                         <?= $h['amount'] > 0 ? '+' : '' ?><?= number_format($h['amount'], 2) ?>
                                     </td>
+ </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
