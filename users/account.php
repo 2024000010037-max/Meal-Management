@@ -17,3 +17,5 @@ urlencode($user['full_name']) . "&background=fff&color=667eea&size=128";
 
 $pageTitle = "My Account";
 ob_start();
+?>
+<div class="row justify-content-center">
