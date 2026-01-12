@@ -38,3 +38,8 @@ $user_meals_map = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
 $stmt = $pdo->prepare("SELECT user_id, SUM(amount) as deposit FROM deposits WHERE status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ? GROUP BY user_id");
 $stmt->execute([$selected_month]);
 $user_deposits_map = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+// --- 3. BUILD REPORT DATA ---
+$report_data = [];
+foreach ($users as $u) {
+    $uid = $u['id'];
+    $meals = $user_meals_map[$uid] ?? 0;
