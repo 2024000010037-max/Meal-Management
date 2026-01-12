@@ -32,6 +32,10 @@ if (isset($_GET['export']) && $_GET['export'] === 'excel') {
     header("Pragma: no-cache");
     header("Expires: 0");
 
+echo '<table border="1">';
+    echo '<tr><th>Date</th><th>Member Name</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th><th>Total</th></tr>';
+    foreach ($meals as $m) {
+        $total = $m['breakfast'] + $m['lunch'] + $m['dinner'];
 
 
 
