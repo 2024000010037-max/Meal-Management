@@ -290,4 +290,6 @@ ob_start();
             </button>
         </li>
         <li class="nav-item"><button class="nav-link fw-bold" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button">History</button></li>
-    </ul>
+    </ul> 
+<div class="tab-content" id="pills-tabContent">
+        
