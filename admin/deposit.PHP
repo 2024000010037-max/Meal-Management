@@ -494,3 +494,10 @@ div class="row g-3">
             });
 
             calculateTotal();
+// Auto-open Add Tab if returning cash
+            <?php if($pre_amount): ?>
+                var addTab = new bootstrap.Tab(document.querySelector('#pills-add-tab'));
+                addTab.show();
+            <?php endif; ?>
+        });
+    </script>
