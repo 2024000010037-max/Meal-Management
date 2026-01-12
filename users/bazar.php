@@ -19,4 +19,12 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])
          exit;
     }
 }
+// --- HANDLE FORM SUBMISSION ---
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_bazar'])) {
+    $date = $_POST['bazar_date'];
+    $amount = $_POST['amount'];
+    $details = $_POST['details'];
+    $remarks = $_POST['remarks'];
+    $shopper_ids = isset($_POST['shopper_ids']) ? implode(',', $_POST['shopper_ids']) : '';
 
+    
