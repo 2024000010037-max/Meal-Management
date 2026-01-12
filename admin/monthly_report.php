@@ -14,3 +14,8 @@ $selected_month = $_GET['month'] ?? date('Y-m');
 $stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
 $stmt->execute([$selected_month]);
 $total_mess_meals = $stmt->fetchColumn() ?: 0;
+
+// Total Mess Bazar
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_mess_bazar = $stmt->fetchColumn() ?: 0;
