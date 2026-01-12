@@ -157,4 +157,15 @@ div class="col-12">
    <td class="fw-bold text-success">+<?= number_format($req['amount'], 2) ?></td>
                                             <td class="text-end">
   <a href="?action=delete&id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-danger btn-sm" title="Withdraw" onclick="return confirm('Withdraw this request?')"><i class="bi bi-trash"></i></a>
+    </td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
                                              
