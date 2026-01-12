@@ -24,3 +24,4 @@ ob_start();
  <!-- Profile Header -->
             <div class="card-header text-white p-4 text-center border-0" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
 <img src="<?= $profile_img ?>" class="rounded-circle mx-auto d-block mb-3 shadow" width="90" height="90" 
+alt="Profile" style="object-fit: cover;">
