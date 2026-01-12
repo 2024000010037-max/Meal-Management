@@ -7,3 +7,4 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'user') {
 include "../config/database.php";
 $pdo = (new Database())->connect();
 $user_id = $_SESSION['user_id'];
+// Fetch User Info
