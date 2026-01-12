@@ -71,6 +71,13 @@ session_start();
         box-shadow: 0 10px 20px rgba(238, 82, 83, 0.3);
         background: linear-gradient(45deg, #ee5253, #ff9f43);
     }
+ .back-link {
+        color: #e15f41;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: all 0.2s;
+    }
 
 
   
