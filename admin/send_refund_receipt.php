@@ -69,4 +69,18 @@ $invoice_html = "
         <h2 style='color: #dc3545; margin: 0;'>REFUND RECEIPT</h2>
         <p style='color: #777; margin: 5px 0;'>Hostel Mess Management</p>
     </div>
-    
+     <table style='width: 100%; margin-bottom: 20px;'>
+        <tr>
+            <td>
+                <strong>Refund To:</strong><br>
+                {$deposit['full_name']}<br>
+                {$deposit['email']}
+            </td>
+            <td style='text-align: right;'>
+                <strong>Receipt No:</strong> $invoice_no<br>
+                <strong>Date:</strong> $date_time<br>
+                <strong>Status:</strong> <span style='color: #dc3545; font-weight: bold;'>Refunded</span>
+            </td>
+        </tr>
+    </table>
+
