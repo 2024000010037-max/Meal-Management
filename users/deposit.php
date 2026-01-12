@@ -121,3 +121,6 @@ div class="col-12">
                                     <label class="form-label small fw-bold">Remarks</label>
                                     <textarea name="remarks" class="form-control" rows="2" placeholder="Any notes..."></textarea>
                                 </div>
+<div class="col-12 mt-3">
+                                    <button class="btn btn-success w-100 fw-bold">Submit Request</button>
+                                </div>
