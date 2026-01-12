@@ -275,6 +275,15 @@ ob_start();
         </div>
 
     </div>
+<script>
+        $(document).ready(function() {
+            $('.select2').select2({
+                theme: 'bootstrap-5',
+                placeholder: "Select shoppers",
+                width: '100%'
+            });
+
+
 
 
             
