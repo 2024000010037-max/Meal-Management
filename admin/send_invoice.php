@@ -134,3 +134,12 @@ try {
     $mail->Password   = 'app pass';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
+// Recipients
+    $mail->setFrom('youremail@gmail.com'', 'Hostel Mess Manager');
+    $mail->addAddress($user['email'], $user['full_name']);
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = "Due Payment Invoice - $month_name";
+    $mail->Body    = "Dear {$user['full_name']},<br><br>You have a due balance for the month of <strong>$month_name</strong>.<br>Please find the invoice details below:<br><br>" . $invoice_html;
+    $mail->AltBody = "Dear {$user['full_name']}, You have a due balance of " . number_format($due_amount, 2) . " for $month_name. Please pay immediately.";
