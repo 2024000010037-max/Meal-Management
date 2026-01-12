@@ -20,3 +20,6 @@ $manager_id = $_SESSION['user_id'];
 if (isset($_GET['msg']) && $_GET['msg'] === 'approved') {
     $msg = "<div class='alert alert-success alert-dismissible fade show'>Deposit Approved & Invoice Sent! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
 }
+if (isset($_GET['msg']) && $_GET['msg'] === 'refund_sent') {
+    $msg = "<div class='alert alert-success alert-dismissible fade show'>Refund processed and receipt sent successfully! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+}
