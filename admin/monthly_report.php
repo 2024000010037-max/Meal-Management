@@ -173,3 +173,9 @@ ob_start();
                     <th>Action</th>
                 </tr>
             </thead>
+        
+            <tbody id="reportTableBody">
+                <?php if(empty($report_data)): ?>
+                    <tr><td colspan="6" class="text-center text-muted py-4">No active members with meals found for this month.</td></tr>
+                <?php else: ?>
+                    <?php foreach($report_data as $row): ?>
