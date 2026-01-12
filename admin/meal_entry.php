@@ -102,3 +102,8 @@ ob_start();
             <input type="date" name="date" class="form-control" value="<?= $selected_date ?>" onchange="this.form.submit()">
         </form>
     </div>
+  <?= $msg ?>
+
+    <?php if($global_lock_msg): ?>
+        <div class="alert alert-warning"><i class="bi bi-lock-fill me-2"></i> <?= $global_lock_msg ?></div>
+    <?php endif; ?>
