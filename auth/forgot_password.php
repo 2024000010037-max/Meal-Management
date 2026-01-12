@@ -13,6 +13,15 @@ session_start();
         overflow-x: hidden;
         position: relative;
     }
+/* Floating Background Animation */
+    .food-icon {
+        position: absolute;
+        font-size: 3rem;
+        opacity: 0.4;
+        animation: float 6s ease-in-out infinite;
+        z-index: 0;
+        user-select: none;
+    }
 
 
 
