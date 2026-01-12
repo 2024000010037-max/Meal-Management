@@ -43,3 +43,13 @@ session_start();
         </div>
         <button id="verify-otp-btn" class="btn btn-primary w-100" onclick="verifyOTP()">Verify Code</button>
     </div>
+  <!-- Step 3: New Password -->
+    <div class="step" id="step-3">
+        <p class="text-muted small mb-3">Create a new password for your account.</p>
+        <div class="mb-3 text-start">
+            <label class="form-label text-secondary small fw-bold">NEW PASSWORD</label>
+            <input type="password" id="newpass" class="form-control" placeholder="Enter new password" required>
+        </div>
+        <button id="change-pass-btn" class="btn btn-primary w-100" onclick="changePassword()">Reset Password</button>
+    </div>
+
