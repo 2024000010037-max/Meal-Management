@@ -20,6 +20,16 @@ if (!$id) {
     header("Location: deposit.php?month=$month");
     exit;
 }
+// 1. Fetch Refund Details (it's already approved and amount is negative)
+$stmt = $pdo->prepare("SELECT d.*, u.full_name, u.email FROM deposits d JOIN users u ON d.user_id = u.id WHERE d.id = ? AND d.amount < 0");
+$stmt->execute([$id]);
+$deposit = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$deposit) {
+    header("Location: deposit.php?month=$month&error=not_found");
+    exit;
+}
+
 
 
 ?>
