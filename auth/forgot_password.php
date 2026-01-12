@@ -96,6 +96,12 @@ session_start();
 function showMessage(message, type) {
         alertMsg.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">${message}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
     }
+function sendOTP() {
+        const email = document.getElementById("email").value;
+        if (!email) {
+            showMessage("Please enter your email address.", "warning");
+            return;
+        }
 
 
 
