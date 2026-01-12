@@ -66,3 +66,13 @@ ob_start();
     .card-value { font-size: 1.8rem; font-weight: 700; margin-bottom: 0; }
     .card-sub { font-size: 0.8rem; opacity: 0.8; }
     </style>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-bold text-dark mb-0">Dashboard</h3>
+        <p class="text-muted small"></p>
+    </div>
+    <form method="GET" class="d-flex align-items-center gap-2 bg-white p-2 rounded shadow-sm">
+        <label class="small fw-bold text-muted mb-0"><i class="bi bi-calendar3 me-1"></i> Month:</label>
+        <input type="month" name="month" class="form-control form-control-sm border-0 bg-light fw-bold" value="<?= $selected_month ?>" onchange="this.form.submit()">
+    </form>
+</div>
