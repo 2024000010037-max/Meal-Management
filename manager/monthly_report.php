@@ -200,6 +200,18 @@ ob_start();
                                     <i class="bi bi-envelope-paper-fill"></i> Pay Taka
                                 </button>
                             <?php else: ?>
+<a href="deposit.php?user_id=<?= $row['user_id'] ?>&return_amount=<?= $row['balance'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-danger btn-sm fw-bold" style="font-size: 0.75rem;">
+                                    <i class="bi bi-arrow-return-left"></i> Return Cash
+                                </a>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 
     
 
