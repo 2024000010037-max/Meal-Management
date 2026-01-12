@@ -37,3 +37,32 @@ $net_balance = $total_deposit - $total_bazar;
 $pageTitle = "Dashboard";
 ob_start();
 ?>
+<!-- Styles for Dashboard -->
+    <style>
+    .dashboard-card {
+        border: none;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+    }
+    .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    .bg-gradient-success { background: linear-gradient(45deg, #1cc88a, #13855c); color: white; }
+    
+    .card-label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9; }
+    .card-value { font-size: 1.8rem; font-weight: 700; margin-bottom: 0; }
+    .card-sub { font-size: 0.8rem; opacity: 0.8; }
+    </style>
