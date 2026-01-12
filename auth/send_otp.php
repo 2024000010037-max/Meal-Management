@@ -68,6 +68,9 @@ $mail->send();
         echo "Mailer Error: {$mail->ErrorInfo}";
     }
 }
+else {
+    echo "Email address not found in our system.";
+}
 
 
 ?>
