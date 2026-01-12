@@ -265,6 +265,16 @@ ob_start();
                             <?php foreach($users as $u): 
                                 $photo = !empty($u['photo']) ? "../uploads/".$u['photo'] : "https://ui-avatars.com/api/?name=".urlencode($u['full_name'])."&background=random";
                             ?>
+                                <tr>
+                                <td class="ps-3">
+                                    <div class="d-flex align-items-center">
+                                        <img src="<?= $photo ?>" class="user-avatar-sm me-3">
+                                        <div>
+                                            <div class="fw-bold text-dark"><?= htmlspecialchars($u['full_name']) ?></div>
+                                            <div class="small text-muted">@<?= htmlspecialchars($u['username']) ?></div>
+                                        </div>
+                                    </div>
+                                </td>
                     
 <?php
 $content = ob_get_clean();
