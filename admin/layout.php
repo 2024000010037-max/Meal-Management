@@ -118,7 +118,7 @@
               <a href="meal_entry.php" class="<?= $cur == 'meal_entry.php' ? 'active' : '' ?>"><i class="bi bi-egg-fried me-2"></i> Meal Entry</a>
             <a href="deposit.php" class="<?= $cur == 'deposit.php' ? 'active' : '' ?>"><i class="bi bi-wallet2 me-2"></i> Deposit</a>
 
-
+           <a href="../auth/logout.php" class="text-danger mt-3"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
             
        </div>
     </div>
