@@ -111,4 +111,7 @@ div class="sidebar-header">
 <a href="deposit.php" class="<?= $cur == 'deposit.php' ? 'active' : '' ?>"><i class="bi bi-wallet2 me-2"></i> Deposit</a>
       </div>
     </div>
-
+ <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="top-header">
