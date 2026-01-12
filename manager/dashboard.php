@@ -59,6 +59,11 @@ if ($view_as === 'user') {
     $stmt->execute([$user_id, $selected_month]);
     $my_total_deposit = $stmt->fetchColumn() ?: 0;
 
+      // Personal Cost & Balance
+    $my_total_cost = $my_total_meal * $meal_rate;
+    $my_net_balance = $my_total_deposit - $my_total_cost;
+}
+
 
 
 
