@@ -157,6 +157,15 @@ ob_start();
         </div>
     </div>
 </div>
+<!-- Report Table -->
+<div class="card p-4">
+    <div class="d-flex justify-content-between align-items-center mb-3 no-print">
+        <input type="text" id="searchInput" class="form-control w-50" placeholder="Search member name...">
+        <div>
+            <button onclick="window.print()" class="btn btn-outline-danger me-2"><i class="bi bi-printer"></i> Print</button>
+            <a href="?month=<?= $selected_month ?>&export=excel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Excel</a>
+        </div>
+    </div>
 
 
 
