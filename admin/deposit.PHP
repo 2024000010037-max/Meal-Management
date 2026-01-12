@@ -501,3 +501,8 @@ div class="row g-3">
             <?php endif; ?>
         });
     </script>
+
+<?php
+$content = ob_get_clean();
+include "layout.php";
+?>
