@@ -8,5 +8,9 @@ include "../config/database.php";
 $pdo = (new Database())->connect();
 $user_id = $_SESSION['user_id'];
 $selected_month = $_GET['month'] ?? date('Y-m');
+// --- MESS STATS ---
+
+// 1. Total Active Members (Non-admin users with meals > 0 this month)
+$stmt = $pdo->prepare("
 
 
