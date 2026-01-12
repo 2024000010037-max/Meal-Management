@@ -20,6 +20,15 @@ if (!$user_id) {
     die("Invalid User ID");
 }
 
+// --- 1. FETCH USER DETAILS ---
+$stmt = $pdo->prepare("SELECT full_name, email FROM users WHERE id = ?");
+$stmt->execute([$user_id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$user || empty($user['email'])) {
+    echo "<script>alert('User email not found!'); window.location.href='monthly_report.php?month=$selected_month';</script>";
+    exit;
+}
 
 
 ?>
