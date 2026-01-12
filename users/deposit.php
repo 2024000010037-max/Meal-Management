@@ -60,4 +60,8 @@ ob_start();
         .card { border: none; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,.05); }
 .nav-pills .nav-link.active { background-color: #198754; } /* Green theme for money */
         .nav-pills .nav-link { color: #198754; }
-
+ .method-icon { width: 24px; text-align: center; display: inline-block; margin-right: 5px; }
+        .badge-bkash { background-color: #e2136e; color: white; }
+        .badge-nagad { background-color: #f7941d; color: white; }
+        .badge-bank { background-color: #0056b3; color: white; }
+        .badge-cash { background-color: #198754; color: white;
