@@ -251,7 +251,10 @@ function sendInvoice(userId, month, name) {
         fetch('send_invoice.php?ajax=1&user_id=' + userId + '&month=' + month)
             .then(response => response.json())
             .then(data => {
-
+ // Hide Loader
+                document.getElementById('loadingOverlay').style.display = 'none';
+                
+                
     
 
 ?>
