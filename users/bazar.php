@@ -83,6 +83,12 @@ ob_start();
         .nav-pills .nav-link.active { background-color: #0d6efd; }
         .status-badge { font-size: 0.75rem; padding: 4px 8px; border-radius: 12px; }
         @media print {
+  .no-print { display: none !important; }
+            .card { box-shadow: none !important; border: 1px solid #ddd !important; }
+            .sidebar, .top-header { display: none !important; }
+            .main-content { margin-left: 0 !important; }
+        }
+    </style>
 
 
     
