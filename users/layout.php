@@ -54,3 +54,5 @@ padding: 12px 25px;
         color: #fff;
             border-left-color: #3b82f6;
         }
+ /* MAIN CONTENT WRAPPER */
+       
