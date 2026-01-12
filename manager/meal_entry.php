@@ -209,16 +209,6 @@ function renderMealInput($uid, $type, $value, $isLocked) {
     ';
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+$content = ob_get_clean();
+include "layout.php";
 ?>
