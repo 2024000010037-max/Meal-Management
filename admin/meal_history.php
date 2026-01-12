@@ -135,3 +135,7 @@ function exportExcel() {
     window.location.href = url.toString();
 }
 </script>
+<?php
+$content = ob_get_clean();
+include "layout.php";
+?>
