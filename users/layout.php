@@ -133,3 +133,4 @@ $user_nav = $stmt_nav->fetch(PDO::FETCH_ASSOC);
                     <img src="<?= $nav_img ?>" class="rounded-circle me-2 shadow-sm" width="38" height="38" alt="User" style="object-fit: cover;">
      <span class="fw-bold text-dark d-none d-sm-inline"><?= $_SESSION['full_name'] ?? 'User' ?></span>
                 </a>
+ <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" aria-labelledby="userDropdown" style="border-radius: 
