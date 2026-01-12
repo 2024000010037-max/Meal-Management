@@ -198,3 +198,16 @@ $stmt = $pdo->prepare("
     WHERE d.status != 'pending' AND DATE_FORMAT(d.deposit_date, '%Y-%m') = ? 
     ORDER BY d.deposit_date DESC
 ");
+$stmt->execute([$selected_month]);
+$history = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// --- HANDLE EXCEL EXPORT ---
+if (isset($_GET['export']) && $_GET['export'] === 'excel') {
+    header("Content-Type: application/vnd.ms-excel");
+    header("Content-Disposition: attachment; filename=deposit_list_{$selected_month}.xls");
+    echo '<table border="1"><tr><th>Date</th><th>Member</th><th>Details</th><th>Approved By</th><th>Amount</th></tr>';
+    foreach($history as $h) {
+        $details = ucfirst($h['payment_method']) . ($h['transaction_id'] ? " ({$h['transaction_id']})" : "");
+        $mgr = $h['manager_name'] ?? 'N/A';
+        echo "<tr><td>{$h['deposit_date']}</td><td>{$h['full_name']}</td><td>{$details}</td><td>{$mgr}</td><td>{$h['amount']}</td></tr>";
+    }
