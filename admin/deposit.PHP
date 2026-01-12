@@ -16,3 +16,7 @@ use PHPMailer\PHPMailer\Exception;
 $msg = "";
 $selected_month = $_GET['month'] ?? date('Y-m');
 $manager_id = $_SESSION['user_id'];
+// Success Message from Approve Page
+if (isset($_GET['msg']) && $_GET['msg'] === 'approved') {
+    $msg = "<div class='alert alert-success alert-dismissible fade show'>Deposit Approved & Invoice Sent! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+}
