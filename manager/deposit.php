@@ -175,12 +175,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
                     $mail->isSMTP();
                     $mail->Host       = 'smtp.gmail.com';
                     $mail->SMTPAuth   = true;
-                    $mail->Username   = 'remarkhb.herlanit@gmail.com';
-                    $mail->Password   = 'mutq ddwp qkyu hzgo';
+                    $mail->Username   = 'yourmail@gmail.com';
+                    $mail->Password   = 'yourapp pasword';
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                     $mail->Port       = 587;
 
-                    $mail->setFrom('remarkhb.herlanit@gmail.com', 'Hostel Mess Manager');
+                    $mail->setFrom('yourmail@gmail.com', 'Hostel Mess Manager');
                     $mail->addAddress($user_info['email'], $user_info['full_name']);
 
                     $mail->isHTML(true);
