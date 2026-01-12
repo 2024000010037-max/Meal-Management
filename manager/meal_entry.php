@@ -160,6 +160,9 @@ ob_start();
 
                              <!-- Breakfast -->
                             <td><?php renderMealInput($uid, 'breakfast', $b, $lock_b); ?></td>
+                             <!-- Lunch -->
+                            <td><?php renderMealInput($uid, 'lunch', $l, $lock_l); ?></td>
+
 
 
 
