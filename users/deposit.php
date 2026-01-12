@@ -193,3 +193,6 @@ div class="col-12">
    <span class="badge badge-<?= strtolower($h['payment_method']) ?> text-uppercase"><?= $h['payment_method'] ?></span>
                                         <?php if($h['transaction_id']): ?><br><small class="text-muted"><?= htmlspecialchars($h['transaction_id']) ?></small><?php endif; ?>
                                     </td>
+ <td><small class="text-muted"><?= htmlspecialchars($h['manager_name'] ?? 'N/A') ?></small></td>
+                                    <td>
+                                        <?php if($h['status'] === 'approved'): ?>
