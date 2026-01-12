@@ -55,3 +55,13 @@ $user_deposit = $stmt->fetchColumn() ?: 0;
 $user_cost = $user_meals * $meal_rate;
 $balance = $user_deposit - $user_cost;
 $due_amount = abs($balance);
+
+// Only send if there is a due
+if ($balance >= 0) {
+    if (isset($_GET['ajax'])) {
+        echo json_encode(['status' => 'error', 'message' => 'User has no due amount to pay.']);
+        exit;
+    }
+    echo "<script>alert('User has no due amount to pay.'); window.location.href='monthly_report.php?month=$selected_month';</script>";
+    exit;
+}
