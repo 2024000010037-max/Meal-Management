@@ -78,6 +78,9 @@ session_start();
         font-weight: 600;
         transition: all 0.2s;
     }
+ .back-link:hover {
+        color: #c44569;
+    }
 
 
   
