@@ -142,3 +142,17 @@ ob_start();
                                     </a>
                                 </div>
                             </td>
+        
+                            <!-- Breakfast -->
+                            <td><?php renderMealInput($uid, 'breakfast', $b, $lock_b); ?></td>
+                            
+                            <!-- Lunch -->
+                            <td><?php renderMealInput($uid, 'lunch', $l, $lock_l); ?></td>
+                            
+                            <!-- Dinner -->
+                            <td><?php renderMealInput($uid, 'dinner', $d, $lock_d); ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
