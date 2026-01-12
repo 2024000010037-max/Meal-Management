@@ -69,3 +69,5 @@ ob_start();
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="fw-bold mb-0 text-success"><i class="bi bi-wallet2"></i> My Deposits</h3>
+ <form method="GET" class="d-flex align-items-center gap-2">
+            <label class="small fw-bold text-muted">Month:</label>
