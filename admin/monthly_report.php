@@ -236,3 +236,30 @@ ob_start();
             row.style.display = text.includes(filter) ? '' : 'none';
         });
     });
+   function sendInvoice(userId, month, name) {
+        if(!confirm('Send Due Invoice to ' + name + ' via Email?')) return;
+
+        // Show Loader
+        document.getElementById('loadingOverlay').style.display = 'flex';
+
+        fetch('send_invoice.php?ajax=1&user_id=' + userId + '&month=' + month)
+            .then(response => response.json())
+            .then(data => {
+                // Hide Loader
+                document.getElementById('loadingOverlay').style.display = 'none';
+                
+                if(data.status === 'success') {
+                    // Show Success Modal
+                    var myModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    myModal.show();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                document.getElementById('loadingOverlay').style.display = 'none';
+                alert('An error occurred while sending the email.');
+                console.error('Error:', error);
+            });
+    }
+</script>
