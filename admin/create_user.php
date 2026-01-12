@@ -237,6 +237,11 @@ ob_start();
                             <?php if($editUser): ?>
                                 <a href="create_user.php" class="btn btn-light w-100 text-muted">Cancel Edit</a>
                             <?php endif; ?>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
                     
 <?php
