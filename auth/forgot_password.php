@@ -34,3 +34,12 @@ session_start();
         </div>
         <button id="send-otp-btn" class="btn btn-primary w-100" onclick="sendOTP()">Send OTP</button>
     </div>
+<!-- Step 2: OTP -->
+    <div class="step" id="step-2">
+        <p class="text-muted small mb-3">Enter the 6-digit code sent to <strong id="user-email-display"></strong>.</p>
+        <div class="mb-3 text-start">
+            <label class="form-label text-secondary small fw-bold">OTP CODE</label>
+            <input type="text" id="otp" class="form-control" placeholder="123456" required>
+        </div>
+        <button id="verify-otp-btn" class="btn btn-primary w-100" onclick="verifyOTP()">Verify Code</button>
+    </div>
