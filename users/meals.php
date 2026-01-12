@@ -112,7 +112,11 @@ ob_start();
          .meal-input { text-align: center; font-weight: bold; font-size: 1.2rem; border: none; background: transparent; width: 60px; }
         .locked-section { opacity: 0.6; pointer-events: none; }
     </style>
- 
+     <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-1">Meal Management</h3>
+        </div>
+        
 
 
 
