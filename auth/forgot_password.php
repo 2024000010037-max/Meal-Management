@@ -154,4 +154,13 @@ function verifyOTP() {
             showMessage("Please enter a new password.", "warning");
             return;
         }
+    toggleButtonLoading('change-pass-btn', true);
+        alertMsg.innerHTML = '';
+
+        fetch("reset_password.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `newpass=${encodeURIComponent(newpass)}`
+        })
+
 
