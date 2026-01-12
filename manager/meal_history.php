@@ -51,11 +51,15 @@ echo '<table border="1">';
     $pageTitle = "Meal History";
 ob_start();
 ?>
-
-
-
-
-
+<style>
+    .card { border:none; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+    @media print {
+        .no-print { display: none !important; }
+        .card { box-shadow: none !important; border: 1px solid #ddd !important; }
+        .sidebar, .top-header { display: none !important; }
+        .main-content { margin-left: 0 !important; }
+    }
+</style>
 <div class="d-flex justify-content-between align-items-center mb-4 no-print">
     <div>
         <h3 class="fw-bold mb-0">Meal History</h3>
