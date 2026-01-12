@@ -137,3 +137,8 @@ div class="col-12">
                             <table class="table table-sm align-middle">
                                 <thead class="table-light">
                                     <tr
+ <th>Date</th>
+                                        <th>Details</th>
+                                        <th>Amount</th>
+                                        <th class="text-end">Action</th>
+                                    </tr>
