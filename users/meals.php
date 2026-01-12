@@ -198,7 +198,20 @@ ob_start();
                     </tr>
                 </thead>
                 <tbody>
-                    
+                 <?php foreach($meals as $m): ?>
+                    <tr>
+                        <td><?= date('d M, Y', strtotime($m['meal_date'])) ?></td>
+                        <td><?= $m['breakfast'] ?></td>
+                        <td><?= $m['lunch'] ?></td>
+                        <td><?= $m['dinner'] ?></td>
+                        <td class="fw-bold"><?= $m['breakfast'] + $m['lunch'] + $m['dinner'] ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+     
 
 
 
