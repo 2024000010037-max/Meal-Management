@@ -25,6 +25,13 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $meals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// Handle Excel Export
+if (isset($_GET['export']) && $_GET['export'] === 'excel') {
+    header("Content-Type: application/vnd.ms-excel");
+    header("Content-Disposition: attachment; filename=meal_history_{$start_date}_to_{$end_date}.xls");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+
 
 
 
