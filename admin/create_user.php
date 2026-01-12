@@ -211,7 +211,10 @@ ob_start();
                             <label class="form-label small fw-bold text-muted">USERNAME</label>
                             <input type="text" name="username" class="form-control" placeholder="e.g. towfiq123" value="<?= $editUser['username'] ?? '' ?>" required>
                         </div>
-
+<div class="col-12">
+                            <label class="form-label small fw-bold text-muted">PASSWORD</label>
+                            <input type="password" name="password" class="form-control" placeholder="<?= $editUser ? 'Leave blank to keep current' : '******' ?>" <?= $editUser ? '' : 'required' ?>>
+                        </div>
 
                     
 <?php
