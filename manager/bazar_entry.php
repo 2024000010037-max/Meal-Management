@@ -288,6 +288,19 @@ ob_start();
             const rows = tableBody.getElementsByTagName('tr');
             const totalDisplay = document.getElementById('totalAmount');
 
+            function calculateTotal() {
+                let total = 0;
+                Array.from(rows).forEach(row => {
+                    if (row.style.display !== 'none') {
+                        const cell = row.querySelector('.amount-cell');
+                        if (cell) total += parseFloat(cell.getAttribute('data-amount')) || 0;
+                    }
+                });
+                totalDisplay.textContent = total.toFixed(2);
+            }
+
+
+
 
 
 
