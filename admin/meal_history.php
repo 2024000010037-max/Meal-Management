@@ -51,3 +51,7 @@ if (isset($_GET['export']) && $_GET['export'] === 'excel') {
     echo '</table>';
     exit;
 }
+
+$pageTitle = "Meal History";
+ob_start();
+?>
