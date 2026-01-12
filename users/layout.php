@@ -43,3 +43,4 @@ padding: 10px 0;
  }
         .sidebar-menu a {
  display: block;
+padding: 12px 25px;
