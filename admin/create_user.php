@@ -176,7 +176,12 @@ ob_start();
     .avatar-upload { position: relative; width: 100px; height: 100px; margin: 0 auto 20px; }
     .avatar-preview { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #f1f5f9; }
     
-
+/* User List */
+    .user-avatar-sm { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .role-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+    .role-manager { background: #dbeafe; color: #1e40af; }
+    .role-user { background: #f1f5f9; color: #475569; }
+    .role-admin { background: #fce7f3; color: #9d174d; }
     
 </style>
 <?= $msg ?>
