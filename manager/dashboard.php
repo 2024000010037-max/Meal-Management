@@ -63,6 +63,17 @@ if ($view_as === 'user') {
     $my_total_cost = $my_total_meal * $meal_rate;
     $my_net_balance = $my_total_deposit - $my_total_cost;
 }
+<!-- Styles for Dashboard -->
+    <style>
+    .dashboard-card {
+        border: none;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+    }
+
+    
 
 
 
