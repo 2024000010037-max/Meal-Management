@@ -299,6 +299,21 @@ ob_start();
                 totalDisplay.textContent = total.toFixed(2);
             }
 
+            if(searchInput) {
+                searchInput.addEventListener('keyup', function() {
+                    const filter = searchInput.value.toLowerCase();
+                    Array.from(rows).forEach(row => {
+                        const text = row.textContent.toLowerCase();
+                        row.style.display = text.includes(filter) ? '' : 'none';
+                    });
+                    calculateTotal();
+                });
+                calculateTotal();
+            }
+        });
+    </script>
+
+
 
 
 
