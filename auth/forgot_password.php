@@ -57,6 +57,15 @@ session_start();
         border-color: #ff9f43;
         box-shadow: 0 0 0 4px rgba(255, 159, 67, 0.2);
     }
+ .btn-primary {
+        background: linear-gradient(45deg, #ff9f43, #ee5253);
+        border: none;
+        border-radius: 12px;
+        padding: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: transform 0.2s;
+    }
 
 
   
