@@ -136,3 +136,5 @@ $user_nav = $stmt_nav->fetch(PDO::FETCH_ASSOC);
  <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" aria-labelledby="userDropdown" style="border-radius: 
 12px; min-width: 200px;">
                     <li><a class="dropdown-item py-2" href="account.php"><i class="bi bi-person-circle me-2 text-primary"></i> My
+Account</a></li>
+                    <li><a class="dropdown-item py-2" href="../auth/change_password.php"><i class="bi bi-key me-2 text-warning"></i> Change Password</a></li>
