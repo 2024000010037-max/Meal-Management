@@ -26,3 +26,4 @@ ob_start();
 <img src="<?= $profile_img ?>" class="rounded-circle mx-auto d-block mb-3 shadow" width="90" height="90" 
 alt="Profile" style="object-fit: cover;">
 <h4 class="fw-bold mb-1"><?= htmlspecialchars($user['full_name']) ?></h4>
+<span class="badge bg-white text-primary rounded-pill px-3"><?= ucfirst($user['role']) ?></s
