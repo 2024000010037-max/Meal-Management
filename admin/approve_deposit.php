@@ -111,3 +111,20 @@ td style='text-align: right;'>
             <td style='border: 1px solid #ddd; padding: 10px; text-align: right; color: #2e7d32; font-weight: bold; font-size: 1.2em;'>৳ " . number_format($deposit['amount'], 2) . "</td>
         </tr>
     </table>
+<div style='background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;'>
+        <h4 style='margin: 0 0 10px 0; font-size: 14px; color: #555;'>Account Summary (Current Month)</h4>
+        <table style='width: 100%; font-size: 13px;'>
+            <tr>
+                <td>Total Deposit:</td>
+                <td style='text-align: right;'>৳ " . number_format($user_total_deposit, 2) . "</td>
+            </tr>
+            <tr>
+                <td>Current Balance:</td>
+                <td style='text-align: right; font-weight: bold; color: " . ($balance >= 0 ? 'green' : 'red') . ";'>
+                    " . ($balance >= 0 ? '+' : '') . number_format($balance, 2) . "
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+";
