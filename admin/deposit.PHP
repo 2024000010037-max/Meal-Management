@@ -161,4 +161,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
                     $mail->Password   = 'your app pass';
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                     $mail->Port       = 587;
+                   $mail->setFrom('youremail@gmail.com', 'Hostel Mess Manager');
+                    $mail->addAddress($user_info['email'], $user_info['full_name']);
+
+                    $mail->isHTML(true);
+                    $mail->Subject = "Deposit Received - ৳ " . number_format($amount, 2);
+                    $mail->Body    = "Dear {$user_info['full_name']},<br><br>We have received your deposit. Here is your receipt.<br><br>" . $invoice_html;
+                    $mail->addStringAttachment($invoice_html, "Receipt_{$invoice_no}.html", 'base64', 'text/html');
 
