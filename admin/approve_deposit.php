@@ -140,3 +140,18 @@ if (!empty($deposit['email'])) {
         $mail->Password   = 'apppassword';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
+       $mail->setFrom('yourmail@gmail.com', 'Hostel Mess Manager');
+        $mail->addAddress($deposit['email'], $deposit['full_name']);
+
+        $mail->isHTML(true);
+        $mail->Subject = "Deposit Approved - ৳ " . number_format($deposit['amount'], 2);
+        $mail->Body    = "Dear {$deposit['full_name']},<br><br>Your deposit request has been approved.<br><br>" . $invoice_html;
+        
+        // Attach HTML Invoice
+        $mail->addStringAttachment($invoice_html, "Receipt_{$invoice_no}.html", 'base64', 'text/html');
+
+        $mail->send();
+    } catch (Exception $e) {
+        // Log error but don't stop flow
+    }
+}
