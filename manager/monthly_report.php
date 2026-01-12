@@ -9,6 +9,12 @@ $pdo = (new Database())->connect();
 
 $selected_month = $_GET['month'] ?? date('Y-m');
 
+// --- 1. CALCULATE GLOBAL MESS STATS ---
+// Total Mess Meals
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_mess_meals = $stmt->fetchColumn() ?: 0;
+
 
 
 
