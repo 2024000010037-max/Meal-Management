@@ -341,3 +341,19 @@ tbody>
                     <?php if($edit_data): ?>
                         <input type="hidden" name="edit_id" value="<?= $edit_data['id'] ?>">
                     <?php endif; ?>
+div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Date</label>
+                            <input type="date" name="deposit_date" class="form-control" value="<?= $edit_data['deposit_date'] ?? date('Y-m-d') ?>" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Member</label>
+                            <select name="user_id" class="form-select select2" required>
+                                <option value="">Select Member</option>
+                                <?php foreach($users as $u): ?>
+                                    <option value="<?= $u['id'] ?>" <?= (($edit_data && $edit_data['user_id'] == $u['id']) || ($pre_user_id == $u['id'])) ? 'selected' : '' ?>>
+                                        <?= htmlspecialchars($u['full_name']) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
