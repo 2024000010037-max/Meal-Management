@@ -28,6 +28,10 @@ $total_mess_deposit = $stmt->fetchColumn() ?: 0;
 // Meal Rate
 $meal_rate = ($total_mess_meals > 0) ? ($total_mess_bazar / $total_mess_meals) : 0;
 
+// --- 2. FETCH USER DATA ---
+// Active Users (Non-Admin)
+$users = $pdo->query("SELECT id, full_name, role FROM users WHERE status = 1 AND role != 'admin' ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 ?>
