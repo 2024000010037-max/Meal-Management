@@ -40,4 +40,7 @@ type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
 }
 // --- FETCH DATA ---
 // 1. My Pending Requests
+$stmt = $pdo->prepare("SELECT * FROM deposits WHERE user_id = ? AND status = 'pending' ORDER BY deposit_date DESC");
+$stmt->execute([$user_id]);
+$my_pending = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
