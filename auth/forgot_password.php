@@ -80,6 +80,19 @@ session_start();
         if (stepNum === 3) step3.classList.add('active');
         if (stepNum === 4) finalSuccess.classList.add('active');
     }
+ function toggleButtonLoading(btnId, isLoading) {
+        const btn = document.getElementById(btnId);
+        if (isLoading) {
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+        } else {
+            btn.disabled = false;
+            // Reset text based on ID
+            if(btnId === 'send-otp-btn') btn.innerText = 'Send OTP';
+            if(btnId === 'verify-otp-btn') btn.innerText = 'Verify Code';
+            if(btnId === 'change-pass-btn') btn.innerText = 'Reset Password';
+        }
+    }
 
 
 
