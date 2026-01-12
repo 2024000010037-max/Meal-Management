@@ -215,6 +215,10 @@ ob_start();
                             <label class="form-label small fw-bold text-muted">PASSWORD</label>
                             <input type="password" name="password" class="form-control" placeholder="<?= $editUser ? 'Leave blank to keep current' : '******' ?>" <?= $editUser ? '' : 'required' ?>>
                         </div>
+          <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">PHONE</label>
+                            <input type="text" name="phone" class="form-control" placeholder="017..." value="<?= $editUser['phone'] ?? '' ?>" required>
+                        </div>
 
                     
 <?php
