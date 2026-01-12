@@ -29,3 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['meals'])) {
         $stmtCheck = $pdo->prepare("SELECT id FROM meals WHERE user_id = ? AND meal_date = ?");
         $stmtInsert = $pdo->prepare("INSERT INTO meals (user_id, meal_date, breakfast, lunch, dinner) VALUES (?, ?, ?, ?, ?)");
         $stmtUpdate = $pdo->prepare("UPDATE meals SET breakfast = ?, lunch = ?, dinner = ? WHERE id = ?");
+     foreach ($_POST['meals'] as $uid => $m) {
+            // Sanitize inputs
+            $b = isset($m['breakfast']) ? floatval($m['breakfast']) : 0;
+            $l = isset($m['lunch']) ? floatval($m['lunch']) : 0;
+            $d = isset($m['dinner']) ? floatval($m['dinner']) : 0;
+
+            // Check if entry exists
+            $stmtCheck->execute([$uid, $selected_date]);
+            $existing_id = $stmtCheck->fetchColumn();
