@@ -188,6 +188,24 @@ if ($view_as === 'user') {
     </div>
     <?php else: ?>
 
+ <!-- Total Due (Deficit) -->
+    <div class="col-md-6 col-lg-6">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm border-start border-5 border-danger">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="card-label text-danger">Total Due</div>
+                    <h2 class="card-value text-dark mt-2">-৳ <?= number_format(abs($net_balance), 0) ?></h2>
+                    <div class="card-sub text-muted mt-1">Current Deficit</div>
+                </div>
+                <div class="card-icon bg-danger bg-opacity-10 text-danger">
+                    <i class="bi bi-graph-down-arrow"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+    
+    <?php else: ?>
 
 
 
