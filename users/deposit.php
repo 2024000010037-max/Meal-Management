@@ -103,3 +103,8 @@ div class="col-12">
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">Payment Method</label>
                                     <select name="payment_method" class="form-select" required>
+ <?php $methods = ['cash', 'bkash', 'nagad', 'bank', 'other']; ?>
+                                        <?php foreach($methods as $m): ?>
+                                            <option value="<?= $m ?>"><?= ucfirst($m) ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
