@@ -256,3 +256,10 @@ ob_start();
             .main-content { margin-left: 0 !important; }
         }
     </style>
+    <div class="d-flex justify-content-between align-items-center mb-4 no-print">
+        <h3 class="fw-bold mb-0 text-success"><i class="bi bi-wallet2"></i> Deposit Section</h3>
+        <form method="GET" class="d-flex align-items-center gap-2">
+            <label class="small fw-bold text-muted">Month:</label>
+            <input type="month" name="month" class="form-control form-control-sm" value="<?= $selected_month ?>" onchange="this.form.submit()">
+        </form>
+    </div>
