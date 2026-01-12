@@ -109,3 +109,6 @@ div class="sidebar-header">
  <a href="meals.php" class="<?= $cur == 'meals.php' ? 'active' : '' ?>"><i class="bi bi-egg-fried me-2"></i> My Meals</a>    
 <a href="bazar.php" class="<?= $cur == 'bazar.php' ? 'active' : '' ?>"><i class="bi bi-cart me-2"></i> Bazar List</a>
 <a href="deposit.php" class="<?= $cur == 'deposit.php' ? 'active' : '' ?>"><i class="bi bi-wallet2 me-2"></i> Deposit</a>
+      </div>
+    </div>
+
