@@ -27,6 +27,20 @@ session_start();
         50% { transform: translateY(-20px) rotate(10deg); }
     }
 
+    /* Glassmorphism Card */
+    .login-card {
+        width: 90%;
+        max-width: 400px;
+        padding: 40px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        z-index: 10;
+        border: 1px solid rgba(255,255,255,0.6);
+        animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
 
 
   
