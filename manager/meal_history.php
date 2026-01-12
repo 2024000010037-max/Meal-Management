@@ -117,6 +117,13 @@ ob_start();
                         <td class="text-center"><?= $m['dinner'] ?></td>
                         <td class="text-center fw-bold"><?= $total ?></td>
                     </tr>
+     <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
 
 ?>
