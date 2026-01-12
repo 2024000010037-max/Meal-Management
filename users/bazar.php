@@ -180,5 +180,13 @@ ob_start();
                                 <label class="form-label small fw-bold">Date</label>
                                 <input type="date" name="bazar_date" class="form-control" value="<?= date('Y-m-d') ?>" required>
                             </div>
+  <div class="mb-3">
+                                <label class="form-label small fw-bold">Shopper (Attached Person)</label>
+                                <select name="shopper_ids[]" class="form-select select2" multiple required>
+                                    <?php foreach($users as $u): ?>
+                                        <option value="<?= $u['id'] ?>" <?= $u['id'] == $userId ? 'selected' : '' ?>><?= htmlspecialchars($u['full_name']) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
 
    
