@@ -9,5 +9,8 @@ $pdo = (new Database())->connect();
 
 // Set Timezone
 date_default_timezone_set('Asia/Dhaka');
+$userId = $_SESSION['user_id'];
+$selected_date = $_GET['date'] ?? date('Y-m-d');
+$msg = "";
 
 
