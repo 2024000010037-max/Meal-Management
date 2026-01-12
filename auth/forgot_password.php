@@ -52,4 +52,11 @@ session_start();
         </div>
         <button id="change-pass-btn" class="btn btn-primary w-100" onclick="changePassword()">Reset Password</button>
     </div>
+<!-- Step 4: Success Message -->
+    <div class="step" id="final-success">
+        <div class="text-success mb-3" style="font-size: 3rem;">🎉</div>
+        <h5 class="fw-bold text-dark">Password Reset!</h5>
+        <p class="text-muted small mb-4">Your password has been changed successfully.</p>
+        <a href="login.php" class="btn btn-primary w-100">Go to Login</a>
+    </div>
 
