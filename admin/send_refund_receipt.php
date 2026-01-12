@@ -58,3 +58,15 @@ $user_total_deposit = $stmt->fetchColumn() ?: 0;
 
 $user_cost = $user_meals * $meal_rate;
 $balance = $user_total_deposit - $user_cost;
+
+// 3. Generate Invoice HTML
+$invoice_no = "REF-" . date('Ymd') . "-" . $deposit['id'];
+$date_time = date('d M, Y h:i A');
+
+$invoice_html = "
+<div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; background: #fff;'>
+    <div style='text-align: center; border-bottom: 2px solid #dc3545; padding-bottom: 10px; margin-bottom: 20px;'>
+        <h2 style='color: #dc3545; margin: 0;'>REFUND RECEIPT</h2>
+        <p style='color: #777; margin: 5px 0;'>Hostel Mess Management</p>
+    </div>
+    
