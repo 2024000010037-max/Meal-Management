@@ -122,3 +122,4 @@ toggle="dropdown" aria-expanded="false">
                     <?php
  $nav_img = "https://ui-avatars.com/api/?name=" . urlencode($_SESSION['full_name'] ?? 'User') . "&background=0D6EFD&color=fff";
 if(isset($_SESSION['user_id']) && isset($pdo)) {
+ $stmt_nav = $pdo->prepare("SELECT photo FROM users WHERE id = ?");
