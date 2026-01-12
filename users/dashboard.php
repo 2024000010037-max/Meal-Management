@@ -93,6 +93,18 @@ ob_start();
         <input type="month" name="month" class="form-control form-control-sm border-0 bg-light fw-bold" value="<?= $selected_month ?>" onchange="this.form.submit()">
     </form>
 </div>
+   <div class="row g-4">
+    <!-- MESS OVERVIEW ROW -->
+    
+    <!-- Active Members -->
+    <div class="col-md-3 col-6">
+        <div class="card dashboard-card bg-white p-3 h-100 shadow-sm">
+            <div class="card-label text-primary">Active Members</div>
+            <h3 class="card-value text-dark mt-2"><?= $total_members ?></h3>
+            <div class="card-sub text-muted">Total Mess</div>
+        </div>
+    </div>
+
 
 
  
