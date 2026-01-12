@@ -31,3 +31,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
     $remarks = $_POST['remarks'];
  // Insert with status = pending
     $stmt = $pdo->prepare("INSERT INTO deposits (user_id, amount, payment_method, transaction_id, deposit_date, remarks, status) VALUES (?, ?, ?, ?, ?, ?, 'pending')");
+ if ($stmt->execute([$user_id, $amount, $method, $tnx_id, $date, $remarks])) {
