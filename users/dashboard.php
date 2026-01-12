@@ -20,5 +20,9 @@ $stmt = $pdo->prepare("
     AND DATE_FORMAT(m.meal_date, '%Y-%m') = ? 
     AND (m.breakfast + m.lunch + m.dinner) > 0
 ");
+$stmt->execute([$selected_month]);
+$total_members = $stmt->fetchColumn() ?: 0;
+
+// 2. Total Meal (Mess - Month)
 
 
