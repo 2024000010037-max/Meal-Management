@@ -172,6 +172,10 @@ ob_start();
     .form-control:focus { box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); border-color: #3b82f6; }
     .btn-primary { border-radius: 10px; padding: 12px 24px; font-weight: 600; }
 
+    /* Avatar Upload */
+    .avatar-upload { position: relative; width: 100px; height: 100px; margin: 0 auto 20px; }
+    .avatar-preview { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #f1f5f9; }
+    
 
     
 </style>
