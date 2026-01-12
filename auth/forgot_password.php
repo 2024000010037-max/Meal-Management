@@ -92,9 +92,12 @@ session_start();
         from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
-
-  
+ /* Loading Spinner for buttons */
+    .spinner-border-sm {
+        width: 1rem;
+        height: 1rem;
+        border-width: 0.15em;
+    }
 </style> 
 </head>
 <body class="d-flex align-items-center justify-content-center">
