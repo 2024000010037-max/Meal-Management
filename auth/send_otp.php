@@ -62,7 +62,8 @@ if ($user) {
                 </div>
             </div>
         ";
-
+$mail->send();
+        echo "success";
 
 
 
