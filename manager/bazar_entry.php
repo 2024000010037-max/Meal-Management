@@ -130,6 +130,53 @@ ob_start();
 
     <div class="tab-content" id="pills-tabContent">
 
+<!-- PENDING REQUESTS -->
+        <div class="tab-pane fade show active" id="pills-pending">
+            <div class="card p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Submitted By</th>
+                                <th>Shopper</th>
+                                <th>Details</th>
+                                <th>Amount</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if(empty($pending_reqs)): ?>
+                                <tr><td colspan="6" class="text-center text-muted py-4">No pending requests.</td></tr>
+                            <?php else: ?>
+                                <?php foreach($pending_reqs as $req): ?>
+                                <tr>
+                                    <td><?= date('d M', strtotime($req['bazar_date'])) ?></td>
+                                    <td><?= htmlspecialchars($req['submitter_name']) ?></td>
+                                    <td>
+                                        <?php 
+                                            $s_ids = explode(',', $req['shopper_ids'] ?? '');
+                                            $s_names = array_map(fn($id) => $userMap[$id] ?? '', $s_ids);
+                                            echo '<span class="badge bg-info text-dark">' . htmlspecialchars(implode(', ', array_filter($s_names))) . '</span>';
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?= htmlspecialchars($req['details']) ?>
+                                        <?php if($req['remarks']): ?><br><small class="text-muted"><?= htmlspecialchars($req['remarks']) ?></small><?php endif; ?>
+                                    </td>
+                                    <td class="fw-bold"><?= number_format($req['amount'], 2) ?></td>
+                                    <td class="text-end">
+                                        <a href="?action=approve&id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="btn btn-success action-btn" title="Approve"><i class="bi bi-check-lg"></i></a>
+                                        <a href="?action=reject&id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-danger action-btn" title="Reject" onclick="return confirm('Reject this request?')"><i class="bi bi-x-lg"></i></a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
 
 ?>
