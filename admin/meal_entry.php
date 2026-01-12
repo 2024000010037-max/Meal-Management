@@ -80,3 +80,14 @@ $lock_d = false; // Dinner Lock
 $global_lock_msg = "";
 
 // Manager & Admin have no time restrictions ("All possible")
+$pageTitle = "Meal Entry";
+ob_start();
+?>
+    <style>
+        .card { border:none; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+        .table-input-group { min-width: 120px; }
+        .form-control-sm { text-align: center; font-weight: bold; }
+        .btn-qty { width: 30px; padding: 0; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .locked-input { background-color: #f8f9fa; border-color: #e9ecef; color: #6c757d; }
+        .user-role-badge { font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: #e2e8f0; color: #475569; margin-left: 5px; }
+    </style>
