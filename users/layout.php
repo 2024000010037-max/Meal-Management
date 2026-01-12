@@ -37,3 +37,4 @@ color: #fff;
             margin: 0;
             font-weight: 700;
         }
+.sidebar-menu {
