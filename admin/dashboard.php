@@ -155,3 +155,19 @@ ob_start();
     </div>
 
     <?php if ($net_balance >= 0): ?>
+    <!-- Total Advance (Surplus) -->
+    <div class="col-md-6 col-lg-6">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm border-start border-5 border-success">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="card-label text-success">Total Advance</div>
+                    <h2 class="card-value text-dark mt-2">+৳ <?= number_format($net_balance, 0) ?></h2>
+                    <div class="card-sub text-muted mt-1">Current Surplus</div>
+                </div>
+                <div class="card-icon bg-success bg-opacity-10 text-success">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php else: ?>
