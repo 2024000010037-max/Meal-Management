@@ -4,10 +4,12 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
 
 
 
   
+</style> 
 </head>
 <body class="d-flex align-items-center justify-content-center">
 <!-- Floating Food Icons -->
