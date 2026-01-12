@@ -71,6 +71,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['toggle_auto'])) {
  if ($existing_id) {
         $stmt = $pdo->prepare("UPDATE meals SET breakfast=?, lunch=?, dinner=? WHERE id=?");
         $stmt->execute([$b, $l, $d, $existing_id]);
+  } else {
+        if ($b > 0 || $l > 0 || $d > 0) {
+            $stmt = $pdo->prepare("INSERT INTO meals (user_id, meal_date, breakfast, lunch, dinner) VALUES (?,?,?,?,?)");
+            $stmt->execute([$userId, $date, $b, $l, $d]);
+        }
+    }
 
 
 
