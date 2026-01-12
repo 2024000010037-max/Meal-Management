@@ -188,3 +188,21 @@ ob_start();
                         <td class="text-end fw-bold <?= $row['balance'] < 0 ? 'text-danger' : 'text-success' ?>">
                             <?= ($row['balance'] >= 0 ? "+" : "") . number_format($row['balance'], 2) ?>
                         </td>
+<td class="text-center">
+                            <?php if($row['balance'] < 0): ?>
+                                <button type="button" class="btn btn-danger btn-sm fw-bold" style="font-size: 0.75rem;" onclick="sendInvoice(<?= $row['user_id'] ?>, '<?= $selected_month ?>', '<?= htmlspecialchars($row['name']) ?>')">
+                                    <i class="bi bi-envelope-paper-fill"></i> Pay Taka
+                                </button>
+                            <?php else: ?>
+                                <a href="deposit.php?user_id=<?= $row['user_id'] ?>&return_amount=<?= $row['balance'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-danger btn-sm fw-bold" style="font-size: 0.75rem;">
+                                    <i class="bi bi-arrow-return-left"></i> Return Cash
+                                </a>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
