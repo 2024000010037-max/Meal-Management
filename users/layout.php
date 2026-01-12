@@ -42,3 +42,4 @@ padding: 10px 0;
  flex-grow: 1;
  }
         .sidebar-menu a {
+ display: block;
