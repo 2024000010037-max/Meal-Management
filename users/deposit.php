@@ -196,3 +196,8 @@ div class="col-12">
  <td><small class="text-muted"><?= htmlspecialchars($h['manager_name'] ?? 'N/A') ?></small></td>
                                     <td>
                                         <?php if($h['status'] === 'approved'): ?>
+   <span class="badge bg-success">Approved</span>
+                                        <?php else: ?>
+                                            <span class="badge bg-danger">Rejected</span>
+                                        <?php endif; ?>
+                                    </td>
