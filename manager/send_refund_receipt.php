@@ -33,5 +33,6 @@ if (!$deposit) {
 $user_id = $deposit['user_id'];
 $current_month = date('Y-m', strtotime($deposit['deposit_date']));
 
+all member meal rate calculate
 
 ?>
