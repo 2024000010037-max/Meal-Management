@@ -56,4 +56,6 @@ $history = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $pageTitle = "My Deposits";
 ob_start();
 ?>
+ <style>
+        .card { border: none; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,.05); }
 
