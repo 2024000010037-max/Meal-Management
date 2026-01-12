@@ -332,3 +332,12 @@ tbody>
                 </div>
             </div>
         </div>
+  <!-- ADD / EDIT FORM -->
+        <div class="tab-pane fade <?= $edit_data ? 'show active' : '' ?>" id="pills-add">
+            <div class="card p-4" style="max-width: 600px; margin: 0 auto;">
+                <h5 class="fw-bold mb-3 <?= $pre_amount ? 'text-danger' : 'text-success' ?>"><?= $edit_data ? 'Update Deposit Entry' : ($pre_amount ? 'Return Cash / Refund' : 'Add Direct Deposit') ?></h5>
+                <form method="POST" action="deposit.php?month=<?= $selected_month ?>">
+                    <input type="hidden" name="save_deposit" value="1">
+                    <?php if($edit_data): ?>
+                        <input type="hidden" name="edit_id" value="<?= $edit_data['id'] ?>">
+                    <?php endif; ?>
