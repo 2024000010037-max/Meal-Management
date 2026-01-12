@@ -91,3 +91,14 @@ ob_start();
         .locked-input { background-color: #f8f9fa; border-color: #e9ecef; color: #6c757d; }
         .user-role-badge { font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: #e2e8f0; color: #475569; margin-left: 5px; }
     </style>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-0">Daily Meal Entry</h3>
+            <p class="text-muted small mb-0">Manage meals for all members</p>
+        </div>
+        <form method="GET" class="d-flex gap-2">
+            <a href="meal_history.php" class="btn btn-outline-primary"><i class="bi bi-clock-history me-1"></i> History</a>
+            <input type="date" name="date" class="form-control" value="<?= $selected_date ?>" onchange="this.form.submit()">
+        </form>
+    </div>
