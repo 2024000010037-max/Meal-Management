@@ -212,3 +212,15 @@ ob_start();
             <span class="fw-bold">Deposits</span>
         </a>
     </div>
+    <div class="col-6 col-md-3 mb-3">
+        <a href="meal_history.php" class="btn btn-outline-secondary w-100 p-3 h-100 d-flex flex-column align-items-center justify-content-center gap-2 rounded-4">
+            <i class="bi bi-clock-history fs-3"></i>
+            <span class="fw-bold">History</span>
+        </a>
+    </div>
+</div>
+
+<?php
+$content = ob_get_clean();
+include "layout.php";
+?>
