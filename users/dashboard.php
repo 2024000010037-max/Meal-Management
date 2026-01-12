@@ -207,6 +207,17 @@ ob_start();
     </div>
 
 </div>
+<!-- Quick Actions -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h5 class="fw-bold text-secondary mb-3">Quick Actions</h5>
+    </div>
+    <div class="col-6 col-md-3 mb-3">
+        <a href="meals.php" class="btn btn-outline-primary w-100 p-3 h-100 d-flex flex-column align-items-center justify-content-center gap-2 rounded-4">
+            <i class="bi bi-egg-fried fs-3"></i>
+            <span class="fw-bold">My Meals</span>
+        </a>
+    </div>
      
 
 
