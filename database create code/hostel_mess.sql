@@ -66,3 +66,8 @@ ALTER TABLE `deposits`
 
 ALTER TABLE `deposits`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `deposits`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `manager_id` (`manager_id`);
