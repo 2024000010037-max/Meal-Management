@@ -69,3 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
         $stmt = $pdo->prepare("SELECT created_at, TIMESTAMPDIFF(SECOND, created_at, NOW()) as time_diff FROM deposits WHERE id = ?");
         $stmt->execute([$edit_id]);
         $dep = $stmt->fetch(PDO::FETCH_ASSOC);
+        $can_edit = false;
+        if ($_SESSION['role'] === 'admin') {
+            $can_edit = true;
+        } elseif ($_SESSION['role'] === 'manager' && isset($dep['time_diff']) && $dep['time_diff'] >= 0 && $dep['time_diff'] <= 600) {
+            $can_edit = true;
+        }
