@@ -288,6 +288,13 @@ ob_start();
                                         <span class="role-badge role-user">User</span>
                                     <?php endif; ?>
                                 </td>
+                                    <td>
+                                    <?php if($u['status']): ?>
+                                        <span class="badge bg-success">Active</span>
+                                    <?php else: ?>
+                                        <span class="badge bg-danger">Inactive</span>
+                                    <?php endif; ?>
+                                </td>
                     
 <?php
 $content = ob_get_clean();
