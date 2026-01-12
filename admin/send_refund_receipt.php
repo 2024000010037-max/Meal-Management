@@ -140,3 +140,8 @@ if (!empty($deposit['email'])) {
         // Log error but don't stop flow
     }
 }
+
+// 5. Redirect
+header("Location: deposit.php?month=$month&msg=refund_sent");
+exit;
+?>
