@@ -346,7 +346,6 @@ if ($view_as === 'user') {
     </div>
 </div>
 <?php
-
-
-
+$content = ob_get_clean();
+include "layout.php";
 ?>
