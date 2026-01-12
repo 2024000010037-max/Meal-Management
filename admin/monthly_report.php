@@ -48,3 +48,14 @@ foreach ($users as $u) {
         $deposit = $user_deposits_map[$uid] ?? 0;
         $cost = $meals * $meal_rate;
         $balance = $deposit - $cost; // Positive = Advance, Negative = Due
+        $report_data[] = [
+            'user_id' => $uid,
+            'name' => $u['full_name'],
+            'role' => ucfirst($u['role']),
+            'meals' => $meals,
+            'deposit' => $deposit,
+            'cost' => $cost,
+            'balance' => $balance
+        ];
+    }
+}
