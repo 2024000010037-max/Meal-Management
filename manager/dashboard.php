@@ -54,6 +54,12 @@ if ($view_as === 'user') {
     $stmt->execute([$user_id, $selected_month]);
     $my_total_meal = $stmt->fetchColumn() ?: 0;
 
+     // Personal Deposit
+    $stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE user_id = ? AND status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
+    $stmt->execute([$user_id, $selected_month]);
+    $my_total_deposit = $stmt->fetchColumn() ?: 0;
+
+
 
 
 
