@@ -49,6 +49,12 @@ $net_balance = $total_deposit - $total_bazar;
 if ($view_as === 'user') {
     $user_id = $_SESSION['user_id'];
 
+    // Personal Meals
+    $stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE user_id = ? AND DATE_FORMAT(meal_date, '%Y-%m') = ?");
+    $stmt->execute([$user_id, $selected_month]);
+    $my_total_meal = $stmt->fetchColumn() ?: 0;
+
+
 
 
 
