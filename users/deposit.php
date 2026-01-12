@@ -142,3 +142,8 @@ div class="col-12">
                                         <th>Amount</th>
                                         <th class="text-end">Action</th>
                                     </tr>
+ </thead>
+                                <tbody>
+                                    <?php if(empty($my_pending)): ?>
+                                        <tr><td colspan="4" class="text-center text-muted py-4">No pending requests.</td></tr>
+                                    <?php else: ?>
