@@ -181,4 +181,8 @@ div class="col-12">
                                 <th>Status</th>
                                 <th class="text-end">Amount</th>
                             </tr>
-                                   
+         </thead>
+                        <tbody>
+                            <?php if(empty($history)): ?>
+                                <tr><td colspan="5" class="text-center text-muted py-4">No records found for this month.</td></tr>
+                            <?php else: ?                           
