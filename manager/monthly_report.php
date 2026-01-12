@@ -262,6 +262,13 @@ function sendInvoice(userId, month, name) {
                     alert(data.message);
                 }
             })
+.catch(error => {
+                document.getElementById('loadingOverlay').style.display = 'none';
+                alert('An error occurred while sending the email.');
+                console.error('Error:', error);
+            });
+    }
+</script>
 
     
 
