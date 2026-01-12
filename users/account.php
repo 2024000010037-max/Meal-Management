@@ -27,3 +27,7 @@ ob_start();
 alt="Profile" style="object-fit: cover;">
 <h4 class="fw-bold mb-1"><?= htmlspecialchars($user['full_name']) ?></h4>
 <span class="badge bg-white text-primary rounded-pill px-3"><?= ucfirst($user['role']) ?></s
+  </div>
+            
+            <!-- Profile Details -->
+            <div class="card-body p-4">
