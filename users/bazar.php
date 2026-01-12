@@ -142,4 +142,11 @@ ob_start();
                                     <td>
                                         <div class="fw-bold small">
                                             <?php 
-    
+        $s_ids = explode(',', $b['shopper_ids'] ?? '');
+                                                $s_names = array_map(fn($id) => $userMap[$id] ?? '', $s_ids);
+                                                echo htmlspecialchars(implode(', ', array_filter($s_names)));
+                                            ?>
+                                        </div>
+                                    </td>
+                                    <td>
+
