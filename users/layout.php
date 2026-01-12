@@ -27,3 +27,5 @@ z-index: 1000;
             display: flex;
             flex-direction: column;
         }
+.sidebar-header {
+            padding: 20px;
