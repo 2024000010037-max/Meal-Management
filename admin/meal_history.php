@@ -11,3 +11,14 @@ $pdo = (new Database())->connect();
 $start_date = $_GET['start_date'] ?? date('Y-m-01');
 $end_date   = $_GET['end_date'] ?? date('Y-m-t');
 $search     = $_GET['search'] ?? '';
+/ Build Query
+$sql = "SELECT m.*, u.full_name 
+        FROM meals m 
+        JOIN users u ON m.user_id = u.id 
+        WHERE m.meal_date BETWEEN ? AND ?";
+$params = [$start_date, $end_date];
+
+if (!empty($search)) {
+    $sql .= " AND u.full_name LIKE ?";
+    $params[] = "%$search%";
+}
