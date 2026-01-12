@@ -305,6 +305,14 @@ ob_start();
                                         <a href="?action=edit&id=<?= $u['id'] ?>" class="btn btn-sm btn-outline-secondary rounded-circle me-1" title="Edit">
                                             <i class="bi bi-pencil"></i>
                                         </a>
+                                         <?php if($u['role'] !== 'manager'): ?>
+                                            <a href="?action=promote&id=<?= $u['id'] ?>" class="btn btn-sm btn-outline-primary rounded-pill me-1" onclick="return confirm('Make this user the Manager? Previous manager will be demoted.')">
+                                                <i class="bi bi-award"></i> <span class="d-none d-md-inline ms-1">Make Manager</span>
+                                            </a>
+                                        <?php else: ?>
+                                            <span class="text-success small fw-bold me-2"><i class="bi bi-check-circle-fill"></i> Manager</span>
+                                        <?php endif; ?>
+
                     
 <?php
 $content = ob_get_clean();
