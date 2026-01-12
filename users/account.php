@@ -32,3 +32,6 @@ alt="Profile" style="object-fit: cover;">
             <!-- Profile Details -->
             <div class="card-body p-4">
  <h6 class="fw-bold text-muted text-uppercase small mb-4"><i class="bi bi-info-circle me-1"></i> Personal 
+Information</h6>
+                
+                <div class="mb-3 border-bottom pb-2">
