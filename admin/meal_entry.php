@@ -156,3 +156,12 @@ ob_start();
                     </tbody>
                 </table>
             </div>
+<div class="col-12 mt-3">
+                <?php if(!$lock_b || !$lock_l || !$lock_d): ?>
+                    <button class="btn btn-primary btn-lg w-100 shadow-sm"><i class="bi bi-save me-2"></i> Save All Changes</button>
+                <?php else: ?>
+                    <button class="btn btn-secondary btn-lg w-100" disabled>Modifications Locked</button>
+                <?php endif; ?>
+            </div>
+        </form>
+    </div>
