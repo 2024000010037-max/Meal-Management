@@ -4,3 +4,9 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['manager', 'ad
     header("Location: ../index.php");
     exit;
 }
+include "../config/database.php";
+$pdo = (new Database())->connect();
+
+require '../sms/Exception.php';
+require '../sms/PHPMailer.php';
+require '../sms/SMTP.php';
