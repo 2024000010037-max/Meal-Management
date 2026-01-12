@@ -138,6 +138,14 @@ ob_start();
                 </div>
             </form>
         </div>
+ <?php if($global_lock_msg): ?>
+            <div class="alert alert-warning py-2"><i class="bi bi-lock-fill me-2"></i> <?= $global_lock_msg ?></div>
+        <?php endif; ?>
+
+        <form method="POST">
+            <input type="hidden" name="meal_date" value="<?= $selected_date ?>">
+            <div class="row g-4 text-center">
+                <!-- Breakfast -->
 
 
 
