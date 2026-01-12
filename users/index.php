@@ -20,3 +20,4 @@ get_template_part( 'template-parts/single' );
 if ( ! $is_elementor_theme_exist || ! elementor_theme_do_location( 'archive' ) ) {
 get_template_part( 'template-parts/archive' );
 	}
+} elseif ( is_search() ) {
