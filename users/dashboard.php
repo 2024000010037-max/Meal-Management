@@ -88,6 +88,12 @@ ob_start();
         <h3 class="fw-bold text-dark mb-0">My Dashboard</h3>
         <p class="text-muted small">Overview for <?= date('F Y', strtotime($selected_month)) ?></p>
     </div>
+<form method="GET" class="d-flex align-items-center gap-2 bg-white p-2 rounded shadow-sm">
+        <label class="small fw-bold text-muted mb-0"><i class="bi bi-calendar3 me-1"></i> Month:</label>
+        <input type="month" name="month" class="form-control form-control-sm border-0 bg-light fw-bold" value="<?= $selected_month ?>" onchange="this.form.submit()">
+    </form>
+</div>
+
 
  
 
