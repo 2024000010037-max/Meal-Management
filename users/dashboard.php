@@ -56,6 +56,13 @@ ob_start();
 ?>
 <!-- Styles (Same as Manager) -->
     <style>
+ .dashboard-card {
+        border: none;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+    }
 
 
 
