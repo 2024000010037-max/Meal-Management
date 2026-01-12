@@ -48,6 +48,10 @@ echo '<table border="1">';
     echo '</table>';
     exit;
 }
+    $pageTitle = "Meal History";
+ob_start();
+?>
+
 
 
 
