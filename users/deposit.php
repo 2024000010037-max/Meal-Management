@@ -35,3 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
  $msg = "<div class='alert alert-success alert-dismissible fade show'>Deposit request submitted! Waiting for approval. <button 
 type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
     } else {
+        $msg = "<div class='alert alert-danger'>Error submitting request.</div>";
+    }
+}
+
