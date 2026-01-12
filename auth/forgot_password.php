@@ -128,6 +128,14 @@ function verifyOTP() {
             showMessage("Please enter the OTP.", "warning");
             return;
         }
+ toggleButtonLoading('verify-otp-btn', true);
+        alertMsg.innerHTML = '';
+
+        fetch("verify_otp.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `otp=${encodeURIComponent(otp)}`
+        })
 
 
 
