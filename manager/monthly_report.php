@@ -218,6 +218,21 @@ ob_start();
     <h5 class="fw-bold text-danger">Sending Invoice...</h5>
     <p class="text-muted">Please wait, do not close this window.</p>
 </div>
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4 border-0 shadow-lg" style="border-radius: 20px;">
+      <div class="modal-body">
+        <div class="mb-3 text-success" style="font-size: 4rem;">
+            <i class="bi bi-check-circle-fill"></i>
+        </div>
+        <h4 class="fw-bold text-dark mb-2">Successfully Sent!</h4>
+        <p class="text-muted">The invoice has been mailed to the user.</p>
+        <button type="button" class="btn btn-success px-4 rounded-pill fw-bold mt-3" data-bs-dismiss="modal">Awesome</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     
 
