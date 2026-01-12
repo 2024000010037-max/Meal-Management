@@ -449,3 +449,16 @@ div class="row g-3">
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </tbody>
+<tfoot class="table-light">
+                            <tr>
+                                <td colspan="4" class="text-end fw-bold">Total Amount:</td>
+                                <td class="text-end fw-bold" id="totalAmount">0.00</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
