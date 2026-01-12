@@ -357,3 +357,14 @@ div class="row g-3">
                                 <?php endforeach; ?>
                             </select>
                         </div>
+<div class="col-md-6">
+                            <label class="form-label small fw-bold">Payment Method</label>
+                            <select name="payment_method" class="form-select" required>
+                                <?php $methods = ['cash', 'bkash', 'nagad', 'bank', 'other']; ?>
+                                <?php foreach($methods as $m): ?>
+                                    <option value="<?= $m ?>" <?= ($edit_data && $edit_data['payment_method'] == $m) ? 'selected' : '' ?>>
+                                        <?= ucfirst($m) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
