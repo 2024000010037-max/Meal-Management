@@ -104,6 +104,15 @@ ob_start();
             <div class="card-sub text-muted">Total Mess</div>
         </div>
     </div>
+    <!-- Meal Rate -->
+    <div class="col-md-3 col-6">
+        <div class="card dashboard-card bg-white p-3 h-100 shadow-sm">
+            <div class="card-label text-info">Meal Rate</div>
+            <h3 class="card-value text-dark mt-2">৳ <?= number_format($meal_rate, 2) ?></h3>
+            <div class="card-sub text-muted">Current Rate</div>
+        </div>
+    </div>
+
 
 
 
