@@ -99,3 +99,12 @@ ob_start();
         <table class="table table-hover align-middle">
             <thead class="table-light">
                 <tr>
+                    <th>Date</th>
+                    <th>Member Name</th>
+                    <th class="text-center">Breakfast</th>
+                    <th class="text-center">Lunch</th>
+                    <th class="text-center">Dinner</th>
+                    <th class="text-center fw-bold">Total</th>
+                </tr>
+            </thead>
+            <tbody>
