@@ -66,3 +66,18 @@ $balance = $user_total_deposit - $user_cost;
 // 4. Generate Invoice HTML
 $invoice_no = "INV-" . date('Ymd') . "-" . $deposit['id'];
 $date_time = date('d M, Y h:i A');
+
+$invoice_html = "
+<div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; background: #fff;'>
+    <div style='text-align: center; border-bottom: 2px solid #28a745; padding-bottom: 10px; margin-bottom: 20px;'>
+        <h2 style='color: #28a745; margin: 0;'>DEPOSIT RECEIPT</h2>
+        <p style='color: #777; margin: 5px 0;'>Hostel Mess Management</p>
+    </div>
+    
+    <table style='width: 100%; margin-bottom: 20px;'>
+        <tr>
+            <td>
+                <strong>Received From:</strong><br>
+                {$deposit['full_name']}<br>
+                {$deposit['email']}
+            </td>
