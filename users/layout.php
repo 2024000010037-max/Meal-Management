@@ -161,3 +161,6 @@ f (!e.target.closest('.sidebar') && !e.target.closest('#menu-toggle')) {
                 }
    }
         });
+ </script>
+</body>
+</html>
