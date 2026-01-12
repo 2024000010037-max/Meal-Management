@@ -37,5 +37,10 @@ if ($amount > 0 && !empty($details)) {
         $msg = "<div class='alert alert-warning'>Please fill in all required fields.</div>";
     }
 }
+// --- FETCH DATA ---
+// 1. Get Active Users (Moved up for Export/Mapping)
+$users = $pdo->query("SELECT id, full_name FROM users WHERE status = 1 AND role IN ('manager', 'user') ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
+$userMap = array_column($users, 'full_name', 'id');
+
 
     
