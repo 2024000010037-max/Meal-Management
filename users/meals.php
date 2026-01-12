@@ -88,6 +88,9 @@ $current_meal = $stmt->fetch(PDO::FETCH_ASSOC);
 $userStmt = $pdo->prepare("SELECT is_auto_meal FROM users WHERE id = ?");
 $userStmt->execute([$userId]);
 $is_auto_meal = $userStmt->fetchColumn();
+// Apply Auto Logic (Display 1s if Auto ON and no record exists for today/future)
+if (!$current_meal && $is_auto_meal && $selected_date >= date('Y-m-d')) {
+    $current_meal = ['breakfast' => 1, 'lunch' => 1, 'dinner' => 1];
 
 
 
