@@ -57,3 +57,8 @@ padding: 12px 25px;
  /* MAIN CONTENT WRAPPER */
 .main-content {       
 margin-left: 250px;
+min-height: 100vh;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
