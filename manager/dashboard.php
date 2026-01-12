@@ -345,7 +345,7 @@ if ($view_as === 'user') {
         </a>
     </div>
 </div>
-
+<?php
 
 
 
