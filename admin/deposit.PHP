@@ -83,3 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
         } else {
             $msg = "<div class='alert alert-danger alert-dismissible fade show'>Permission denied or time limit exceeded. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
         }
+   } else {
+        // ADD NEW (Direct Entry - Auto Approved)
+        $stmt = $pdo->prepare("INSERT INTO deposits (user_id, manager_id, amount, payment_method, transaction_id, deposit_date, remarks, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'approved')");
+        if ($stmt->execute([$user_id, $manager_id, $amount, $method, $tnx_id, $date, $remarks])) {
+            $deposit_id = $pdo->lastInsertId();            
+
