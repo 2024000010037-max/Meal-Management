@@ -12,4 +12,4 @@ $user_id = $_SESSION['user_id'];
 // --- HANDLE ACTIONS (Delete Pending) ---
 if (isset($_GET['action']) && isset($_GET['id'])) {
  $action = $_GET['action'];
-
+$did = intval($_GET['id']);
