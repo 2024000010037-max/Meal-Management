@@ -31,3 +31,21 @@ if (!$deposit) {
     header("Location: deposit.php?month=$month&error=not_found");
     exit;
 }
+// 2. Approve the Deposit
+$stmt = $pdo->prepare("UPDATE deposits SET status = 'approved', manager_id = ? WHERE id = ?");
+$stmt->execute([$manager_id, $id]);
+
+// 3. Calculate Stats for Invoice (Total Deposit & Current Balance)
+$user_id = $deposit['user_id'];
+$current_month = date('Y-m'); 
+
+// Global Stats for Rate
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$current_month]);
+$total_mess_meals = $stmt->fetchColumn() ?: 0;
+
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
+$stmt->execute([$current_month]);
+$total_mess_bazar = $stmt->fetchColumn() ?: 0;
+
+$me
