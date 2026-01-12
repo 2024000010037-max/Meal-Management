@@ -25,3 +25,12 @@ session_start();
     </div>
 
     <div id="alertMsg"></div>
+<!-- Step 1: Email -->
+    <div class="step active" id="step-1">
+        <p class="text-muted small mb-3">Enter your email to receive a verification code.</p>
+        <div class="mb-3 text-start">
+            <label class="form-label text-secondary small fw-bold">EMAIL ADDRESS</label>
+            <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <button id="send-otp-btn" class="btn btn-primary w-100" onclick="sendOTP()">Send OTP</button>
+    </div>
