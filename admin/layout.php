@@ -113,7 +113,7 @@
         </div>
         <div class="sidebar-menu">
             <?php $cur = basename($_SERVER['PHP_SELF']); ?>
-
+            <a href="dashboard.php" class="<?= $cur == 'dashboard.php' ? 'active' : '' ?>"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
             <a href="create_user.php" class="<?= $cur == 'create_user.php' ? 'active' : '' ?>"><i class="bi bi-person-plus me-2"></i> Create User</a>
             <a href="meal_entry.php" class="<?= $cur == 'meal_entry.php' ? 'active' : '' ?>"><i class="bi bi-egg-fried me-2"></i> Meal Entry</a>
             <a href="deposit.php" class="<?= $cur == 'deposit.php' ? 'active' : '' ?>"><i class="bi bi-wallet2 me-2"></i> Deposit</a>
