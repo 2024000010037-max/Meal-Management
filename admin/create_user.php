@@ -250,7 +250,17 @@ ob_start();
                     <h5 class="fw-bold text-secondary mb-0"><i class="bi bi-people-fill me-2"></i>Member List</h5>
                     <span class="badge bg-light text-dark border"><?= count($users) ?> Members</span>
                 </div>
-
+        <div class="table-responsive">
+                    <table class="table table-hover align-middle text-nowrap">
+                        <thead class="table-light">
+                            <tr>
+                                <th class="ps-3">Member</th>
+                                <th>Contact</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th class="text-end pe-3">Actions</th>
+                            </tr>
+                        </thead>
                     
 <?php
 $content = ob_get_clean();
