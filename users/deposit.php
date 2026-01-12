@@ -131,3 +131,6 @@ div class="col-12">
 
 !-- My Pending Requests -->
                 <div class="col-md-7">
+  <div class="card p-4 h-100">
+                        <h5 class="fw-bold mb-3">My Pending Requests</h5>
+                        <div class="table-responsive">
