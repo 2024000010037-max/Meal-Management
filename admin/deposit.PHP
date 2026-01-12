@@ -94,3 +94,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
                 header("Location: send_refund_receipt.php?id=$deposit_id&month=$selected_month");
                 exit;
             }
+         // --- START: SEND INVOICE EMAIL ---
+            $stmtUser = $pdo->prepare("SELECT full_name, email FROM users WHERE id = ?");
+            $stmtUser->execute([$user_id]);
+            $user_info = $stmtUser->fetch(PDO::FETCH_ASSOC);
+
+            if ($user_info && !empty($user_info['email'])) {
+                $current_month = date('Y-m', strtotime($date));
