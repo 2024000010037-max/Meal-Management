@@ -319,6 +319,12 @@ if ($view_as === 'user') {
         </a>
     </div>
 
+<div class="col-6 col-md-3 mb-3">
+        <a href="bazar_entry.php" class="btn btn-outline-danger w-100 p-3 h-100 d-flex flex-column align-items-center justify-content-center gap-2 rounded-4">
+            <i class="bi bi-cart-plus fs-3"></i>
+            <span class="fw-bold">Bazar Entry</span>
+        </a>
+    </div>
 
 
 
