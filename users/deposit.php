@@ -43,4 +43,6 @@ type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
 $stmt = $pdo->prepare("SELECT * FROM deposits WHERE user_id = ? AND status = 'pending' ORDER BY deposit_date DESC");
 $stmt->execute([$user_id]);
 $my_pending = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// 2. My History (Approved/Rejected) for Selected Month
+$stmt = $pdo->prepare("
 
