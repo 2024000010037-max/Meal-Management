@@ -96,6 +96,16 @@ if (!$current_meal && $is_auto_meal && $selected_date >= date('Y-m-d')) {
         $stmt = $pdo->prepare("INSERT INTO meals (user_id, meal_date, breakfast, lunch, dinner) VALUES (?,?,?,?,?)");
         $stmt->execute([$userId, $selected_date, 1, 1, 1]);
     }
+}
+
+// 2. Get History
+$meals = $pdo->query("SELECT * FROM meals WHERE user_id = $userId ORDER BY meal_date DESC");
+
+// --- TIME CONSTRAINTS LOGIC MOVED UP ---
+
+$pageTitle = "My Meals";
+ob_start();
+?>
 
 
 
