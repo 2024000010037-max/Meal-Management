@@ -275,3 +275,19 @@ ob_start();
                     </span>
                 <?php endif; ?>
             </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link <?= $edit_data ? 'active' : '' ?> fw-bold" id="pills-add-tab" data-bs-toggle="pill" data-bs-target="#pills-add" type="button">
+                <?= $edit_data ? 'Edit Deposit' : ($pre_amount ? 'Return Cash Entry' : 'Add New Deposit') ?>
+            </button>
+        </li>
+        <li class="nav-item"><button class="nav-link fw-bold" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button">History</button></li>
+    </ul>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link <?= $edit_data ? 'active' : '' ?> fw-bold" id="pills-add-tab" data-bs-toggle="pill" data-bs-target="#pills-add" type="button">
+                <?= $edit_data ? 'Edit Deposit' : ($pre_amount ? 'Return Cash Entry' : 'Add New Deposit') ?>
+            </button>
+        </li>
+        <li class="nav-item"><button class="nav-link fw-bold" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button">History</button></li>
+    </ul>
