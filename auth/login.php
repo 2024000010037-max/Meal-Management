@@ -11,3 +11,12 @@ if (isset($_SESSION['user_id'])) {
         exit;
     }
 }
+msg = "";
+
+// Only run login logic if form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include "../config/database.php";
+    $pdo = (new Database())->connect();
+
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
