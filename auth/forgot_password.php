@@ -75,5 +75,11 @@ session_start();
         step2.classList.remove('active');
         step3.classList.remove('active');
         finalSuccess.classList.remove('active');
+          if (stepNum === 1) step1.classList.add('active');
+        if (stepNum === 2) step2.classList.add('active');
+        if (stepNum === 3) step3.classList.add('active');
+        if (stepNum === 4) finalSuccess.classList.add('active');
+    }
+
 
 
