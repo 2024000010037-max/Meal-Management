@@ -238,6 +238,21 @@ if ($view_as === 'user') {
         </div>
     </div>
 
+ <!-- My Cost -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="card-label text-danger">My Expenses</div>
+                    <h2 class="card-value text-dark mt-2">৳ <?= number_format($my_total_cost, 0) ?></h2>
+                    <div class="card-sub text-muted mt-1">Total Expense</div>
+                </div>
+                <div class="card-icon bg-danger bg-opacity-10 text-danger">
+                    <i class="bi bi-cash-stack"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
