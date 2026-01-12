@@ -145,5 +145,8 @@ function verifyOTP() {
             }
         })
 
+.catch(() => showMessage("An error occurred.", "danger"))
+        .finally(() => toggleButtonLoading('verify-otp-btn', false));
+    }
 
 
