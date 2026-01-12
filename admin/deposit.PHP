@@ -224,3 +224,11 @@ if (isset($_GET['edit'])) {
     $stmt->execute([$_GET['edit']]);
     $edit_data = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
+// 5. Check for Return Cash Action (Pre-fill)
+$pre_user_id = null;
+$pre_amount = null;
+if (isset($_GET['return_amount']) && isset($_GET['user_id'])) {
+    $pre_user_id = intval($_GET['user_id']);
+    $pre_amount = -abs(floatval($_GET['return_amount'])); // Make it negative for return
+}
