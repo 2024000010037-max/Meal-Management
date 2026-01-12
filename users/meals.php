@@ -68,6 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['toggle_auto'])) {
     $stmtCheck = $pdo->prepare("SELECT id FROM meals WHERE user_id = ? AND meal_date = ?");
     $stmtCheck->execute([$userId, $date]);
     $existing_id = $stmtCheck->fetchColumn();
+ if ($existing_id) {
+        $stmt = $pdo->prepare("UPDATE meals SET breakfast=?, lunch=?, dinner=? WHERE id=?");
+        $stmt->execute([$b, $l, $d, $existing_id]);
 
 
 
