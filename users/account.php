@@ -46,3 +46,5 @@ div class="mb-3 border-bottom pb-2">
                     <label class="small text-muted d-block mb-1">Phone Number</label>
                     <span class="fw-bold text-dark fs-5"><?= htmlspecialchars($user['phone'] ?? 'Not Provided') ?></span>
                 </div>
+<div class="mb-3">
+                    <label class="small text-muted d-block mb-1">Account Status</label>
