@@ -126,7 +126,12 @@ ob_start();
     <div class="card p-4 mb-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="mb-0 text-primary">Update Meal <small class="text-muted fs-6 ms-1">(<?= date('d M', strtotime($selected_date)) ?>)</small></h5   
-       
+        <!-- Auto Meal Toggle (Moved Here) -->
+            <form method="POST" class="d-flex align-items-center">
+                <input type="hidden" name="toggle_auto" value="1">
+                <input type="hidden" name="auto_status" value="<?= $is_auto_meal ?>">
+                <div class="form-check form-switch m-0">
+
 
 
 
