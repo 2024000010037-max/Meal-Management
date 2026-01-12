@@ -106,7 +106,10 @@ $meals = $pdo->query("SELECT * FROM meals WHERE user_id = $userId ORDER BY meal_
 $pageTitle = "My Meals";
 ob_start();
 ?>
-
+    <style>
+        .card { border:none; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+        .btn-qty { width: 35px; height: 35px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; }
+        
 
 
 
