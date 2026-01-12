@@ -154,3 +154,5 @@ Logout</a></li>
 document.getElementById('menu-toggle').addEventListener('click', function() {
   document.body.classList.toggle('toggled');
         });
+document.body.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && document.body.classList.contains('toggled')) {
