@@ -28,5 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_bazar'])) {
     $shopper_ids = isset($_POST['shopper_ids']) ? implode(',', $_POST['shopper_ids']) : '';
 if ($amount > 0 && !empty($details)) {
         $stmt = $pdo->prepare("INSERT INTO bazar (user_id, shopper_ids, bazar_date, amount, details, remarks, status) VALUES (?, ?, ?, ?, ?, ?, 'pending')");
+ if ($stmt->execute([$userId, $shopper_ids, $date, $amount, $details, $remarks])) {
+            $msg = "<div class='alert alert-success alert-dismissible fade show'>Request submitted successfully! Waiting for approval. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        } else {
 
     
