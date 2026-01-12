@@ -81,3 +81,6 @@ if (isset($_GET['export']) && $_GET['export'] === 'excel') {
     echo '</table>';
     exit;
 }
+$pageTitle = "Monthly Report";
+ob_start();
+?>
