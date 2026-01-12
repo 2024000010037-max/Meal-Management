@@ -41,5 +41,11 @@ if ($target_str < $today_str) {
             $global_lock_msg = "Tomorrow's meal entry opens at 6:00 PM today.";
         }
     } else {
-             
+     // Days after tomorrow: Locked (Prevent far future booking if not desired, or allow)
+        // Based on "next tah 6PM por", usually implies strict next day control.
+        // We will lock dates beyond tomorrow to keep it simple.
+        $lock_b = $lock_l = $lock_d = true;
+        $global_lock_msg = "Advance booking is only allowed for the next day.";
+    }
+}         
 
