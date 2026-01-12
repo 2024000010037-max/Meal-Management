@@ -234,7 +234,14 @@ ob_start();
         <a href="meals.php" class="btn btn-outline-secondary w-100 p-3 h-100 d-flex flex-column align-items-center justify-content-center gap-2 rounded-4">
             <i class="bi bi-clock-history fs-3"></i>
             <span class="fw-bold">History</span>
+    </a>
+    </div>
+</div>
 
+<?php
+$content = ob_get_clean();
+include "layout.php";
+?>
 
 
 
