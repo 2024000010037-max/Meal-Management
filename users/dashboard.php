@@ -48,6 +48,9 @@ $my_deposit = $stmt->fetchColumn() ?: 0;
 // 7. My Expense (Estimated)
 $my_expense = $my_meal * $meal_rate;
 
+// 8. My Balance (Due / Advance)
+$my_balance = $my_deposit - $my_expense;
+
 
 
 
