@@ -134,3 +134,5 @@ $user_nav = $stmt_nav->fetch(PDO::FETCH_ASSOC);
      <span class="fw-bold text-dark d-none d-sm-inline"><?= $_SESSION['full_name'] ?? 'User' ?></span>
                 </a>
  <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" aria-labelledby="userDropdown" style="border-radius: 
+12px; min-width: 200px;">
+                    <li><a class="dropdown-item py-2" href="account.php"><i class="bi bi-person-circle me-2 text-primary"></i> My
