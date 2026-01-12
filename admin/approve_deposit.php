@@ -49,3 +49,20 @@ $stmt->execute([$current_month]);
 $total_mess_bazar = $stmt->fetchColumn() ?: 0;
 
 $me
+
+// User Stats (This Month)
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE user_id = ? AND DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$user_id, $current_month]);
+$user_meals = $stmt->fetchColumn() ?: 0;
+
+// User Total Deposit (This Month)
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE user_id = ? AND status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
+$stmt->execute([$user_id, $current_month]);
+$user_total_deposit = $stmt->fetchColumn() ?: 0;
+
+$user_cost = $user_meals * $meal_rate;
+$balance = $user_total_deposit - $user_cost;
+
+// 4. Generate Invoice HTML
+$invoice_no = "INV-" . date('Ymd') . "-" . $deposit['id'];
+$date_time = date('d M, Y h:i A');
