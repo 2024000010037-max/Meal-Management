@@ -282,6 +282,13 @@ ob_start();
                 placeholder: "Select shoppers",
                 width: '100%'
             });
+            
+            const searchInput = document.getElementById('searchInput');
+            const tableBody = document.getElementById('bazarTableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+            const totalDisplay = document.getElementById('totalAmount');
+
+
 
 
 
