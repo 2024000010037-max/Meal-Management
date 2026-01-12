@@ -151,4 +151,7 @@ div class="col-12">
                                         <tr>
                                             <td><?= date('d M', strtotime($req['deposit_date'])) ?></td>
                                             <td>
+  <span class="badge badge-<?= strtolower($req['payment_method']) ?> text-uppercase"><?= $req['payment_method'] ?></span>
+                                                <?php if($req['transaction_id']): ?><br><small class="text-muted"><?= htmlspecialchars($req['transaction_id']) ?></small><?php endif; ?>
+                                            </td>
                                                 
