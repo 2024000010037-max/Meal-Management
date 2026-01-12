@@ -287,6 +287,31 @@ if ($view_as === 'user') {
         </div>
     </div>
     <?php else: ?>
+     <!-- My Balance (Due) -->
+    <div class="col-md-12 col-lg-12">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm border-start border-5 border-danger">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="card-label text-danger">My Due</div>
+                    <h2 class="card-value text-dark mt-2">-৳ <?= number_format(abs($my_net_balance), 0) ?></h2>
+                    <div class="card-sub text-muted mt-1">Please Pay Soon</div>
+                </div>
+                <div class="card-icon bg-danger bg-opacity-10 text-danger">
+                    <i class="bi bi-exclamation-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+    
+    <?php endif; ?>
+</div>
+<!-- Quick Actions -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h5 class="fw-bold text-secondary mb-3">Quick Actions</h5>
+    </div>
+
 
 
 
