@@ -216,6 +216,7 @@ ob_start();
                 </form>
             </div>
         </div>
-
+<!-- HISTORY -->
+        <div class="tab-pane fade" id="pills-history">
 
 ?>
