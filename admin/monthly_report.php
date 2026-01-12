@@ -33,3 +33,8 @@ $users = $pdo->query("SELECT id, full_name, role FROM users WHERE status = 1 AND
 $stmt = $pdo->prepare("SELECT user_id, SUM(breakfast + lunch + dinner) as meals FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ? GROUP BY user_id");
 $stmt->execute([$selected_month]);
 $user_meals_map = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+// Deposits per User
+$stmt = $pdo->prepare("SELECT user_id, SUM(amount) as deposit FROM deposits WHERE status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ? GROUP BY user_id");
+$stmt->execute([$selected_month]);
+$user_deposits_map = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
