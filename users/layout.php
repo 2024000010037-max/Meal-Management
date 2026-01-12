@@ -138,3 +138,5 @@ $user_nav = $stmt_nav->fetch(PDO::FETCH_ASSOC);
                     <li><a class="dropdown-item py-2" href="account.php"><i class="bi bi-person-circle me-2 text-primary"></i> My
 Account</a></li>
                     <li><a class="dropdown-item py-2" href="../auth/change_password.php"><i class="bi bi-key me-2 text-warning"></i> Change Password</a></li>
+ <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item py-2 text-danger" href="../auth/logout.php"><i class="bi bi-box-arrow-right me-2"></i> 
