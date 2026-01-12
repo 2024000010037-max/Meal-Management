@@ -275,6 +275,10 @@ ob_start();
                                         </div>
                                     </div>
                                 </td>
+                                    <td>
+                                    <div class="small"><i class="bi bi-telephone me-1"></i> <?= htmlspecialchars($u['phone'] ?? '-') ?></div>
+                                    <div class="small text-muted"><i class="bi bi-envelope me-1"></i> <?= htmlspecialchars($u['email'] ?? '-') ?></div>
+                                </td>
                     
 <?php
 $content = ob_get_clean();
