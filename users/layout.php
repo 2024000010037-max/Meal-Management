@@ -129,3 +129,5 @@ $user_nav = $stmt_nav->fetch(PDO::FETCH_ASSOC);
                             $nav_img = "../uploads/" . $user_nav['photo'];
                         }
                     }
+?>
+                    <img src="<?= $nav_img ?>" class="rounded-circle me-2 shadow-sm" width="38" height="38" alt="User" style="object-fit: cover;">
