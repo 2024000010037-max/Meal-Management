@@ -223,6 +223,12 @@ ob_start();
                             <label class="form-label small fw-bold text-muted">EMAIL</label>
                             <input type="email" name="email" class="form-control" placeholder="mail@example.com" value="<?= $editUser['email'] ?? '' ?>" required>
                         </div>
+          <div class="col-12">
+                            <label class="form-label small fw-bold text-muted">NID PHOTO</label>
+                            <input type="file" name="nid_photo" class="form-control" accept="image/*" <?= $editUser ? '' : 'required' ?>>
+                            <?php if($editUser && !empty($editUser['nid_photo'])): ?>
+                                <small class="text-success"><i class="bi bi-check-circle"></i> Uploaded</small>
+                            <?php endif; ?>
 
                     
 <?php
