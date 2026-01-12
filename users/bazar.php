@@ -246,5 +246,19 @@ ob_start();
         </div>
 
     </div>
+ <script>
+        $(document).ready(function() {
+            $('.select2').select2({
+                theme: 'bootstrap-5',
+                placeholder: "Select shoppers",
+                width: '100%'
+            });
+
+            // Live Search & Total Calculation
+            const searchInput = document.getElementById('searchInput');
+            const tableBody = document.getElementById('bazarTableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+            const totalDisplay = document.getElementById('totalAmount');
+
 
    
