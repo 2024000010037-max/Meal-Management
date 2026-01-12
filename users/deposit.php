@@ -18,3 +18,7 @@ $did = intval($_GET['id']);
         $stmt = $pdo->prepare("DELETE FROM deposits WHERE id = ? AND user_id = ? AND status = 'pending'");
         if ($stmt->execute([$did, $user_id])) {
    $msg = "<div class='alert alert-warning alert-dismissible fade show'>Request withdrawn successfully. <button            
+type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        }
+    }
+}
