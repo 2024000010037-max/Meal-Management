@@ -6,3 +6,5 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'user') {
 }
 include "../config/database.php";
 $pdo = (new Database())->connect();
+$msg = "";
+$selected_month = $_GET['month'] ?? date('Y-m');
