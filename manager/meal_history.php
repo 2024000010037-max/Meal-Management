@@ -16,6 +16,10 @@ $sql = "SELECT m.*, u.full_name
         JOIN users u ON m.user_id = u.id 
         WHERE m.meal_date BETWEEN ? AND ?";
 $params = [$start_date, $end_date];
+if (!empty($search)) {
+    $sql .= " AND u.full_name LIKE ?";
+    $params[] = "%$search%";
+}
 
 
 
