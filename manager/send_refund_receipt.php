@@ -35,4 +35,10 @@ $current_month = date('Y-m', strtotime($deposit['deposit_date']));
 
 all member meal rate calculate
 
+// User Stats (This Month)
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE user_id = ? AND DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$user_id, $current_month]);
+$user_meals = $stmt->fetchColumn() ?: 0;
+
+
 ?>
