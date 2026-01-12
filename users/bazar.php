@@ -131,5 +131,9 @@ ob_start();
                                 <th>Details</th>
                                 <th class="text-end">Amount (৳)</th>
                             </tr>
-                        
+                         </thead>
+                        <tbody id="bazarTableBody">
+                            <?php if(empty($approved_bazars)): ?>
+                                <tr><td colspan="4" class="text-center text-muted py-4">No bazar records found for this month.</td></tr>
+
     
