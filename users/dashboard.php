@@ -51,6 +51,12 @@ $my_expense = $my_meal * $meal_rate;
 // 8. My Balance (Due / Advance)
 $my_balance = $my_deposit - $my_expense;
 
+$pageTitle = "User Dashboard";
+ob_start();
+?>
+<!-- Styles (Same as Manager) -->
+    <style>
+
 
 
 
