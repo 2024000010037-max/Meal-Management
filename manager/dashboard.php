@@ -86,11 +86,13 @@ if ($view_as === 'user') {
         font-size: 1.5rem;
         margin-bottom: 15px;
     }
-
-
-
-
-
+.bg-gradient-success { background: linear-gradient(45deg, #1cc88a, #13855c); color: white; }
+    
+    .card-label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9; }
+    .card-value { font-size: 1.8rem; font-weight: 700; margin-bottom: 0; }
+    .card-sub { font-size: 0.8rem; opacity: 0.8; }
+    </style>
+        
     <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4 gap-3">
     <div class="text-center text-lg-start">
         <h3 class="fw-bold text-dark mb-0"></h3>
