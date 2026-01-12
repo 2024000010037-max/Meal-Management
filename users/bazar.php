@@ -48,6 +48,20 @@ $stmt = $pdo->prepare("
     WHERE b.status = 'approved' AND DATE_FORMAT(b.bazar_date, '%Y-%m') = ? 
     ORDER BY b.bazar_date DESC
 ");
+$stmt->execute([$selected_month]);
+$approved_bazars = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// --- HANDLE EXCEL EXPORT ---
+if (isset($_GET['export']) && $_GET['export'] === 'excel') {
+    header("Content-Type: application/vnd.ms-excel");
+    header("Content-Disposition: attachment; filename=bazar_list_{$selected_month}.xls");
+    echo '<table border="1"><tr><th>Date</th><th>Shopper</th><th>Details</th><th>Amount</th></tr>';
+    foreach($approved_bazars as $b) {
+        $s_ids = explode(',', $b['shopper_ids'] ?? '');
+        $s_names = array_map(fn($id) => $userMap[$id] ?? '', $s_ids);
+        $shopper = implode(', ', array_filter($s_names));
+        echo "<tr><td>{$b['bazar_date']}</td><td>{$shopper}</td><td>{$b['details']} " . ($b['remarks'] ? "({$b['remarks']})" : "") . "</td><td>{$b['amount']}</td></tr>";
+    }
 
 
     
