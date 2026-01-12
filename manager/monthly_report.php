@@ -20,6 +20,11 @@ $stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' A
 $stmt->execute([$selected_month]);
 $total_mess_bazar = $stmt->fetchColumn() ?: 0;
 
+// Total Mess Deposit
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_mess_deposit = $stmt->fetchColumn() ?: 0;
+
 
 
 ?>
