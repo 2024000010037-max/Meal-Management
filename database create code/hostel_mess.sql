@@ -82,3 +82,7 @@ CREATE TABLE `meals` (
   `lunch` float DEFAULT 0,
   `dinner` float DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+ALTER TABLE `meals`
+  ADD CONSTRAINT `meals_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+COMMIT;
