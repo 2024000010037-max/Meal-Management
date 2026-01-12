@@ -42,6 +42,10 @@ $total_deposit = $stmt->fetchColumn() ?: 0;
 // 5. Meal Rate
 $meal_rate = ($total_meal > 0) ? ($total_bazar / $total_meal) : 0;
 
+// 6. Calculate Net Balance
+$net_balance = $total_deposit - $total_bazar;
+
+
 
 
 
