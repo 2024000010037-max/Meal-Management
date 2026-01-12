@@ -154,4 +154,9 @@ ob_start();
                                     </td>
                                     <td class="fw-bold text-success text-end amount-cell" data-amount="<?= $b['amount'] ?>"><?= number_format($b['amount'], 2) ?></td>
                                 </tr>
-
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                        <tfoot class="table-light">
+                            <tr>
+                                
