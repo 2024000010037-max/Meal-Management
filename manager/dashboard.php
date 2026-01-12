@@ -338,6 +338,13 @@ if ($view_as === 'user') {
             <span class="fw-bold">History</span>
         </a>
     </div>
+<div class="col-6 col-md-3 mb-3">
+        <a href="monthly_report.php" class="btn btn-outline-info w-100 p-3 h-100 d-flex flex-column align-items-center justify-content-center gap-2 rounded-4">
+            <i class="bi bi-file-earmark-bar-graph fs-3"></i>
+            <span class="fw-bold">Monthly Report</span>
+        </a>
+    </div>
+</div>
 
 
 
