@@ -20,3 +20,4 @@ width: 250px;
  height: 100vh;
             background: #020617;
  position: fixed;
+top: 0;
