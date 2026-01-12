@@ -33,3 +33,9 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         $stmt = $pdo->prepare("SELECT created_at, TIMESTAMPDIFF(SECOND, created_at, NOW()) as time_diff FROM deposits WHERE id = ?");
         $stmt->execute([$did]);
         $dep = $stmt->fetch(PDO::FETCH_ASSOC);
+       $can_delete = false;
+        if ($_SESSION['role'] === 'admin') {
+            $can_delete = true;
+        } elseif ($_SESSION['role'] === 'manager' && isset($dep['time_diff']) && $dep['time_diff'] >= 0 && $dep['time_diff'] <= 600) {
+            $can_delete = true;
+        }
