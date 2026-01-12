@@ -175,7 +175,15 @@ ob_start();
 
     
 </style>
+<?= $msg ?>
 
+    <div class="row g-4">
+        <!-- LEFT: CREATE USER FORM -->
+        <div class="col-lg-4">
+            <div class="card p-4 h-100">
+                <h5 class="fw-bold mb-4 text-secondary">
+                    <i class="bi bi-person-<?= $editUser ? 'gear' : 'plus' ?>-fill me-2"></i>
+                    <?= $editUser ? 'Edit Member' : 'Add New Member' ?>
 
 
 
