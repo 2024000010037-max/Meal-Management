@@ -102,6 +102,8 @@ function sendOTP() {
             showMessage("Please enter your email address.", "warning");
             return;
         }
+ toggleButtonLoading('send-otp-btn', true);
+        alertMsg.innerHTML = '';
 
 
 
