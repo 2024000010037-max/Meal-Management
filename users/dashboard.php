@@ -181,7 +181,11 @@ ob_start();
             <div class="card dashboard-card bg-gradient-success p-4 h-100 text-white">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-  
+    <div class="card-label text-white-50">My Balance</div>
+                        <h2 class="card-value mt-2">+৳ <?= number_format($my_balance, 0) ?></h2>
+                        <div class="card-sub text-white-50 mt-1">Back Balance</div>
+                    </div>
+
 
 
 
