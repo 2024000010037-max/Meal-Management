@@ -45,6 +45,11 @@ $meal_rate = ($total_meal > 0) ? ($total_bazar / $total_meal) : 0;
 // 6. Calculate Net Balance
 $net_balance = $total_deposit - $total_bazar;
 
+// 7. Personal Stats (if view_as is user)
+if ($view_as === 'user') {
+    $user_id = $_SESSION['user_id'];
+
+
 
 
 
