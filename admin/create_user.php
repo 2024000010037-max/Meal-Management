@@ -183,6 +183,13 @@ ob_start();
     .role-user { background: #f1f5f9; color: #475569; }
     .role-admin { background: #fce7f3; color: #9d174d; }
     
+    /* Mobile Responsive Tweaks */
+    @media (max-width: 768px) {
+        .card { padding: 1.25rem !important; }
+        .table { font-size: 0.85rem; }
+        .user-avatar-sm { width: 35px; height: 35px; }
+    }
+    
 </style>
 <?= $msg ?>
 
