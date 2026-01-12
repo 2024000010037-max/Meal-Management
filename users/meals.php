@@ -183,7 +183,22 @@ ob_start();
             <?php endif; ?>
         </form>
     </div>
-
+    <!-- HISTORY -->
+    <div class="card p-4">
+        <h5 class="mb-3">History</h5>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Date</th>
+                        <th>Breakfast</th>
+                        <th>Lunch</th>
+                        <th>Dinner</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
 
 
 
