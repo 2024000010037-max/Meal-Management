@@ -48,4 +48,14 @@ if ($target_str < $today_str) {
         $global_lock_msg = "Advance booking is only allowed for the next day.";
     }
 }         
+// --- HANDLE AUTO MEAL TOGGLE ---
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_auto'])) {
+    $new_status = $_POST['auto_status'] == 1 ? 0 : 1;
+    $stmt = $pdo->prepare("UPDATE users SET is_auto_meal = ? WHERE id = ?");
+    $stmt->execute([$new_status, $userId]);
+    // Refresh to show correct state
+    header("Location: meals.php?date=" . $selected_date);
+    exit;
+}
+
 
