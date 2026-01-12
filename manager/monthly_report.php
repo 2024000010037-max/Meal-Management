@@ -64,6 +64,29 @@ foreach ($users as $u) {
         ];
     }
 }
+// --- 4. HANDLE EXCEL EXPORT ---
+if (isset($_GET['export']) && $_GET['export'] === 'excel') {
+    header("Content-Type: application/vnd.ms-excel");
+    header("Content-Disposition: attachment; filename=monthly_report_{$selected_month}.xls");
+    echo '<table border="1">';
+    echo '<tr><th colspan="6" style="text-align:center; font-size:16px; background:#f0f0f0;">Monthly Mess Report - ' . date('F Y', strtotime($selected_month)) . '</th></tr>';
+    echo '<tr><th>Member Name</th><th>Role</th><th>Total Meals</th><th>Total Deposit</th><th>Cost (' . number_format($meal_rate, 2) . '/meal)</th><th>Balance (Due/Adv)</th></tr>';
+    foreach ($report_data as $row) {
+        $bal_text = ($row['balance'] >= 0 ? "+" : "") . number_format($row['balance'], 2);
+        $color = $row['balance'] < 0 ? 'color:red;' : 'color:green;';
+        echo "<tr>
+            <td>{$row['name']}</td>
+            <td>{$row['role']}</td>
+            <td>{$row['meals']}</td>
+            <td>" . number_format($row['deposit'], 2) . "</td>
+            <td>" . number_format($row['cost'], 2) . "</td>
+            <td style='{$color}'>{$bal_text}</td>
+        </tr>";
+    }
+    echo '</table>';
+    exit;
+}
+
 
 
 
