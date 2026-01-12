@@ -135,5 +135,11 @@ ob_start();
                         <tbody id="bazarTableBody">
                             <?php if(empty($approved_bazars)): ?>
                                 <tr><td colspan="4" class="text-center text-muted py-4">No bazar records found for this month.</td></tr>
-
+ <?php else: ?>
+                                <?php foreach($approved_bazars as $b): ?>
+                                <tr>
+                                    <td><?= date('d M', strtotime($b['bazar_date'])) ?></td>
+                                    <td>
+                                        <div class="fw-bold small">
+                                            <?php 
     
