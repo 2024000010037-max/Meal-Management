@@ -99,3 +99,7 @@ ob_start();
 div class="col-12">
                                     <label class="form-label small fw-bold">Date</label>
                                     <input type="date" name="deposit_date" class="form-control" value="<?= date('Y-m-d') ?>" readonly required>
+ </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">Payment Method</label>
+                                    <select name="payment_method" class="form-select" required>
