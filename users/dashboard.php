@@ -120,6 +120,15 @@ ob_start();
             <div class="card-sub text-muted">Total Mess</div>
         </div>
     </div>
+    <!-- Total Mess Bazar -->
+    <div class="col-md-3 col-6">
+        <div class="card dashboard-card bg-white p-3 h-100 shadow-sm">
+            <div class="card-label text-danger">Total Bazar</div>
+            <h3 class="card-value text-dark mt-2">৳ <?= number_format($total_mess_bazar, 0) ?></h3>
+            <div class="card-sub text-muted">Mess Expenses</div>
+        </div>
+    </div>
+
 
 
 
