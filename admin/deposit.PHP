@@ -75,3 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
         } elseif ($_SESSION['role'] === 'manager' && isset($dep['time_diff']) && $dep['time_diff'] >= 0 && $dep['time_diff'] <= 600) {
             $can_edit = true;
         }
+      if ($can_edit) {
+            $stmt = $pdo->prepare("UPDATE deposits SET user_id=?, manager_id=?, amount=?, payment_method=?, transaction_id=?, deposit_date=?, remarks=? WHERE id=?");
+            if ($stmt->execute([$user_id, $manager_id, $amount, $method, $tnx_id, $date, $remarks, $edit_id])) {
+                $msg = "<div class='alert alert-success alert-dismissible fade show'>Deposit updated successfully! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+            }
+        } else {
+            $msg = "<div class='alert alert-danger alert-dismissible fade show'>Permission denied or time limit exceeded. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        }
