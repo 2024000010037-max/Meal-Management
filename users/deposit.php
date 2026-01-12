@@ -96,3 +96,6 @@ ob_start();
                         <form method="POST" action="deposit.php?month=<?= $selected_month ?>">
                             <input type="hidden" name="save_deposit" value="1">
                             <div class="row g-3"> 
+div class="col-12">
+                                    <label class="form-label small fw-bold">Date</label>
+                                    <input type="date" name="deposit_date" class="form-control" value="<?= date('Y-m-d') ?>" readonly required>
