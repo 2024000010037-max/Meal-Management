@@ -243,6 +243,14 @@ ob_start();
             </div>
         </div>
 
+          <!-- RIGHT: USER LIST -->
+        <div class="col-lg-8">
+            <div class="card p-4 h-100">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="fw-bold text-secondary mb-0"><i class="bi bi-people-fill me-2"></i>Member List</h5>
+                    <span class="badge bg-light text-dark border"><?= count($users) ?> Members</span>
+                </div>
+
                     
 <?php
 $content = ob_get_clean();
