@@ -14,3 +14,5 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 // Profile Photo Logic (Same as create_user.php)
 $profile_img = !empty($user['photo']) ? "../uploads/" . $user['photo'] : "https://ui-avatars.com/api/?name=" . 
 urlencode($user['full_name']) . "&background=fff&color=667eea&size=128";
+
+$pageTitle = "My Account";
