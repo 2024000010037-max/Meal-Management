@@ -202,7 +202,15 @@ ob_start();
                             <input type="file" name="photo" class="d-none" accept="image/*" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])">
                         </label>
                     </div>
+        iv class="row g-3">
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-muted">FULL NAME</label>
+                            <input type="text" name="full_name" class="form-control" placeholder="e.g. Towfiq omar" value="<?= $editUser['full_name'] ?? '' ?>" required>
+                        </div>
 
+
+
+                    
 <?php
 $content = ob_get_clean();
 include "layout.php";
