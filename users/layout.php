@@ -49,3 +49,5 @@ padding: 12px 25px;
             transition: 0.2s;
             border-left: 4px solid transparent;
         }
+ .sidebar-menu a:hover, .sidebar-menu a.active {
+            background: #1e293b;
