@@ -270,6 +270,8 @@ function sendInvoice(userId, month, name) {
     }
 </script>
 <?php
+$content = ob_get_clean();
+include "layout.php";
     
 
 ?>
