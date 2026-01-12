@@ -415,3 +415,19 @@ div class="row g-3">
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
+<tbody id="depositTableBody">
+                            <?php if(empty($history)): ?>
+                                <tr><td colspan="6" class="text-center text-muted py-4">No records found for this month.</td></tr>
+                            <?php else: ?>
+                                <?php foreach($history as $h): ?>
+                                <tr>
+                                    <td><?= date('d M', strtotime($h['deposit_date'])) ?></td>
+                                    <td><?= htmlspecialchars($h['full_name']) ?></td>
+                                    <td>
+                                        <span class="badge badge-<?= strtolower($h['payment_method']) ?> text-uppercase"><?= $h['payment_method'] ?></span>
+                                        <?php if($h['transaction_id']): ?><br><small class="text-muted"><?= htmlspecialchars($h['transaction_id']) ?></small><?php endif; ?>
+                                    </td>
+                                    <td><small class="text-muted"><?= htmlspecialchars($h['manager_name'] ?? 'N/A') ?></small></td>
+                                    <td class="fw-bold text-end <?= $h['amount'] < 0 ? 'text-danger' : 'text-success' ?> amount-cell" data-amount="<?= $h['amount'] ?>">
+                                        <?= $h['amount'] > 0 ? '+' : '' ?><?= number_format($h['amount'], 2) ?>
+                                    </td>
