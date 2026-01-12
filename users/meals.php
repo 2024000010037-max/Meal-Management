@@ -91,6 +91,11 @@ $is_auto_meal = $userStmt->fetchColumn();
 // Apply Auto Logic (Display 1s if Auto ON and no record exists for today/future)
 if (!$current_meal && $is_auto_meal && $selected_date >= date('Y-m-d')) {
     $current_meal = ['breakfast' => 1, 'lunch' => 1, 'dinner' => 1];
+   // Auto-save if Today and Breakfast is locked (Ensures record exists if Auto is ON)
+    if ($target_str == $today_str && $lock_b) {
+        $stmt = $pdo->prepare("INSERT INTO meals (user_id, meal_date, breakfast, lunch, dinner) VALUES (?,?,?,?,?)");
+        $stmt->execute([$userId, $selected_date, 1, 1, 1]);
+    }
 
 
 
