@@ -16,3 +16,4 @@ $profile_img = !empty($user['photo']) ? "../uploads/" . $user['photo'] : "https:
 urlencode($user['full_name']) . "&background=fff&color=667eea&size=128";
 
 $pageTitle = "My Account";
+ob_start();
