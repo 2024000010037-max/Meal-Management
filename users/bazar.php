@@ -41,6 +41,13 @@ if ($amount > 0 && !empty($details)) {
 // 1. Get Active Users (Moved up for Export/Mapping)
 $users = $pdo->query("SELECT id, full_name FROM users WHERE status = 1 AND role IN ('manager', 'user') ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
 $userMap = array_column($users, 'full_name', 'id');
+// 2. Approved Bazar List (For History Tab)
+$stmt = $pdo->prepare("
+    SELECT b.* 
+    FROM bazar b 
+    WHERE b.status = 'approved' AND DATE_FORMAT(b.bazar_date, '%Y-%m') = ? 
+    ORDER BY b.bazar_date DESC
+");
 
 
     
