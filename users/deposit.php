@@ -13,3 +13,5 @@ $user_id = $_SESSION['user_id'];
 if (isset($_GET['action']) && isset($_GET['id'])) {
  $action = $_GET['action'];
 $did = intval($_GET['id']);
+    if ($action === 'delete') {
+        // Users can only delete their own PENDING requests
