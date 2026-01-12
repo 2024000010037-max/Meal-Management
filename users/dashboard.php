@@ -83,6 +83,11 @@ ob_start();
     .card-value { font-size: 1.8rem; font-weight: 700; margin-bottom: 0; }
     .card-sub { font-size: 0.8rem; opacity: 0.8; }
     </style>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-bold text-dark mb-0">My Dashboard</h3>
+        <p class="text-muted small">Overview for <?= date('F Y', strtotime($selected_month)) ?></p>
+    </div>
 
  
 
