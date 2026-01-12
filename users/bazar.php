@@ -78,7 +78,11 @@ ob_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
+  <style>
+        .card{border:none;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+        .nav-pills .nav-link.active { background-color: #0d6efd; }
+        .status-badge { font-size: 0.75rem; padding: 4px 8px; border-radius: 12px; }
+        @media print {
 
 
     
