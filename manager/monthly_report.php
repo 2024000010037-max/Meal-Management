@@ -254,7 +254,15 @@ function sendInvoice(userId, month, name) {
  // Hide Loader
                 document.getElementById('loadingOverlay').style.display = 'none';
                 
-                
+                if(data.status === 'success') {
+                    // Show Success Modal
+                    var myModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    myModal.show();
+                } else {
+                    alert(data.message);
+                }
+            })
+
     
 
 ?>
