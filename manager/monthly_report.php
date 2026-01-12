@@ -269,7 +269,7 @@ function sendInvoice(userId, month, name) {
             });
     }
 </script>
-
+<?php
     
 
 ?>
