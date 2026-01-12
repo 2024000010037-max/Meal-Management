@@ -35,6 +35,7 @@ if (!$deposit) {
 // 2. Calculate Stats for Invoice (Total Deposit & Current Balance)
 $user_id = $deposit['user_id'];
 $current_month = date('Y-m', strtotime($deposit['deposit_date']));
+
 // Global Stats for Rate
 $stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
 $stmt->execute([$current_month]);
@@ -45,3 +46,15 @@ $stmt->execute([$current_month]);
 $total_mess_bazar = $stmt->fetchColumn() ?: 0;
 
 $meal_rate = ($total_mess_meals > 0) ? ($total_mess_bazar / $total_mess_meals) : 0;
+// User Stats (This Month)
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE user_id = ? AND DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$user_id, $current_month]);
+$user_meals = $stmt->fetchColumn() ?: 0;
+
+// User Total Deposit (This Month, after this refund)
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE user_id = ? AND status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
+$stmt->execute([$user_id, $current_month]);
+$user_total_deposit = $stmt->fetchColumn() ?: 0;
+
+$user_cost = $user_meals * $meal_rate;
+$balance = $user_total_deposit - $user_cost;
