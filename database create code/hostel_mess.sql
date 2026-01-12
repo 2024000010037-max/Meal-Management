@@ -39,3 +39,5 @@ CREATE TABLE `bazar` (
 
 ALTER TABLE `bazar`
   ADD CONSTRAINT `bazar_ibfk_1` FOREIGN KEY (`manager_id`) REFERENCES `users` (`id`);
+ALTER TABLE `bazar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
