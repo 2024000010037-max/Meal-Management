@@ -33,3 +33,7 @@ z-index: 1000;
      border-bottom: 1px solid #1e293b;
         }
 .sidebar-header h4 {
+color: #fff;
+            margin: 0;
+            font-weight: 700;
+        }
