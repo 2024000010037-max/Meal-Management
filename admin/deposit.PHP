@@ -232,3 +232,6 @@ if (isset($_GET['return_amount']) && isset($_GET['user_id'])) {
     $pre_user_id = intval($_GET['user_id']);
     $pre_amount = -abs(floatval($_GET['return_amount'])); // Make it negative for return
 }
+$pageTitle = "Deposit Management";
+ob_start();
+?>
