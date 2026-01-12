@@ -30,3 +30,5 @@ z-index: 1000;
 .sidebar-header {
             padding: 20px;
  text-align: center;
+     border-bottom: 1px solid #1e293b;
+        }
