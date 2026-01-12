@@ -8,4 +8,8 @@ if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['manager', 'ad
 include "../config/database.php";
 $pdo = (new Database())->connect();
 
+$selected_month = $_GET['month'] ?? date('Y-m');
+$view_as = $_GET['view_as'] ?? 'manager';
+
+
 ?>
