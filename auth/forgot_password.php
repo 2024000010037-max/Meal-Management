@@ -66,6 +66,11 @@ session_start();
         letter-spacing: 0.5px;
         transition: transform 0.2s;
     }
+  .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(238, 82, 83, 0.3);
+        background: linear-gradient(45deg, #ee5253, #ff9f43);
+    }
 
 
   
