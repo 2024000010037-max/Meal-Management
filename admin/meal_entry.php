@@ -165,3 +165,15 @@ ob_start();
             </div>
         </form>
     </div>
+ <script>
+        // JavaScript for +/- buttons
+        function updateQty(btn, change) {
+            const input = btn.parentElement.querySelector('input');
+            if (input.readOnly) return;
+            
+            let val = parseFloat(input.value) || 0;
+            val += change;
+            if (val < 0) val = 0;
+            input.value = val;
+        }
+    </script>
