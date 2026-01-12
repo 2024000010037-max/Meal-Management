@@ -73,3 +73,10 @@ $target = new DateTime($selected_date);
 $today_str = $now->format('Y-m-d');
 $target_str = $target->format('Y-m-d');
 $hour = (int)$now->format('H');
+
+$lock_b = false; // Breakfast Lock
+$lock_l = false; // Lunch Lock
+$lock_d = false; // Dinner Lock
+$global_lock_msg = "";
+
+// Manager & Admin have no time restrictions ("All possible")
