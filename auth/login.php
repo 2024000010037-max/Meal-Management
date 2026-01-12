@@ -130,4 +130,15 @@ body {
                     <div class="bg-white p-2 rounded-circle shadow-sm me-3 text-primary"><i class="bi bi-telephone-fill"></i></div>
                     <div><small class="text-muted d-block" style="font-size: 10px;">CALL US</small><span class="fw-bold text-dark">+8801780767020</span></div>
                 </div>
+                <div class="d-flex align-items-center">
+                    <div class="bg-white p-2 rounded-circle shadow-sm me-3 text-danger"><i class="bi bi-envelope-fill"></i></div>
+                    <div><small class="text-muted d-block" style="font-size: 10px;">EMAIL US</small><span class="fw-bold text-dark">1towfiq12@gmail.com</span></div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="bg-white p-2 rounded-circle shadow-sm me-3 text-info"><i class="bi bi-globe"></i></div>
+                    <div><small class="text-muted d-block" style="font-size: 10px;">WEBSITE</small><span class="fw-bold text-dark">www.edicut.com</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
