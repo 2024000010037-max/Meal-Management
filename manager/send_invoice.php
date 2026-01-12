@@ -162,6 +162,11 @@ try {
         exit;
     }
     echo "<script>
+        alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');
+        window.location.href='monthly_report.php?month=$selected_month';
+    </script>";
+}
+
 
     
 ?>
