@@ -138,6 +138,12 @@ ob_start();
             <div class="summary-value"><?= number_format($total_mess_meals, 1) ?></div>
         </div>
     </div>
+<div class="col-md-3">
+        <div class="summary-box border-bottom border-4 border-success">
+            <div class="summary-label">Total Mess Deposit</div>
+            <div class="summary-value">৳ <?= number_format($total_mess_deposit, 0) ?></div>
+        </div>
+    </div>
 
 
 
