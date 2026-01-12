@@ -65,3 +65,27 @@ if ($balance >= 0) {
     echo "<script>alert('User has no due amount to pay.'); window.location.href='monthly_report.php?month=$selected_month';</script>";
     exit;
 }
+
+// --- 3. GENERATE INVOICE HTML ---
+$month_name = date('F Y', strtotime($selected_month));
+$invoice_date = date('d M, Y');
+$invoice_html = "
+<div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; padding: 20px; background: #fff;'>
+    <div style='text-align: center; border-bottom: 2px solid #e15f41; padding-bottom: 10px; margin-bottom: 20px;'>
+        <h2 style='color: #e15f41; margin: 0;'>HOSTEL MESS INVOICE</h2>
+        <p style='color: #777; margin: 5px 0;'>Month: <strong>$month_name</strong></p>
+    </div>
+    
+    <table style='width: 100%; margin-bottom: 20px;'>
+        <tr>
+            <td>
+                <strong>To:</strong><br>
+                {$user['full_name']}<br>
+                {$user['email']}
+            </td>
+            <td style='text-align: right;'>
+                <strong>Date:</strong> $invoice_date<br>
+                <strong>Status:</strong> <span style='color: red;'>Unpaid</span>
+            </td>
+        </tr>
+    </table>
