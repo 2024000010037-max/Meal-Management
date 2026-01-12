@@ -63,5 +63,11 @@ session_start();
         <a href="login.php" class="back-link">← Back to Login</a>
     </div>
   </div>
+<script>
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const step3 = document.getElementById('step-3');
+    const finalSuccess = document.getElementById('final-success');
+    const alertMsg = document.getElementById('alertMsg');
 
 
