@@ -59,6 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['meals'])) {
         $msg = "<div class='alert alert-danger'>Error saving meals: " . $e->getMessage() . "</div>";
     }
 }
+    // --- FETCH DATA ---
+// 1. Get all active members (Managers + Users)
+$users = $pdo->query("SELECT id, full_name, role, is_auto_meal FROM users WHERE role IN ('manager', 'user') AND status = 1 ORDER BY role ASC, full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
 
 
 
