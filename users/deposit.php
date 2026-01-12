@@ -186,3 +186,7 @@ div class="col-12">
                             <?php if(empty($history)): ?>
                                 <tr><td colspan="5" class="text-center text-muted py-4">No records found for this month.</td></tr>
                             <?php else: ?                           
+ <?php foreach($history as $h): ?>
+                                <tr>
+                                    <td><?= date('d M', strtotime($h['deposit_date'])) ?></td>
+                                    <td>
