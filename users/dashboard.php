@@ -145,7 +145,22 @@ ob_start();
             </div>
         </div>
     </div>
-     
+    <!-- My Deposit -->
+    <div class="col-md-3">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm border-bottom border-4 border-success">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="card-label text-success">My Deposit</div>
+                    <h2 class="card-value text-dark mt-2">৳ <?= number_format($my_deposit, 0) ?></h2>
+                    <div class="card-sub text-muted mt-1">Blance</div>
+                </div>
+                <div class="card-icon bg-success bg-opacity-10 text-success">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+  
 
 
 
