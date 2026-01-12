@@ -245,6 +245,12 @@ ob_start();
     });
 function sendInvoice(userId, month, name) {
         if(!confirm('Send Due Invoice to ' + name + ' via Email?')) return;
+ // Show Loader
+        document.getElementById('loadingOverlay').style.display = 'flex';
+
+        fetch('send_invoice.php?ajax=1&user_id=' + userId + '&month=' + month)
+            .then(response => response.json())
+            .then(data => {
 
     
 
