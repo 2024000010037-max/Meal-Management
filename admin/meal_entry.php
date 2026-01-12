@@ -49,3 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['meals'])) {
                 }
             }
         }
+ $pdo->commit();
+        $msg = "<div class='alert alert-success alert-dismissible fade show'>
+                    <i class='bi bi-check-circle-fill me-2'></i> Meals updated successfully for <strong>" . date('d M, Y', strtotime($selected_date)) . "</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert'></button>
+                </div>";
+    } catch (Exception $e) {
+        $pdo->rollBack();
+        $msg = "<div class='alert alert-danger'>Error saving meals: " . $e->getMessage() . "</div>";
+    }
+}
