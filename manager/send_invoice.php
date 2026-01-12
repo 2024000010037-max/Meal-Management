@@ -156,6 +156,12 @@ try {
         alert('Invoice sent successfully to {$user['email']}!');
         window.location.href='monthly_report.php?month=$selected_month';
     </script>";
+} catch (Exception $e) {
+    if (isset($_GET['ajax'])) {
+        echo json_encode(['status' => 'error', 'message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
+        exit;
+    }
+    echo "<script>
 
     
 ?>
