@@ -269,6 +269,19 @@ function calculateTotal() {
                 });
                 totalDisplay.textContent = total.toFixed(2);
             }
+ searchInput.addEventListener('keyup', function() {
+                const filter = searchInput.value.toLowerCase();
+                Array.from(rows).forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(filter) ? '' : 'none';
+                });
+                calculateTotal();
+            });
+
+            // Initial Calc
+            calculateTotal();
+        });
+    </script>
 
 
 
