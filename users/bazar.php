@@ -62,6 +62,9 @@ if (isset($_GET['export']) && $_GET['export'] === 'excel') {
         $shopper = implode(', ', array_filter($s_names));
         echo "<tr><td>{$b['bazar_date']}</td><td>{$shopper}</td><td>{$b['details']} " . ($b['remarks'] ? "({$b['remarks']})" : "") . "</td><td>{$b['amount']}</td></tr>";
     }
+ echo '</table>';
+    exit;
+}
 
 
     
