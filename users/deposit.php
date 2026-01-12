@@ -201,3 +201,6 @@ div class="col-12">
                                             <span class="badge bg-danger">Rejected</span>
                                         <?php endif; ?>
                                     </td>
+ <td class="fw-bold text-end <?= $h['amount'] < 0 ? 'text-danger' : 'text-success' ?>">
+                                        <?= $h['amount'] > 0 ? '+' : '' ?><?= number_format($h['amount'], 2) ?>
+                                    </td>
