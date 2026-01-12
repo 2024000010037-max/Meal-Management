@@ -151,6 +151,11 @@ try {
         echo json_encode(['status' => 'success', 'message' => "Invoice sent successfully to {$user['email']}!"]);
         exit;
     }
+// Success Redirect
+    echo "<script>
+        alert('Invoice sent successfully to {$user['email']}!');
+        window.location.href='monthly_report.php?month=$selected_month';
+    </script>";
 
     
 ?>
