@@ -125,7 +125,11 @@ if (!empty($deposit['email'])) {
         $mail->addStringAttachment($invoice_html, "Receipt_{$invoice_no}.html", 'base64', 'text/html');
 
         $mail->send();
-    } 
+    } catch (Exception $e) {
+        
+    }
+}
+
 
 
 ?>
