@@ -165,7 +165,17 @@ ob_start();
         <div class="card dashboard-card bg-white p-4 h-100 shadow-sm border-bottom border-4 border-danger">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
-                    
+               <div class="card-label text-danger">My Expense</div>
+                    <h2 class="card-value text-dark mt-2">৳ <?= number_format($my_expense, 0) ?></h2>
+                    <div class="card-sub text-muted mt-1">Meal Cost</div>
+                </div>
+                <div class="card-icon bg-danger bg-opacity-10 text-danger">
+                    <i class="bi bi-receipt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+      
 
 
 
