@@ -76,3 +76,5 @@ body.toggled .sidebar {
             left: -250px;
         }
 body.toggled .main-content {
+ margin-left: 0;
+        }
