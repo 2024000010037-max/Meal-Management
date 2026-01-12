@@ -41,3 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: ../user/dashboard.php");
             }
             exit;
+        } else {
+            $msg = "<div class='alert alert-danger'>User inactive, contact hostel manager</div>";
+        }
+    } else {
+        $msg = "<div class='alert alert-danger'>Invalid username or password</div>";
+    }
+}
