@@ -79,5 +79,10 @@ ob_start();
  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item">
             <button class="nav-link active fw-bold" id="pills-add-tab" data-bs-toggle="pill" data-bs-target="#pills-add" type="button">
+ New Request
+            </button>
+        </li>
+        <li class="nav-item"><button class="nav-link fw-bold" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button">History</button></li>
+    </ul>
 
     
