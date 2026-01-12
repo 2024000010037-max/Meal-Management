@@ -74,6 +74,10 @@ ob_start();
             <input type="date" name="start_date" class="form-control" value="<?= $start_date ?>">
         </div>
 
+<div class="col-md-3">
+            <label class="form-label small fw-bold text-muted">End Date</label>
+            <input type="date" name="end_date" class="form-control" value="<?= $end_date ?>">
+        </div>
 
 
 
