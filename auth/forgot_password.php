@@ -122,6 +122,12 @@ fetch("send_otp.php", {
 .catch(() => showMessage("An error occurred. Please try again.", "danger"))
         .finally(() => toggleButtonLoading('send-otp-btn', false));
     }
+function verifyOTP() {
+        const otp = document.getElementById("otp").value;
+        if (!otp) {
+            showMessage("Please enter the OTP.", "warning");
+            return;
+        }
 
 
 
