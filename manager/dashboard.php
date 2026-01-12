@@ -90,6 +90,23 @@ if ($view_as === 'user') {
     </form>
 </div>
 
+<div class="row g-4">
+    <?php if ($view_as === 'manager'): ?>
+    <!-- Total Members -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="card-label text-primary">Active Members</div>
+                    <h2 class="card-value text-dark mt-2"><?= $total_members ?></h2>
+                    <div class="card-sub text-muted mt-1">Total Users</div>
+                </div>
+                <div class="card-icon bg-primary bg-opacity-10 text-primary">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
