@@ -175,4 +175,10 @@ div class="col-12">
                     <table class="table table-hover align-middle">
                         <thead class="table-light">
                             <tr>
-                                          
+          <th>Date</th>
+                                <th>Details</th>
+                                <th>Approved By</th>
+                                <th>Status</th>
+                                <th class="text-end">Amount</th>
+                            </tr>
+                                   
