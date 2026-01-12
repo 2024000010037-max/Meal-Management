@@ -229,6 +229,14 @@ ob_start();
                             <?php if($editUser && !empty($editUser['nid_photo'])): ?>
                                 <small class="text-success"><i class="bi bi-check-circle"></i> Uploaded</small>
                             <?php endif; ?>
+</div>
+                        <div class="col-12 mt-4">
+                            <button class="btn btn-primary w-100 shadow-sm mb-2">
+                                <i class="bi bi-check-lg me-2"></i> <?= $editUser ? 'Update Member' : 'Create Member' ?>
+                            </button>
+                            <?php if($editUser): ?>
+                                <a href="create_user.php" class="btn btn-light w-100 text-muted">Cancel Edit</a>
+                            <?php endif; ?>
 
                     
 <?php
