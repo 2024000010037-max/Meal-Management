@@ -52,6 +52,11 @@ session_start();
         transition: all 0.3s;
         box-shadow: 0 2px 10px rgba(0,0,0,0.02);
     }
+ .form-control:focus {
+        background: #fff;
+        border-color: #ff9f43;
+        box-shadow: 0 0 0 4px rgba(255, 159, 67, 0.2);
+    }
 
 
   
