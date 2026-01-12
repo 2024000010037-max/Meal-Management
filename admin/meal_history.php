@@ -75,3 +75,9 @@ ob_start();
         <button onclick="exportExcel()" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Excel</button>
     </div>
 </div>
+<div class="card p-4 mb-4 no-print">
+    <form method="GET" class="row g-3">
+        <div class="col-md-3">
+            <label class="form-label small fw-bold text-muted">Start Date</label>
+            <input type="date" name="start_date" class="form-control" value="<?= $start_date ?>">
+        </div>
