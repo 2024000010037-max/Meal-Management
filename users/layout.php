@@ -159,3 +159,5 @@ document.body.addEventListener('click', function(e) {
 f (!e.target.closest('.sidebar') && !e.target.closest('#menu-toggle')) {
                     document.body.classList.remove('toggled');
                 }
+   }
+        });
