@@ -89,4 +89,10 @@ ob_start();
         <!-- ADD NEW REQUEST -->
         <div class="tab-pane fade show active" id="pills-add">
             <div class="row g-4"
-    
+   <!-- Form -->
+                <div class="col-md-5">
+                    <div class="card p-4 h-100">
+                        <h5 class="fw-bold mb-3 text-success">Submit Deposit Request</h5>
+                        <form method="POST" action="deposit.php?month=<?= $selected_month ?>">
+                            <input type="hidden" name="save_deposit" value="1">
+                            <div class="row g-3"> 
