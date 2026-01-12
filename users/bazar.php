@@ -231,5 +231,20 @@ ob_start();
                                             <?php elseif($req['status'] == 'rejected'): ?>
                                                 <span class="badge bg-danger status-badge">Rejected</span>
                                                 <a href="?action=delete&id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="text-danger ms-2" onclick="return confirm('Permanently delete this rejected request?')" title="Delete"><i class="bi bi-trash"></i></a>
+     <?php else: ?>
+                                                <span class="badge bg-warning text-dark status-badge">Pending</span>
+                                            <?php endif; ?>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
    
