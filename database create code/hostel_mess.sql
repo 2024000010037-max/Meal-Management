@@ -63,3 +63,6 @@ CREATE TABLE `deposits` (
 ALTER TABLE `deposits`
   ADD CONSTRAINT `deposits_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `deposits_ibfk_2` FOREIGN KEY (`manager_id`) REFERENCES `users` (`id`);
+
+ALTER TABLE `deposits`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
