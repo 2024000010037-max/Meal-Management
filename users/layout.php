@@ -55,4 +55,4 @@ padding: 12px 25px;
             border-left-color: #3b82f6;
         }
  /* MAIN CONTENT WRAPPER */
-       
+.main-content {       
