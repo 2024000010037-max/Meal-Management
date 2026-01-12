@@ -107,6 +107,22 @@ if ($view_as === 'user') {
             </div>
         </div>
     </div>
+ <!-- Meal Rate -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dashboard-card bg-white p-4 h-100 shadow-sm">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <div class="card-label text-info">Meal Rate</div>
+                    <h2 class="card-value text-dark mt-2">৳ <?= number_format($meal_rate, 2) ?></h2>
+                    <div class="card-sub text-muted mt-1">Per Meal</div>
+                </div>
+                <div class="card-icon bg-info bg-opacity-10 text-info">
+                    <i class="bi bi-calculator"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
