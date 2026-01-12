@@ -107,3 +107,15 @@ ob_start();
     <?php if($global_lock_msg): ?>
         <div class="alert alert-warning"><i class="bi bi-lock-fill me-2"></i> <?= $global_lock_msg ?></div>
     <?php endif; ?>
+  <div class="card p-4">
+        <form method="POST" class="row g-3">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th style="width: 25%">Member Name</th>
+                            <th class="text-center">Breakfast <small class="text-muted d-block" style="font-size:10px">(< 8 AM)</small></th>
+                            <th class="text-center">Lunch <small class="text-muted d-block" style="font-size:10px">(< 11 AM)</small></th>
+                            <th class="text-center">Dinner <small class="text-muted d-block" style="font-size:10px">(< 3 PM)</small></th>
+                        </tr>
+                    </thead>
