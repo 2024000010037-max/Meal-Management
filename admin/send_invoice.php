@@ -143,3 +143,12 @@ try {
     $mail->Subject = "Due Payment Invoice - $month_name";
     $mail->Body    = "Dear {$user['full_name']},<br><br>You have a due balance for the month of <strong>$month_name</strong>.<br>Please find the invoice details below:<br><br>" . $invoice_html;
     $mail->AltBody = "Dear {$user['full_name']}, You have a due balance of " . number_format($due_amount, 2) . " for $month_name. Please pay immediately.";
+  // Attach HTML Invoice (User can print this as PDF)
+    $mail->addStringAttachment($invoice_html, "Invoice_{$selected_month}.html", 'base64', 'text/html');
+
+    $mail->send();
+    
+    if (isset($_GET['ajax'])) {
+        echo json_encode(['status' => 'success', 'message' => "Invoice sent successfully to {$user['email']}!"]);
+        exit;
+    }
