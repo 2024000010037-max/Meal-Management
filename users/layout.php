@@ -12,3 +12,5 @@
         body {
 font-family: 'Segoe UI', sans-serif;
 background: #f1f5f9;
+  overflow-x: hidden;
+        }
