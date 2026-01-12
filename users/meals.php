@@ -84,6 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['toggle_auto'])) {
 $stmt = $pdo->prepare("SELECT * FROM meals WHERE user_id = ? AND meal_date = ?");
 $stmt->execute([$userId, $selected_date]);
 $current_meal = $stmt->fetch(PDO::FETCH_ASSOC);
+// Get User Auto Status
+$userStmt = $pdo->prepare("SELECT is_auto_meal FROM users WHERE id = ?");
+$userStmt->execute([$userId]);
+$is_auto_meal = $userStmt->fetchColumn();
 
 
 
