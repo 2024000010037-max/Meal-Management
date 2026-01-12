@@ -21,3 +21,5 @@ ob_start();
 <div class="row justify-content-center">
 <div class="col-md-8 col-lg-6">
  <div class="card border-0 shadow-lg rounded-4 overflow-hid
+ <!-- Profile Header -->
+            <div class="card-header text-white p-4 text-center border-0" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
