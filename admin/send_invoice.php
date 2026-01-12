@@ -40,3 +40,18 @@ $total_mess_meals = $stmt->fetchColumn() ?: 0;
 $stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
 $stmt->execute([$selected_month]);
 $total_mess_bazar = $stmt->fetchColumn() ?: 0;
+
+$meal_rate = ($total_mess_meals > 0) ? ($total_mess_bazar / $total_mess_meals) : 0;
+
+// User Stats
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE user_id = ? AND DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$user_id, $selected_month]);
+$user_meals = $stmt->fetchColumn() ?: 0;
+
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE user_id = ? AND status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
+$stmt->execute([$user_id, $selected_month]);
+$user_deposit = $stmt->fetchColumn() ?: 0;
+
+$user_cost = $user_meals * $meal_rate;
+$balance = $user_deposit - $user_cost;
+$due_amount = abs($balance);
