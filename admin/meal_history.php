@@ -108,3 +108,17 @@ ob_start();
                 </tr>
             </thead>
             <tbody>
+                <?php if(empty($meals)): ?>
+                    <tr><td colspan="6" class="text-center py-4 text-muted">No records found</td></tr>
+                <?php else: ?>
+                    <?php foreach($meals as $m): 
+                        $total = $m['breakfast'] + $m['lunch'] + $m['dinner'];
+                    ?>
+                    <tr>
+                        <td><?= date('d M, Y', strtotime($m['meal_date'])) ?></td>
+                        <td class="fw-bold"><?= htmlspecialchars($m['full_name']) ?></td>
+                        <td class="text-center"><?= $m['breakfast'] ?></td>
+                        <td class="text-center"><?= $m['lunch'] ?></td>
+                        <td class="text-center"><?= $m['dinner'] ?></td>
+                        <td class="text-center fw-bold"><?= $total ?></td>
+                    </tr>
