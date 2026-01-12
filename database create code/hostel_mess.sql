@@ -89,3 +89,7 @@ COMMIT;
 
 ALTER TABLE `meals`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `meals`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
