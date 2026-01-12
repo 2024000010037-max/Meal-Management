@@ -82,6 +82,11 @@ ob_start();
             <label class="form-label small fw-bold text-muted">Search Member</label>
             <input type="text" name="search" class="form-control" placeholder="Enter name..." value="<?= htmlspecialchars($search) ?>">
         </div>
+ <div class="col-md-2 d-flex align-items-end">
+            <button class="btn btn-primary w-100"><i class="bi bi-filter"></i> Filter</button>
+        </div>
+    </form>
+</div>
 
 
 
