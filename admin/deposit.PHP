@@ -39,3 +39,10 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         } elseif ($_SESSION['role'] === 'manager' && isset($dep['time_diff']) && $dep['time_diff'] >= 0 && $dep['time_diff'] <= 600) {
             $can_delete = true;
         }
+       if ($can_delete) {
+            $stmt = $pdo->prepare("DELETE FROM deposits WHERE id = ?");
+            $stmt->execute([$did]);
+            $msg = "<div class='alert alert-warning alert-dismissible fade show'>Deposit deleted permanently. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        } else {
+            $msg = "<div class='alert alert-danger alert-dismissible fade show'>Permission denied or time limit exceeded. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+        }
