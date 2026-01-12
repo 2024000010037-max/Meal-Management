@@ -64,6 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['toggle_auto'])) {
     $l = floatval($_POST['lunch']);
     $d = floatval($_POST['dinner']);
     $date = $_POST['meal_date'];
+  // Check if entry exists
+    $stmtCheck = $pdo->prepare("SELECT id FROM meals WHERE user_id = ? AND meal_date = ?");
+    $stmtCheck->execute([$userId, $date]);
+    $existing_id = $stmtCheck->fetchColumn();
+
 
 
 
