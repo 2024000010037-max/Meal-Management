@@ -87,4 +87,19 @@ body {
         </div>
 
         <?= $msg ?>
+<form method="POST" class="text-start">
+            <div class="mb-3">
+                <label class="form-label text-secondary small fw-bold">USERNAME</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter username" required>
+            </div>
+            <div class="mb-4">
+                <label class="form-label text-secondary small fw-bold">PASSWORD</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+                <div class="mt-2">
+                    <a href="forgot_password.php" class="forgot-link">Forgot Password?</a>
+                </div>
+            </div>
+            <button class="btn btn-primary w-100">Let's Eat!</button>
+        </form>
+    </div>
 </body>
