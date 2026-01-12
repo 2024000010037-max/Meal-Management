@@ -65,6 +65,14 @@ if (isset($_GET['export']) && $_GET['export'] === 'excel') {
  echo '</table>';
     exit;
 }
+// 3. My Pending/Recent Requests (For Add Tab)
+$stmt = $pdo->prepare("SELECT * FROM bazar WHERE user_id = ? ORDER BY id DESC LIMIT 10");
+$stmt->execute([$userId]);
+$my_requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$pageTitle = "Bazar List";
+ob_start();
+?>
 
 
     
