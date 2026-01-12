@@ -124,3 +124,11 @@ ob_start();
         <input type="month" name="month" class="form-control form-control-sm fw-bold" value="<?= $selected_month ?>" onchange="this.form.submit()">
     </form>
 </div>
+<!-- Summary Cards -->
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="summary-box border-bottom border-4 border-warning">
+            <div class="summary-label">Total Mess Meals</div>
+            <div class="summary-value"><?= number_format($total_mess_meals, 1) ?></div>
+        </div>
+    </div>
