@@ -30,3 +30,13 @@ if (!$user || empty($user['email'])) {
     echo "<script>alert('User email not found!'); window.location.href='monthly_report.php?month=$selected_month';</script>";
     exit;
 }
+// --- 2. CALCULATE STATS (Same logic as monthly_report.php) ---
+
+// Global Stats for Rate
+$stmt = $pdo->prepare("SELECT SUM(breakfast + lunch + dinner) FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_mess_meals = $stmt->fetchColumn() ?: 0;
+
+$stmt = $pdo->prepare("SELECT SUM(amount) FROM bazar WHERE status = 'approved' AND DATE_FORMAT(bazar_date, '%Y-%m') = ?");
+$stmt->execute([$selected_month]);
+$total_mess_bazar = $stmt->fetchColumn() ?: 0;
