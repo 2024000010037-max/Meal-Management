@@ -166,6 +166,10 @@ ob_start();
                             <td><?php renderMealInput($uid, 'dinner', $d, $lock_d); ?></td>
                             </tr>
                          <?php endforeach; ?>
+                             </tbody>
+                                </table>
+                                </div>
+
 
 
 
