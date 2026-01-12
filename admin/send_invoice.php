@@ -89,3 +89,36 @@ $invoice_html = "
             </td>
         </tr>
     </table>
+   <table style='width: 100%; border-collapse: collapse; margin-bottom: 20px;'>
+        <tr style='background: #f8f9fa;'>
+            <th style='border: 1px solid #ddd; padding: 10px; text-align: left;'>Description</th>
+            <th style='border: 1px solid #ddd; padding: 10px; text-align: right;'>Value</th>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Total Meals Consumed</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>" . number_format($user_meals, 1) . "</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Meal Rate (Current)</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>৳ " . number_format($meal_rate, 2) . "</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'><strong>Total Expense</strong></td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'><strong>৳ " . number_format($user_cost, 2) . "</strong></td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Less: Total Deposit</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>(-) ৳ " . number_format($user_deposit, 2) . "</td>
+        </tr>
+        <tr style='background: #ffebee;'>
+            <td style='border: 1px solid #ddd; padding: 10px; color: #c62828; font-weight: bold;'>TOTAL DUE AMOUNT</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right; color: #c62828; font-weight: bold; font-size: 1.2em;'>৳ " . number_format($due_amount, 2) . "</td>
+        </tr>
+    </table>
+
+    <div style='text-align: center; font-size: 12px; color: #777; margin-top: 30px;'>
+        <p>Please clear your dues as soon as possible to avoid meal cancellation.</p>
+        <p>Thank you, <br>Hostel Manager</p>
+    </div>
+</div>
+";
