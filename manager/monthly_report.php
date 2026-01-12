@@ -144,6 +144,12 @@ ob_start();
             <div class="summary-value">৳ <?= number_format($total_mess_deposit, 0) ?></div>
         </div>
     </div>
+<div class="col-md-3">
+        <div class="summary-box border-bottom border-4 border-danger">
+            <div class="summary-label">Total Mess Bazar</div>
+            <div class="summary-value">৳ <?= number_format($total_mess_bazar, 0) ?></div>
+        </div>
+    </div>
 
 
 
