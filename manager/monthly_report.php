@@ -32,6 +32,12 @@ $meal_rate = ($total_mess_meals > 0) ? ($total_mess_bazar / $total_mess_meals) :
 // Active Users (Non-Admin)
 $users = $pdo->query("SELECT id, full_name, role FROM users WHERE status = 1 AND role != 'admin' ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
 
+// Meals per User
+$stmt = $pdo->prepare("SELECT user_id, SUM(breakfast + lunch + dinner) as meals FROM meals WHERE DATE_FORMAT(meal_date, '%Y-%m') = ? GROUP BY user_id");
+$stmt->execute([$selected_month]);
+$user_meals_map = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+
+
 
 
 ?>
