@@ -79,6 +79,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['toggle_auto'])) {
     }
   $msg = "<div class='alert alert-success alert-dismissible fade show'>Meal updated successfully! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
 }
+// --- FETCH DATA ---
+// 1. Get today's/selected date meal
+$stmt = $pdo->prepare("SELECT * FROM meals WHERE user_id = ? AND meal_date = ?");
+$stmt->execute([$userId, $selected_date]);
+$current_meal = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
