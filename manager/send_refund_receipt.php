@@ -119,6 +119,13 @@ if (!empty($deposit['email'])) {
 
         $mail->setFrom('remarkhb.herlanit@gmail.com', 'Hostel Mess Manager');
         $mail->addAddress($deposit['email'], $deposit['full_name']);
+        $mail->isHTML(true);
+        $mail->Subject = "Cash Refund Processed - ৳ " . number_format(abs($deposit['amount']), 2);
+        $mail->Body    = "Dear {$deposit['full_name']},<br><br>A cash refund has been processed for your account. Here is your receipt.<br><br>" . $invoice_html;
+        $mail->addStringAttachment($invoice_html, "Receipt_{$invoice_no}.html", 'base64', 'text/html');
+
+        $mail->send();
+    } 
 
 
 ?>
