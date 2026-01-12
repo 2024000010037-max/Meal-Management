@@ -44,3 +44,8 @@ padding: 10px 0;
         .sidebar-menu a {
  display: block;
 padding: 12px 25px;
+ color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.2s;
+            border-left: 4px solid transparent;
+        }
