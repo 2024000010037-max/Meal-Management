@@ -31,5 +31,11 @@ if ($target_str < $today_str) {
     if ($hour >= 8)  $lock_b = true;
     if ($hour >= 11) $lock_l = true;
     if ($hour >= 15) $lock_d = true;
-
+} else {
+    // Future
+    $tomorrow = new DateTime('tomorrow');
+    if ($target_str == $tomorrow->format('Y-m-d')) {
+        // Tomorrow: Opens after 6 PM today
+        if ($hour < 18) {
+            
 
