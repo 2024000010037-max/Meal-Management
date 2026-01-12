@@ -185,7 +185,12 @@ ob_start();
                         <h2 class="card-value mt-2">+৳ <?= number_format($my_balance, 0) ?></h2>
                         <div class="card-sub text-white-50 mt-1">Back Balance</div>
                     </div>
-
+   <div class="card-icon bg-white bg-opacity-25 text-white">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        <?php else: ?>
 
 
 
