@@ -29,3 +29,4 @@ z-index: 1000;
         }
 .sidebar-header {
             padding: 20px;
+ text-align: center;
