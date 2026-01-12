@@ -15,3 +15,6 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
 $did = intval($_GET['id']);
     if ($action === 'delete') {
         // Users can only delete their own PENDING requests
+        $stmt = $pdo->prepare("DELETE FROM deposits WHERE id = ? AND user_id = ? AND status = 'pending'");
+        if ($stmt->execute([$did, $user_id])) {
+            
