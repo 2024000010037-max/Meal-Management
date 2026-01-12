@@ -93,3 +93,5 @@ ALTER TABLE `meals`
 ALTER TABLE `meals`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+
+
