@@ -77,6 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['toggle_auto'])) {
             $stmt->execute([$userId, $date, $b, $l, $d]);
         }
     }
+  $msg = "<div class='alert alert-success alert-dismissible fade show'>Meal updated successfully! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+}
 
 
 
