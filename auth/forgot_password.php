@@ -59,4 +59,9 @@ session_start();
         <p class="text-muted small mb-4">Your password has been changed successfully.</p>
         <a href="login.php" class="btn btn-primary w-100">Go to Login</a>
     </div>
+ <div class="mt-4">
+        <a href="login.php" class="back-link">← Back to Login</a>
+    </div>
+  </div>
+
 
