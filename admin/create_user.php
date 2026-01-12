@@ -261,6 +261,10 @@ ob_start();
                                 <th class="text-end pe-3">Actions</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <?php foreach($users as $u): 
+                                $photo = !empty($u['photo']) ? "../uploads/".$u['photo'] : "https://ui-avatars.com/api/?name=".urlencode($u['full_name'])."&background=random";
+                            ?>
                     
 <?php
 $content = ob_get_clean();
