@@ -46,3 +46,11 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
         } else {
             $msg = "<div class='alert alert-danger alert-dismissible fade show'>Permission denied or time limit exceeded. <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
         }
+   } elseif ($action === 'reject') {
+        $new_status = 'rejected';
+        // Update status AND manager_id
+        $stmt = $pdo->prepare("UPDATE deposits SET status = ?, manager_id = ? WHERE id = ?");
+        $stmt->execute([$new_status, $manager_id, $did]);
+        $msg = "<div class='alert alert-success alert-dismissible fade show'>Request Rejected! <button type='button' class='btn-close' data-bs-dismiss='alert'></button></div>";
+    }
+}
