@@ -120,7 +120,12 @@ ob_start();
             <input type="date" name="date" class="form-control" value="<?= $selected_date ?>" onchange="this.form.submit()">
         </form>
     </div>
+ <?= $msg ?>
 
+    <!-- ENTRY CARD -->
+    <div class="card p-4 mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0 text-primary">Update Meal <small class="text-muted fs-6 ms-1">(<?= date('d M', strtotime($selected_date)) ?>)</small>
        
 
 
