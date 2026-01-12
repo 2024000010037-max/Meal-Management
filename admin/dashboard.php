@@ -27,3 +27,13 @@ $total_bazar = $stmt->fetchColumn() ?: 0;
 $stmt = $pdo->prepare("SELECT SUM(amount) FROM deposits WHERE status = 'approved' AND DATE_FORMAT(deposit_date, '%Y-%m') = ?");
 $stmt->execute([$selected_month]);
 $total_deposit = $stmt->fetchColumn() ?: 0;
+
+// 5. Meal Rate
+$meal_rate = ($total_meal > 0) ? ($total_bazar / $total_meal) : 0;
+
+// 6. Calculate Net Balance
+$net_balance = $total_deposit - $total_bazar;
+
+$pageTitle = "Dashboard";
+ob_start();
+?>
