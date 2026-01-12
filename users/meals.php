@@ -155,6 +155,19 @@ ob_start();
                     </div>
                     <?php if($lock_b): ?><small class="text-danger d-block mt-1"><i class="bi bi-lock"></i> Locked</small><?php endif; ?>
                 
+                </div>
+
+                <!-- Lunch -->
+                <div class="col-md-4 <?= $lock_l ? 'locked-section' : '' ?>">
+                    <label class="form-label text-muted fw-bold small">LUNCH</label>
+                    <div class="d-flex align-items-center justify-content-center gap-2 bg-light rounded-pill p-2">
+                        <button type="button" class="btn btn-outline-danger btn-qty" onclick="updateQty('lunch', -0.5)">-</button>
+                        <input type="number" step="0.5" min="0" id="lunch" name="lunch" value="<?= $current_meal['lunch'] ?? 0 ?>" class="meal-input" readonly>
+                        <button type="button" class="btn btn-outline-success btn-qty" onclick="updateQty('lunch', 0.5)">+</button>
+                    </div>
+                    <?php if($lock_l): ?><small class="text-danger d-block mt-1"><i class="bi bi-lock"></i> Locked</small><?php endif; ?>
+                </div>
+
 
 
 
