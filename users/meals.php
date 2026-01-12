@@ -220,7 +220,10 @@ ob_start();
             input.value = val;
         }
     </script>
- 
+ <?php
+$content = ob_get_clean();
+include "layout.php";
+?>
 
 
 
