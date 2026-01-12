@@ -131,6 +131,8 @@ ob_start();
                 <input type="hidden" name="toggle_auto" value="1">
                 <input type="hidden" name="auto_status" value="<?= $is_auto_meal ?>">
                 <div class="form-check form-switch m-0">
+<input class="form-check-input" type="checkbox" role="switch" id="autoSwitch" onchange="this.form.submit()" <?= $is_auto_meal ? 'checked' : '' ?>>
+                    <label class="form-check-label small fw-bold <?= $is_auto_meal ? 'text-success' : 'text-muted' ?>" for="autoSwitch">
 
 
 
