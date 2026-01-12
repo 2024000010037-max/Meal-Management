@@ -26,6 +26,10 @@ if ($target_str < $today_str) {
     // Past dates: Locked
     $lock_b = $lock_l = $lock_d = true;
     $global_lock_msg = "Past dates cannot be updated.";
-
+} elseif ($target_str == $today_str) {
+    // Today: Time based locking
+    if ($hour >= 8)  $lock_b = true;
+    if ($hour >= 11) $lock_l = true;
+    if ($hour >= 15) $lock_d = true;
 
 
