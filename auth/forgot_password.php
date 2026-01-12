@@ -85,6 +85,9 @@ session_start();
         display: none;
         animation: fadeIn 0.5s ease-out;
     }
+ .step.active {
+        display: block;
+    }
 
 
   
