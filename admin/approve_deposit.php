@@ -81,3 +81,33 @@ $invoice_html = "
                 {$deposit['full_name']}<br>
                 {$deposit['email']}
             </td>
+td style='text-align: right;'>
+                <strong>Receipt No:</strong> $invoice_no<br>
+                <strong>Date:</strong> $date_time<br>
+                <strong>Status:</strong> <span style='color: green; font-weight: bold;'>Approved</span>
+            </td>
+        </tr>
+    </table>
+
+    <table style='width: 100%; border-collapse: collapse; margin-bottom: 20px;'>
+        <tr style='background: #f8f9fa;'>
+            <th style='border: 1px solid #ddd; padding: 12px; text-align: left;'>Description</th>
+            <th style='border: 1px solid #ddd; padding: 12px; text-align: right;'>Details</th>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Payment Type</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>Advance / Deposit</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Payment Method</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right; text-transform: capitalize;'>{$deposit['payment_method']}</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Transaction ID</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>{$deposit['transaction_id']}</td>
+        </tr>
+        <tr style='background: #e8f5e9;'>
+            <td style='border: 1px solid #ddd; padding: 10px; color: #2e7d32; font-weight: bold;'>AMOUNT RECEIVED</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right; color: #2e7d32; font-weight: bold; font-size: 1.2em;'>৳ " . number_format($deposit['amount'], 2) . "</td>
+        </tr>
+    </table>
