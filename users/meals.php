@@ -146,6 +146,10 @@ ob_start();
             <input type="hidden" name="meal_date" value="<?= $selected_date ?>">
             <div class="row g-4 text-center">
                 <!-- Breakfast -->
+<div class="col-md-4 <?= $lock_b ? 'locked-section' : '' ?>">
+                    <label class="form-label text-muted fw-bold small">BREAKFAST</label>
+                    <div class="d-flex align-items-center justify-content-center gap-2 bg-light rounded-pill p-2">
+                        <button type="button" class="btn btn-outline-danger btn-qty" onclick="updateQty('breakfast', -0.5)">-</button>
 
 
 
