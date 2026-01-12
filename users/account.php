@@ -60,3 +60,5 @@ div class="mb-3 border-bottom pb-2">
 </div>
 <?php
 $content = ob_get_clean();
+include "layout.php";
+?>
