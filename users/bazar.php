@@ -188,5 +188,18 @@ ob_start();
                                     <?php endforeach; ?>
                                 </select>
                             </div>
+ <div class="mb-3">
+                                <label class="form-label small fw-bold">Items / Details</label>
+                                <textarea name="details" class="form-control" rows="2" placeholder="e.g. Rice, Oil, Chicken" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Amount (৳)</label>
+                                <input type="number" step="0.01" name="amount" class="form-control" placeholder="0.00" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-bold">Remarks (Optional)</label>
+                                <input type="text" name="remarks" class="form-control" placeholder="Any extra note...">
+                            </div>
+                            <button class="btn btn-primary w-100 fw-bold"><i class="bi bi-send me-2"></i> Submit for Approval</button>
 
    
