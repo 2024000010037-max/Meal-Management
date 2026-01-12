@@ -462,3 +462,35 @@ div class="row g-3">
         </div>
 
     </div>
+<script>
+        $(document).ready(function() {
+            $('.select2').select2({ theme: 'bootstrap-5', width: '100%' });
+
+            // Live Search & Total Calculation
+            const searchInput = document.getElementById('searchInput');
+            const tableBody = document.getElementById('depositTableBody');
+            const rows = tableBody.getElementsByTagName('tr');
+            const totalDisplay = document.getElementById('totalAmount');
+
+            function calculateTotal() {
+                let total = 0;
+                Array.from(rows).forEach(row => {
+                    if (row.style.display !== 'none') {
+                        const cell = row.querySelector('.amount-cell');
+                        if (cell) total += parseFloat(cell.getAttribute('data-amount')) || 0;
+                    }
+                });
+                totalDisplay.textContent = (total > 0 ? '+' : '') + total.toFixed(2);
+                totalDisplay.className = 'text-end fw-bold ' + (total < 0 ? 'text-danger' : 'text-success');
+            }
+
+            searchInput.addEventListener('keyup', function() {
+                const filter = searchInput.value.toLowerCase();
+                Array.from(rows).forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(filter) ? '' : 'none';
+                });
+                calculateTotal();
+            });
+
+            calculateTotal();
