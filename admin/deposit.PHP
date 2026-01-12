@@ -431,3 +431,21 @@ div class="row g-3">
                                     <td class="fw-bold text-end <?= $h['amount'] < 0 ? 'text-danger' : 'text-success' ?> amount-cell" data-amount="<?= $h['amount'] ?>">
                                         <?= $h['amount'] > 0 ? '+' : '' ?><?= number_format($h['amount'], 2) ?>
                                     </td>
+<td class="text-end">
+                                        <?php
+                                        $can_action = false;
+                                        if ($_SESSION['role'] === 'admin') {
+                                            $can_action = true;
+                                        } elseif ($_SESSION['role'] === 'manager' && isset($h['time_diff']) && $h['time_diff'] >= 0 && $h['time_diff'] <= 600) {
+                                            $can_action = true;
+                                        }
+                                        ?>
+                                        <?php if ($can_action): ?>
+                                            <a href="?edit=<?= $h['id'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil"></i></a>
+                                            <a href="?action=delete&id=<?= $h['id'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Permanently delete this record?')"><i class="bi bi-trash"></i></a>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
