@@ -212,5 +212,13 @@ ob_start();
                         <div class="table-responsive">
                             <table class="table table-sm align-middle">
                                 <thead>
-                                    
+                                   tr>
+                                        <th>Da<te</th>
+                                        <th>Details</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+   
    
