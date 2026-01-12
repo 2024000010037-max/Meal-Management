@@ -71,3 +71,14 @@ ALTER TABLE `deposits`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `manager_id` (`manager_id`);
+
+
+/* meal data entry section */
+CREATE TABLE `meals` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `meal_date` date DEFAULT NULL,
+  `breakfast` float DEFAULT 0,
+  `lunch` float DEFAULT 0,
+  `dinner` float DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
