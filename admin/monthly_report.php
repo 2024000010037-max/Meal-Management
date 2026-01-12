@@ -263,3 +263,7 @@ ob_start();
             });
     }
 </script>
+<?php
+$content = ob_get_clean();
+include "layout.php";
+?>
