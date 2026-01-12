@@ -132,6 +132,9 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
+ // Recipients
+    $mail->setFrom('remarkhb.herlanit@gmail.com', 'Hostel Mess Manager');
+    $mail->addAddress($user['email'], $user['full_name']);
 
     
 ?>
