@@ -26,5 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_bazar'])) {
     $details = $_POST['details'];
     $remarks = $_POST['remarks'];
     $shopper_ids = isset($_POST['shopper_ids']) ? implode(',', $_POST['shopper_ids']) : '';
+if ($amount > 0 && !empty($details)) {
+        $stmt = $pdo->prepare("INSERT INTO bazar (user_id, shopper_ids, bazar_date, amount, details, remarks, status) VALUES (?, ?, ?, ?, ?, ?, 'pending')");
 
     
