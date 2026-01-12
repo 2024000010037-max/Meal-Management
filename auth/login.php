@@ -102,4 +102,14 @@ body {
             <button class="btn btn-primary w-100">Let's Eat!</button>
         </form>
     </div>
+      <!-- Floating Developer Button -->
+    <div class="dev-fab-container">
+        <button class="dev-fab" onclick="toggleDevPopup()">
+            <i class="bi bi-bell-fill"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="border: 2px solid white;">
+                1
+            </span>
+        </button>
+        <span class="dev-tooltip">Need a Custom System?</span>
+    </div>
 </body>
