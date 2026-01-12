@@ -211,7 +211,16 @@ ob_start();
             </table>
         </div>
     </div>
-     
+     <script>
+        function updateQty(id, change) {
+            const input = document.getElementById(id);
+            let val = parseFloat(input.value) || 0;
+            val += change;
+            if (val < 0) val = 0;
+            input.value = val;
+        }
+    </script>
+ 
 
 
 
