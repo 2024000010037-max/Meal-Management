@@ -109,6 +109,15 @@ fetch("send_otp.php", {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: `email=${encodeURIComponent(email)}`
         })
+ .then(res => res.text())
+        .then(data => {
+            if (data.trim() === "success") {
+                document.getElementById('user-email-display').textContent = email;
+                showStep(2);
+            } else {
+                showMessage(data, "danger");
+            }
+        })
 
 
 
