@@ -120,3 +120,4 @@ div class="sidebar-header">
                 <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-            
 toggle="dropdown" aria-expanded="false">
                     <?php
+ $nav_img = "https://ui-avatars.com/api/?name=" . urlencode($_SESSION['full_name'] ?? 'User') . "&background=0D6EFD&color=fff";
