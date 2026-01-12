@@ -178,5 +178,44 @@ ob_start();
             </div>
         </div>
 
+        <!-- ADD NEW ENTRY -->
+        <div class="tab-pane fade" id="pills-add">
+            <div class="card p-4" style="max-width: 600px; margin: 0 auto;">
+                <h5 class="fw-bold mb-3 text-primary">Add Direct Bazar Entry</h5>
+                <form method="POST">
+                    <input type="hidden" name="add_bazar" value="1">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Date</label>
+                            <input type="date" name="bazar_date" class="form-control" value="<?= date('Y-m-d') ?>" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Shopper</label>
+                            <select name="shopper_ids[]" class="form-select select2" multiple required>
+                                <?php foreach($users as $u): ?>
+                                    <option value="<?= $u['id'] ?>" <?= $u['id'] == $_SESSION['user_id'] ? 'selected' : '' ?>><?= htmlspecialchars($u['full_name']) ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold">Items / Details</label>
+                            <textarea name="details" class="form-control" rows="2" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Amount (৳)</label>
+                            <input type="number" step="0.01" name="amount" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold">Remarks</label>
+                            <input type="text" name="remarks" class="form-control">
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button class="btn btn-success w-100 fw-bold">Save & Approve</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
 
 ?>
