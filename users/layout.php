@@ -101,5 +101,7 @@ body.toggled .main-content {
 <body>
 <!-- SIDEBAR -->
     <div class="sidebar">
+div class="sidebar-header">
+            <h4>My Portal</h4>
 
      
