@@ -124,3 +124,8 @@ toggle="dropdown" aria-expanded="false">
 if(isset($_SESSION['user_id']) && isset($pdo)) {
  $stmt_nav = $pdo->prepare("SELECT photo FROM users WHERE id = ?");
  $stmt_nav->execute([$_SESSION['user_id']]);
+$user_nav = $stmt_nav->fetch(PDO::FETCH_ASSOC);
+                        if ($user_nav && !empty($user_nav['photo'])) {
+                            $nav_img = "../uploads/" . $user_nav['photo'];
+                        }
+                    }
