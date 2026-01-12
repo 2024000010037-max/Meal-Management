@@ -169,6 +169,7 @@ if ($view_as === 'user') {
             </div>
         </div>
     </div>
+<?php if ($net_balance >= 0): ?>
 
 
 
