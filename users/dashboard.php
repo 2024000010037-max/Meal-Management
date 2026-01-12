@@ -191,7 +191,10 @@ ob_start();
                 </div>
             </div>
         <?php else: ?>
-
+            <div class="card dashboard-card bg-white p-4 h-100 shadow-sm border-start border-5 border-danger">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        
 
 
 
