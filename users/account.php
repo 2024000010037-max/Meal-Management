@@ -48,3 +48,5 @@ div class="mb-3 border-bottom pb-2">
                 </div>
 <div class="mb-3">
                     <label class="small text-muted d-block mb-1">Account Status</label>
+?php if($user['status'] == 1): ?>
+                        <span class="text-success fw-bold"><i class="bi bi-check-circle-fill"></i> Active</span>
