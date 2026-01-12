@@ -78,6 +78,10 @@ ob_start();
             <label class="form-label small fw-bold text-muted">End Date</label>
             <input type="date" name="end_date" class="form-control" value="<?= $end_date ?>">
         </div>
+<div class="col-md-4">
+            <label class="form-label small fw-bold text-muted">Search Member</label>
+            <input type="text" name="search" class="form-control" placeholder="Enter name..." value="<?= htmlspecialchars($search) ?>">
+        </div>
 
 
 
