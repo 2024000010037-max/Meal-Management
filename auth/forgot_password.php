@@ -5,6 +5,14 @@ session_start();
 <html lang="en">
 <head>
 <style>
+ body {
+        font-family: 'Poppins', sans-serif;
+        /* Warm, cute gradient background matching login.php */
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+    }
 
 
 
