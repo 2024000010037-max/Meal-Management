@@ -130,6 +130,7 @@ function exportExcel() {
     window.location.href = url.toString();
 }
 </script>
+<?php
 
 
 
