@@ -185,6 +185,17 @@ ob_start();
                     <tr><td colspan="6" class="text-center text-muted py-4">No active members with meals found for this month.</td></tr>
                 <?php else: ?>
                     <?php foreach($report_data as $row): ?>
+ <tr>
+                        <td class="fw-bold"><?= htmlspecialchars($row['name']) ?></td>
+                        <td class="text-center"><span class="badge bg-secondary bg-opacity-10 text-secondary"><?= $row['role'] ?></span></td>
+                        <td class="text-center fw-bold"><?= number_format($row['meals'], 1) ?></td>
+                        <td class="text-end text-success">+<?= number_format($row['deposit'], 2) ?></td>
+                        <td class="text-end text-danger">-<?= number_format($row['cost'], 2) ?></td>
+                        <td class="text-end fw-bold <?= $row['balance'] < 0 ? 'text-danger' : 'text-success' ?>">
+                            <?= ($row['balance'] >= 0 ? "+" : "") . number_format($row['balance'], 2) ?>
+                        </td>
 
+
+    
 
 ?>
