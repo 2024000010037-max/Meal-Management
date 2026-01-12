@@ -229,5 +229,53 @@ ob_start();
                     <a href="?month=<?= $selected_month ?>&export=excel" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Excel</a>
                 </div>
             </div>
+            <div class="card p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Shopper</th>
+                                <th>Details</th>
+                                <th class="text-end">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bazarTableBody">
+                            <?php if(empty($history)): ?>
+                                <tr><td colspan="4" class="text-center text-muted py-4">No records found.</td></tr>
+                            <?php else: ?>
+                                <?php foreach($history as $h): ?>
+                                <tr>
+                                    <td><?= date('d M, Y', strtotime($h['bazar_date'])) ?></td>
+                                    <td>
+                                        <?php 
+                                            $s_ids = explode(',', $h['shopper_ids'] ?? '');
+                                            $s_names = array_map(fn($id) => $userMap[$id] ?? '', $s_ids);
+                                            echo htmlspecialchars(implode(', ', array_filter($s_names)));
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?= htmlspecialchars($h['details']) ?>
+                                        <?php if($h['remarks']): ?><small class="text-muted d-block"><?= htmlspecialchars($h['remarks']) ?></small><?php endif; ?>
+                                    </td>
+                                    <td class="fw-bold text-end amount-cell" data-amount="<?= $h['amount'] ?>"><?= number_format($h['amount'], 2) ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                        <tfoot class="table-light">
+                            <tr>
+                                <td colspan="3" class="text-end fw-bold">Total Amount:</td>
+                                <td class="text-end fw-bold text-primary" id="totalAmount">0.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
 
+    </div>
+
+
+            
 ?>
