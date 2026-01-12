@@ -45,4 +45,5 @@ $stmt->execute([$user_id]);
 $my_pending = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // 2. My History (Approved/Rejected) for Selected Month
 $stmt = $pdo->prepare("
-
+SELECT d.*, m.full_name as manager_name
+    FROM deposits d
