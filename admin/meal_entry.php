@@ -38,3 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['meals'])) {
             // Check if entry exists
             $stmtCheck->execute([$uid, $selected_date]);
             $existing_id = $stmtCheck->fetchColumn();
+
+            if ($existing_id) {
+                // Update existing
+                $stmtUpdate->execute([$b, $l, $d, $existing_id]);
+            } else {
+                // Insert new if any value is greater than 0
+                if ($b > 0 || $l > 0 || $d > 0) {
+                    $stmtInsert->execute([$uid, $selected_date, $b, $l, $d]);
+                }
+            }
+        }
