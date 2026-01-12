@@ -105,5 +105,5 @@ div class="sidebar-header">
             <h4>My Portal</h4>
         </div>
         <div class="sidebar-menu">
-            
+ ass="<?= $cur == 'dashboard.php' ? 'active' : '' ?>"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>            
      
