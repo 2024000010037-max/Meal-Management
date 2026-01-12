@@ -116,7 +116,12 @@ ob_start();
         <div>
             <h3 class="fw-bold mb-1">Meal Management</h3>
         </div>
-        
+  <form method="GET" class="d-flex gap-2">
+            <input type="date" name="date" class="form-control" value="<?= $selected_date ?>" onchange="this.form.submit()">
+        </form>
+    </div>
+
+       
 
 
 
