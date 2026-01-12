@@ -45,3 +45,16 @@ ALTER TABLE `bazar`
 ALTER TABLE `bazar`
   ADD PRIMARY KEY (`id`),
   ADD KEY `manager_id` (`manager_id`);
+
+CREATE TABLE `deposits` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `manager_id` int(11) DEFAULT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `payment_method` varchar(50) NOT NULL,
+  `transaction_id` varchar(100) DEFAULT NULL,
+  `deposit_date` date NOT NULL,
+  `status` enum('pending','approved','rejected') DEFAULT 'pending',
+  `remarks` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
