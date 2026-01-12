@@ -118,3 +118,5 @@ div class="sidebar-header">
 <button class="btn btn-light border" id="menu-toggle"><i class="bi bi-list fs-5"></i></button>
    <div class="dropdown">
                 <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-            
+toggle="dropdown" aria-expanded="false">
+                    <?php
