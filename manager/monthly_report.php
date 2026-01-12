@@ -100,6 +100,16 @@ ob_start();
         .sidebar, .top-header { display: none !important; }
         .main-content { margin-left: 0 !important; }
     }
+ /* Loading Overlay */
+    #loadingOverlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 9999;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
 
 
