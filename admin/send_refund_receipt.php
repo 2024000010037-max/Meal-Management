@@ -115,3 +115,28 @@ $invoice_html = "
     </div>
 </div>
 ";
+/ 4. Send Email
+if (!empty($deposit['email'])) {
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'yourmail@gmail.com';
+        $mail->Password   = 'app passord';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+
+        $mail->setFrom('yourmail@gmail.com', 'Hostel Mess Manager');
+        $mail->addAddress($deposit['email'], $deposit['full_name']);
+
+        $mail->isHTML(true);
+        $mail->Subject = "Cash Refund Processed - ৳ " . number_format(abs($deposit['amount']), 2);
+        $mail->Body    = "Dear {$deposit['full_name']},<br><br>A cash refund has been processed for your account. Here is your receipt.<br><br>" . $invoice_html;
+        $mail->addStringAttachment($invoice_html, "Receipt_{$invoice_no}.html", 'base64', 'text/html');
+
+        $mail->send();
+    } catch (Exception $e) {
+        // Log error but don't stop flow
+    }
+}
