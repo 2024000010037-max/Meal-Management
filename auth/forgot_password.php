@@ -44,6 +44,14 @@ session_start();
         from { opacity: 0; transform: translateY(40px); }
         to { opacity: 1; transform: translateY(0); }
     }
+.form-control {
+        background: rgba(255, 255, 255, 0.9);
+        border: 2px solid #fff;
+        border-radius: 12px;
+        padding: 12px 15px;
+        transition: all 0.3s;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
 
 
   
