@@ -128,3 +128,15 @@ td style='text-align: right;'>
     </div>
 </div>
 ";
+
+// 5. Send Email
+if (!empty($deposit['email'])) {
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'yourmail@gmail.com';
+        $mail->Password   = 'apppassword';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
