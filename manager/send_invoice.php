@@ -119,6 +119,18 @@ $invoice_html = "
 </div>
 ";
 
+// --- 4. SEND EMAIL ---
+$mail = new PHPMailer(true);
+
+try {
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'remarkhb.herlanit@gmail.com'; // Using credentials from context
+    $mail->Password   = 'mutq ddwp qkyu hzgo';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
 
 
     
