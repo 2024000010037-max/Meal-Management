@@ -38,3 +38,4 @@ color: #fff;
             font-weight: 700;
         }
 .sidebar-menu {
+padding: 10px 0;
