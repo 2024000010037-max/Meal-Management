@@ -58,4 +58,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_auto'])) {
     exit;
 }
 
+// --- HANDLE FORM SUBMISSION ---
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['toggle_auto'])) {
+    $b = floatval($_POST['breakfast']);
+    $l = floatval($_POST['lunch']);
+    $d = floatval($_POST['dinner']);
+    $date = $_POST['meal_date'];
+
+
 
