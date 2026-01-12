@@ -220,5 +220,16 @@ ob_start();
                                     </tr>
                                 </thead>
                                 <tbody>
-   
+    <?php foreach($my_requests as $req): ?>
+                                    <tr>
+                                        <td><?= date('d M', strtotime($req['bazar_date'])) ?></td>
+                                        <td><small><?= htmlspecialchars(substr($req['details'], 0, 20)) ?>...</small></td>
+                                        <td><?= $req['amount'] ?></td>
+                                        <td>
+                                            <?php if($req['status'] == 'approved'): ?>
+                                                <span class="badge bg-success status-badge">Approved</span>
+                                            <?php elseif($req['status'] == 'rejected'): ?>
+                                                <span class="badge bg-danger status-badge">Rejected</span>
+                                                <a href="?action=delete&id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="text-danger ms-2" onclick="return confirm('Permanently delete this rejected request?')" title="Delete"><i class="bi bi-trash"></i></a>
+
    
