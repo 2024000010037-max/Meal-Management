@@ -83,4 +83,7 @@ body.toggled .main-content {
             .sidebar {
                 left: -250px;
             }
-            
+    .main-content {
+                margin-left: 0;
+            }
+         
