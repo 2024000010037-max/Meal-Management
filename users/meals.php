@@ -19,5 +19,13 @@ $today_str = $now->format('Y-m-d');
 $target_str = $target->format('Y-m-d');
 $hour = (int)$now->format('H');
 
+$lock_b = false; $lock_l = false; $lock_d = false;
+$global_lock_msg = "";
+
+if ($target_str < $today_str) {
+    // Past dates: Locked
+    $lock_b = $lock_l = $lock_d = true;
+    $global_lock_msg = "Past dates cannot be updated.";
+
 
 
