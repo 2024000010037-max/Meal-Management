@@ -307,3 +307,28 @@ ob_start();
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
+tbody>
+                            <?php if(empty($pending_reqs)): ?>
+                                <tr><td colspan="5" class="text-center text-muted py-4">No pending deposit requests.</td></tr>
+                            <?php else: ?>
+                                <?php foreach($pending_reqs as $req): ?>
+                                <tr>
+                                    <td><?= date('d M', strtotime($req['deposit_date'])) ?></td>
+                                    <td class="fw-bold"><?= htmlspecialchars($req['full_name']) ?></td>
+                                    <td>
+                                        <span class="badge badge-<?= strtolower($req['payment_method']) ?> text-uppercase"><?= $req['payment_method'] ?></span>
+                                        <div class="small text-muted"><?= htmlspecialchars($req['transaction_id']) ?></div>
+                                    </td>
+                                    <td class="fw-bold text-success">+<?= number_format($req['amount'], 2) ?></td>
+                                    <td class="text-end">
+                                        <a href="approve_deposit.php?id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="btn btn-success btn-sm" title="Approve" onclick="return confirm('Are you sure you want to approve this deposit and send the invoice?')"><i class="bi bi-check-lg"></i></a>
+                                        <a href="?action=reject&id=<?= $req['id'] ?>&month=<?= $selected_month ?>" class="btn btn-outline-danger btn-sm" title="Reject" onclick="return confirm('Reject this deposit?')"><i class="bi bi-x-lg"></i></a>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
