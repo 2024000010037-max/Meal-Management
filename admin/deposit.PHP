@@ -122,3 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_deposit'])) {
 
                 $user_cost = $user_meals * $meal_rate;
                 $balance = $user_total_deposit - $user_cost;
+               // Generate Invoice HTML
+                $invoice_no = "INV-" . date('Ymd') . "-" . $deposit_id;
+                $date_time = date('d M, Y h:i A');
+
+                $invoice_html = "
