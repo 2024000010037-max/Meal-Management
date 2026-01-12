@@ -79,3 +79,8 @@ body.toggled .main-content {
  margin-left: 0;
         }
 /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .sidebar {
+                left: -250px;
+            }
+            
