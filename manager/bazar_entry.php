@@ -66,6 +66,25 @@ $history = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $users = $pdo->query("SELECT id, full_name FROM users WHERE status = 1 AND role IN ('manager', 'user') ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
 $userMap = array_column($users, 'full_name', 'id');
 
+// --- HANDLE EXCEL EXPORT (Manager) ---
+if (isset($_GET['export']) && $_GET['export'] === 'excel') {
+    header("Content-Type: application/vnd.ms-excel");
+    header("Content-Disposition: attachment; filename=manager_bazar_list_{$selected_month}.xls");
+    echo '<table border="1"><tr><th>Date</th><th>Shopper</th><th>Details</th><th>Amount</th></tr>';
+    foreach($history as $h) {
+        $s_ids = explode(',', $h['shopper_ids'] ?? '');
+        $s_names = array_map(fn($id) => $userMap[$id] ?? '', $s_ids);
+        $shopper = implode(', ', array_filter($s_names));
+        echo "<tr><td>{$h['bazar_date']}</td><td>{$shopper}</td><td>{$h['details']} " . ($h['remarks'] ? "({$h['remarks']})" : "") . "</td><td>{$h['amount']}</td></tr>";
+    }
+    echo '</table>';
+    exit;
+}
+
+$pageTitle = "Bazar Entry";
+ob_start();
+?>
+
 
 
 ?>
