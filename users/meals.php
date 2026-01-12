@@ -37,5 +37,9 @@ if ($target_str < $today_str) {
     if ($target_str == $tomorrow->format('Y-m-d')) {
         // Tomorrow: Opens after 6 PM today
         if ($hour < 18) {
-            
+                   $lock_b = $lock_l = $lock_d = true;
+            $global_lock_msg = "Tomorrow's meal entry opens at 6:00 PM today.";
+        }
+    } else {
+             
 
