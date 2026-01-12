@@ -79,5 +79,12 @@ body {
     <div class="food-icon" style="top: 50%; left: 5%; animation-delay: 1.5s;">🥗</div>
     <div class="food-icon" style="top: 10%; left: 50%; animation-delay: 0.5s;">🍳</div>
 
+   <div class="login-card text-center">
+        <div class="mb-4">
+            <span style="font-size: 3.5rem;">🍱</span>
+            <h3 class="fw-bold mt-2 text-dark">Welcome Back!</h3>
+            <p class="text-muted small">Hostel Meal management portal </p>
+        </div>
 
+        <?= $msg ?>
 </body>
