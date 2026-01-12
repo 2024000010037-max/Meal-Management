@@ -177,3 +177,11 @@ ob_start();
             input.value = val;
         }
     </script>
+<?php
+// Helper function to render inputs
+function renderMealInput($uid, $type, $value, $isLocked) {
+    $name = "meals[$uid][$type]";
+    $readonly = $isLocked ? 'readonly class="form-control form-control-sm locked-input"' : 'class="form-control form-control-sm"';
+    $btnClass = $isLocked ? 'btn-secondary disabled' : 'btn-outline-primary';
+    $onclickMinus = $isLocked ? '' : 'onclick="updateQty(this, -0.5)"';
+    $onclickPlus = $isLocked ? '' : 'onclick="updateQty(this, 0.5)"';
