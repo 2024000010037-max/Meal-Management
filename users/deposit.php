@@ -58,4 +58,6 @@ ob_start();
 ?>
  <style>
         .card { border: none; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,.05); }
+.nav-pills .nav-link.active { background-color: #198754; } /* Green theme for money */
+        .nav-pills .nav-link { color: #198754; }
 
