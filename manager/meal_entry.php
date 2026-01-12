@@ -86,6 +86,78 @@ $lock_l = false; // Lunch Lock
 $lock_d = false; // Dinner Lock
 $global_lock_msg = "";
 
+$pageTitle = "Meal Entry";
+ob_start();
+?>
+    <style>
+        .card { border:none; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+        .table-input-group { min-width: 120px; }
+        .form-control-sm { text-align: center; font-weight: bold; }
+        .btn-qty { width: 30px; padding: 0; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .locked-input { background-color: #f8f9fa; border-color: #e9ecef; color: #6c757d; }
+        .user-role-badge { font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: #e2e8f0; color: #475569; margin-left: 5px; }
+    </style>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="fw-bold mb-0">Daily Meal Entry</h3>
+            <p class="text-muted small mb-0">Manage meals for all members</p>
+        </div>
+        <form method="GET" class="d-flex gap-2">
+            <a href="meal_history.php" class="btn btn-outline-primary"><i class="bi bi-clock-history me-1"></i> History</a>
+            <input type="date" name="date" class="form-control" value="<?= $selected_date ?>" onchange="this.form.submit()">
+        </form>
+    </div>
+
+    <?= $msg ?>
+
+    <?php if($global_lock_msg): ?>
+        <div class="alert alert-warning"><i class="bi bi-lock-fill me-2"></i> <?= $global_lock_msg ?></div>
+    <?php endif; ?>
+
+    <div class="card p-4">
+        <form method="POST" class="row g-3">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th style="width: 25%">Member Name</th>
+                            <th class="text-center">Breakfast <small class="text-muted d-block" style="font-size:10px">(< 8 AM)</small></th>
+                            <th class="text-center">Lunch <small class="text-muted d-block" style="font-size:10px">(< 11 AM)</small></th>
+                            <th class="text-center">Dinner <small class="text-muted d-block" style="font-size:10px">(< 3 PM)</small></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($users as $u): 
+                            $uid = $u['id'];
+                            // Auto Meal Logic: If no entry exists and auto is ON, default to 1 (only for today/future)
+                            $default = ($u['is_auto_meal'] && $selected_date >= date('Y-m-d')) ? 1 : 0;
+                            
+                            // Auto-save if Today, Auto is ON, No Entry, and Breakfast time passed
+                            if (!isset($current_meals[$uid]) && $u['is_auto_meal'] && $time_lock_b) {
+                                $pdo->prepare("INSERT INTO meals (user_id, meal_date, breakfast, lunch, dinner) VALUES (?, ?, 1, 1, 1)")->execute([$uid, $selected_date]);
+                                $current_meals[$uid] = ['breakfast' => 1, 'lunch' => 1, 'dinner' => 1];
+                            }
+
+                            $b = $current_meals[$uid]['breakfast'] ?? $default;
+                            $l = $current_meals[$uid]['lunch'] ?? $default;
+                            $d = $current_meals[$uid]['dinner'] ?? $default;
+                        ?>
+                        <tr>
+                            <td>
+                                <div class="fw-bold"><?= htmlspecialchars($u['full_name']) ?></div>
+                                <?php if($u['role'] === 'manager'): ?>
+                                    <span class="user-role-badge">Manager</span>
+                                <?php endif; ?>
+                                <!-- Auto Meal Toggle -->
+                                <div class="mt-1">
+                                    <a href="?date=<?= $selected_date ?>&toggle_auto=1&uid=<?= $uid ?>" class="text-decoration-none small">
+                                        <i class="bi <?= $u['is_auto_meal'] ? 'bi-toggle-on text-success' : 'bi-toggle-off text-muted' ?> fs-5 align-middle"></i>
+                                        <span class="text-muted align-middle" style="font-size: 11px;">Auto Meal</span>
+                                    </a>
+                                </div>
+                            </td>
+
 
 
 
