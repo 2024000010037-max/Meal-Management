@@ -295,11 +295,15 @@ ob_start();
                                         <span class="badge bg-danger">Inactive</span>
                                     <?php endif; ?>
                                 </td>
-                                    td class="text-end pe-3">
+                                    <td class="text-end pe-3">
                                     <?php if($u['role'] !== 'admin'): ?>
                                         <!-- Status Toggle -->
                                         <a href="?action=status&id=<?= $u['id'] ?>" class="btn btn-sm btn-light text-secondary me-1" title="Toggle Status">
                                             <i class="bi bi-toggle-<?= $u['status'] ? 'on text-success' : 'off text-danger' ?>"></i>
+                                        </a>
+                                <!-- Edit -->
+                                        <a href="?action=edit&id=<?= $u['id'] ?>" class="btn btn-sm btn-outline-secondary rounded-circle me-1" title="Edit">
+                                            <i class="bi bi-pencil"></i>
                                         </a>
                     
 <?php
