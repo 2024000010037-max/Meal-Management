@@ -68,6 +68,14 @@ $stmt = $pdo->prepare("SELECT user_id, breakfast, lunch, dinner FROM meals WHERE
 $stmt->execute([$selected_date]);
 $current_meals = $stmt->fetchAll(PDO::FETCH_UNIQUE | PDO::FETCH_ASSOC);
 
+// --- TIME CONSTRAINTS LOGIC ---
+$now = new DateTime();
+$target = new DateTime($selected_date);
+$today_str = $now->format('Y-m-d');
+$target_str = $target->format('Y-m-d');
+$hour = (int)$now->format('H');
+
+
 
 
 
