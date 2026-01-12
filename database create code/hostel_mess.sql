@@ -23,3 +23,16 @@ ALTER TABLE `users`
 /* AUTO_INCREMENT for table `users` */
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+CREATE TABLE `bazar` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `shopper_id` int(11) DEFAULT NULL,
+  `manager_id` int(11) DEFAULT NULL,
+  `amount` decimal(10,2) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `remarks` text DEFAULT NULL,
+  `status` enum('pending','approved','rejected') DEFAULT 'pending',
+  `bazar_date` date DEFAULT NULL,
+  `shopper_ids` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
