@@ -83,4 +83,35 @@ $invoice_html = "
             </td>
         </tr>
     </table>
+   <table style='width: 100%; border-collapse: collapse; margin-bottom: 20px;'>
+        <tr style='background: #f8f9fa;'>
+            <th style='border: 1px solid #ddd; padding: 12px; text-align: left;'>Description</th>
+            <th style='border: 1px solid #ddd; padding: 12px; text-align: right;'>Details</th>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #ddd; padding: 10px;'>Payment Type</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right;'>Cash Refund</td>
+        </tr>
+        <tr style='background: #fbe9e7;'>
+            <td style='border: 1px solid #ddd; padding: 10px; color: #c62828; font-weight: bold;'>AMOUNT REFUNDED</td>
+            <td style='border: 1px solid #ddd; padding: 10px; text-align: right; color: #c62828; font-weight: bold; font-size: 1.2em;'>৳ " . number_format(abs($deposit['amount']), 2) . "</td>
+        </tr>
+    </table>
 
+    <div style='background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;'>
+        <h4 style='margin: 0 0 10px 0; font-size: 14px; color: #555;'>Account Summary (For {$current_month})</h4>
+        <table style='width: 100%; font-size: 13px;'>
+            <tr>
+                <td>Total Deposit (after refund):</td>
+                <td style='text-align: right;'>৳ " . number_format($user_total_deposit, 2) . "</td>
+            </tr>
+            <tr>
+                <td>Current Balance:</td>
+                <td style='text-align: right; font-weight: bold; color: " . ($balance >= 0 ? 'green' : 'red') . ";'>
+                    " . ($balance >= 0 ? '+' : '') . number_format($balance, 2) . "
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+";
