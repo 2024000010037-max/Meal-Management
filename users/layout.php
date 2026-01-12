@@ -21,3 +21,4 @@ width: 250px;
             background: #020617;
  position: fixed;
 top: 0;
+left: 0;
