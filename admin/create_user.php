@@ -166,8 +166,15 @@ $users = $pdo->query("SELECT * FROM users ORDER BY FIELD(role, 'admin', 'manager
 $pageTitle = "User Management | Admin";
 ob_start();
 ?>
+<style>
+    .card { border: none; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .form-control { border-radius: 10px; padding: 12px; border: 1px solid #e2e8f0; }
+    .form-control:focus { box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); border-color: #3b82f6; }
+    .btn-primary { border-radius: 10px; padding: 12px 24px; font-weight: 600; }
 
 
+    
+</style>
 
 
 
