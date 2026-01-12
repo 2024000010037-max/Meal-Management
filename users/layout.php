@@ -16,3 +16,4 @@ background: #f1f5f9;
         }
 /* SIDEBAR STYLES */
 .sidebar {
+width: 250px;
