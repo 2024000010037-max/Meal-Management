@@ -178,6 +178,12 @@ ob_start();
                     <?php if($lock_d): ?><small class="text-danger d-block mt-1"><i class="bi bi-lock"></i> Locked</small><?php endif; ?>
                 </div>
             </div>
+<?php if(!$lock_b || !$lock_l || !$lock_d): ?>
+                <button class="btn btn-primary w-100 mt-4 py-2 fw-bold">Save Changes</button>
+            <?php endif; ?>
+        </form>
+    </div>
+
 
 
 
