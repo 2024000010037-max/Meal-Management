@@ -40,7 +40,10 @@ session_start();
         border: 1px solid rgba(255,255,255,0.6);
         animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-
+ @keyframes slideUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
 
   
