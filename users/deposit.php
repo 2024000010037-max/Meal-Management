@@ -72,3 +72,9 @@ ob_start();
  <form method="GET" class="d-flex align-items-center gap-2">
             <label class="small fw-bold text-muted">Month:</label>
        <input type="month" name="month" class="form-control form-control-sm" value="<?= $selected_month ?>" onchange="this.form.submit()">
+        </form>
+    </div>
+
+    <?= $msg ?>
+
+    
