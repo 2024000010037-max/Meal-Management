@@ -254,6 +254,24 @@ if ($view_as === 'user') {
         </div>
     </div>
 
+    <!-- My Deposit -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card dashboard-card bg-gradient-success p-4 h-100 text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <div class="card-label text-white-50">My Deposit</div>
+                    <h2 class="card-value mt-2">৳ <?= number_format($my_total_deposit, 0) ?></h2>
+                    <div class="card-sub text-white-50 mt-1">Paid Amount</div>
+                </div>
+                <div class="card-icon bg-white bg-opacity-25 text-white">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php if ($my_net_balance >= 0): ?>
+
 
 
 
