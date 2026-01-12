@@ -85,6 +85,51 @@ $pageTitle = "Bazar Entry";
 ob_start();
 ?>
 
+<!-- Select2 & jQuery for Advanced Dropdown -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <style>
+        .card{border:none;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+        .nav-pills .nav-link.active { background-color: #0d6efd; }
+        .action-btn { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; }
+        @media print {
+            .no-print { display: none !important; }
+            .card { box-shadow: none !important; border: 1px solid #ddd !important; }
+            .sidebar, .top-header { display: none !important; }
+            .main-content { margin-left: 0 !important; }
+        }
+    </style>
+    
+    <div class="d-flex justify-content-between align-items-center mb-4 no-print">
+        <h3 class="fw-bold mb-0"></h3>
+        <form method="GET" class="d-flex align-items-center gap-2">
+            <label class="small fw-bold text-muted">Month:</label>
+            <input type="month" name="month" class="form-control form-control-sm" value="<?= $selected_month ?>" onchange="this.form.submit()">
+        </form>
+    </div>
+
+    <?= $msg ?>
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active fw-bold position-relative" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending" type="button">
+                Pending Requests
+                <?php if(count($pending_reqs) > 0): ?>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <?= count($pending_reqs) ?>
+                    </span>
+                <?php endif; ?>
+            </button>
+        </li>
+        <li class="nav-item"><button class="nav-link fw-bold" id="pills-add-tab" data-bs-toggle="pill" data-bs-target="#pills-add" type="button">Add New Entry</button></li>
+        <li class="nav-item"><button class="nav-link fw-bold" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button">History</button></li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+
 
 
 ?>
