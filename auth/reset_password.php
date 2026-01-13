@@ -5,5 +5,7 @@ if (!isset($_SESSION['otp_verified']) || $_SESSION['otp_verified'] !== true) {
     echo "Unauthorized access.";
     exit;
 }
+$newpass = $_POST['newpass'] ?? '';
+$email = $_SESSION['otp_email'] ?? '';
 
 ?>
