@@ -11,4 +11,14 @@ if (strlen($newpass) < 6) {
     echo "Password must be at least 6 characters.";
     exit;
 }
+    $pdo = (new Database())->connect();
+$hashed_password = password_hash($newpass, PASSWORD_DEFAULT);
+
+$stmt = $pdo->prepare("UPDATE users SET password = ? WHERE email = ?");
+if ($stmt->execute([$hashed_password, $email])) {
+    session_destroy(); // Clear session after success
+    echo "success";
+} else {
+    echo "Database error. Could not update password.";
+}
 ?>
